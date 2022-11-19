@@ -1,0 +1,257 @@
+# jemdoc: nofooter, menu{MENU}{research.html}, analytics{UA-54571990-1}
+#
+= Cong Shi - Research
+#
+
+== Research Interests
+-  Revenue Management, Supply Chain Management, Healthcare Operations, Human-Robot Interaction
+-  Online Reinforcement Learning, Data-Driven Optimization, Approximation Algorithms
+
+#~~~
+#For any prospective PhD students, here is a recent book that encompasses my research interests. (Online version coming up soon!) \n
+#[https://link.springer.com/book/9783031019258 The Elements of Joint Learning and Optimization in Operations Management], edited by Xi Chen, Stefanus Jasin, Cong Shi, Springer, New York, NY.
+#~~~ 
+
+#~~~
+#{}{img_left}{wordcloud.png}{Word Cloud}{480}{300}{}
+#~~~
+
+
+== Working Papers
+
+- Online Learning and Pricing for Multiple Products with Reference Price Effects, 
+Sheng Ji, Yi Yang, Cong Shi
+
+- Online Learning and Pricing for Network Revenue Management with Reusable Resources, 
+Huiwen Jia, Cong Shi, Siqian Shen
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
+Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3456834 Tailored Base-Surge Policies in Dual-Sourcing Inventory Systems with Demand Learning], 
+Beryl Chen, Cong Shi
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655819 More Bang for Your Buck: Effective KOL Marketing Campaign in Emerging Short-Video Markets], 
+Xingyu Chen, Li Ji, Ling Jiang, Sentao Miao, Cong Shi 
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655848 Optimal Content Strategies for Social Media Influencers on Streaming Video Platforms],
+Xingyu Chen, Ling Liang, Sentao Miao, Cong Shi
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247323 Integrating Empirical Estimation and Assortment Personalization for E-Commerce: A Consider-then-Choose Model], 
+Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua
+-- Finalist, The 2018 MSOM Data Driven Research Challenge, 2018.
+
+- Online Learning and Matching for Multiproduct Systems with General Upgrading, 
+Jingwen Tang, Cong Shi, Izak Duenyas
+
+- Near-Optimal Pricing Policy for Service Systems with Reusable Resources and Forward-Looking Customers, 
+Yiwei Chen, Cong Shi
+
+
+
+
+== Under Revision
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4143885 Online Learning for Dual Index Policies in Dual Sourcing Systems], 
+Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi, Major Revision at *Manufacturing & Service Operations Management*.
+
+-  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Personalized Pricing with Censored Demand],
+Zhengling Qi, Jingwen Tang, Xingyuan (Ethan) Fang, Cong Shi, Major Revision at *Management Science*.
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3501316 Contextual Learning with Online Convex Optimization: Theory and Application to Chronic Diseases], 
+Esmaeil Keyvanshokooh, Mohammad Zhalechian, Cong Shi, Mark P. Van Oyen, Pooyan Kazemian, Major Revision at *Management Science*.
+-- Finalist, POMS College of Healthcare Operations Management (CHOM) Best Paper Competition, 2022.
+-- Finalist, INFORMS Manufacturing & Service Operations Management (MSOM) Best Student Paper Competition, 2021.
+-- Finalist, INFORMS Health Applications Society (HAS) Best Student Paper Competition, 2021.
+-- Finalist, INFORMS Decision Analysis Society (DAS) Best Student Paper Competition, 2020.
+-- IOE Murty Prize for Best Student Paper on Optimization, 2020.
+
+
+
+== Operations Research
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4225832 Online Learning and Pricing for Network Revenue Management with Reusable Resources], 
+H. Jia, C. Shi, S. Shen, *Advances in Neural Information Processing Systems (NeurIPS 2022)*, New Orleans, LA.
+
+- [https://proceedings.mlr.press/v162/jia22c.html Online Learning and Pricing with Reusable Resources: Linear Bandits with Sub-Exponential Rewards], 
+H. Jia, C. Shi, S. Shen, *International Conference on Machine Learning (ICML 2022)*, Baltimore, MD. [https://proceedings.mlr.press/v162/jia22c.html \[DOI\]] 
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3755902 Online Learning and Pricing for Service Systems with Reusable Resources], 
+H. Jia, C. Shi, S. Shen, *Operations Research*, to appear. [https://pubsonline.informs.org/doi/full/10.1287/opre.2022.2381 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3653433 Data-Driven Hospital Admission Control: A Contextual Learning Approach], 
+M. Zhalechian, E. Keyvanshokooh, C. Shi, M. P. Van Oyen, *Operations Research*, to appear.
+-- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2021.
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3538509 Online Resource Allocation with Personalized Learning], 
+M. Zhalechian, E. Keyvanshokooh, C. Shi, M. P. Van Oyen, *Operations Research*, Vol. 70(4), 2138–2161, 2022. [https://pubsonline.informs.org/doi/10.1287/opre.2022.2294 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3331939 Network Revenue Management with Online Inverse Batch Gradient Descent Method], 
+Y. Chen, C. Shi, *Production and Operations Management*, to appear.
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3734018 Partner with a Third-Party Delivery Service or Not? A Prediction-and-Decision Tool for Restaurants Facing Takeout Demand Surges During a Pandemic],
+H. Jia, S. Shen, J. Garcia, C. Shi, *Service Science*, Vol. 14(2), 139-155, 2022. [https://pubsonline.informs.org/doi/abs/10.1287/serv.2021.0294 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3926846 Multi-Armed Bandit with Sub-Exponential Rewards], 
+H. Jia, C. Shi, S. Shen, *Operations Research Letters*, Vol. 49(5), 728-733, 2021. [https://www.sciencedirect.com/science/article/pii/S0167637721001231 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3329611 Marrying Stochastic Gradient Descent with Bandits: Learning Algorithms for Inventory Systems with Fixed Costs], 
+H. Yuan, Q. Luo, C. Shi, *Management Science*, Vol. 67(10), 6089–6115, 2021. [https://pubsonline.informs.org/doi/10.1287/mnsc.2020.3799 \[DOI\]] 
+-- Finalist, INFORMS Applied Probability Society (APS) Best Student Paper Competition, 2019.
+-- IOE Murty Prize for Best Student Paper on Optimization, 2019.
+
+- [http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2836057 Nonparametric Learning Algorithms for Joint Pricing and Inventory Control with Lost-Sales and Censored Demand], 
+B. Chen, X. Chao, C. Shi, *Mathematics of Operations Research*, Vol. 46(2), 405-833, 2021. [https://pubsonline.informs.org/doi/abs/10.1287/moor.2020.1084 \[DOI\]]  
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3352166 Online Advance Scheduling with Overtime: A Primal-Dual Approach], 
+E. Keyvanshokooh, C. Shi, M. P. Van Oyen, *Manufacturing & Service Operations Management*, Vol. 23(1), 246-266, 2021. [https://pubsonline.informs.org/doi/10.1287/msom.2019.0832 \[DOI\]]
+-- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2019.
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3287560 Optimal Learning Algorithms for Stochastic Inventory Systems with Random Capacities], 
+W. Chen, C. Shi, I. Duenyas, *Production and Operations Management*, Vol. 29(7), 1624-1649, 2020. [https://onlinelibrary.wiley.com/doi/abs/10.1111/poms.13178 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2922820 Closing the Gap: A Learning Algorithm for the Lost-Sales Inventory System with Lead Times], 
+H. Zhang, X. Chao, C. Shi, *Management Science*, Vol. 66(5), 1962–1980, 2020. [https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2019.3288 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2939664 Strategic Capacity Planning Problems in Revenue Sharing Joint Ventures], 
+R. Levi, G. Perakis, C. Shi, W. Sun, *Production and Operations Management*, Vol. 29(3), 664-687, 2020. [https://onlinelibrary.wiley.com/doi/abs/10.1111/poms.13128 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2770242 Joint Pricing and Inventory Management with Strategic Customers], 
+Y. Chen, C. Shi, *Operations Research*, Vol. 67(6), 1610-1627, 2019. [https://pubsonline.informs.org/doi/10.1287/opre.2019.1857 \[DOI\]]
+-- Third Place, INFORMS Junior Faculty Interest Group (JFIG) Paper Competition, 2017.
+#-- Accepted at the 18th ACM conference on Economics and Computation (EC), 2017.
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2770242 Joint Pricing and Inventory Management with Strategic Customers], 
+Y. Chen, C. Shi, *ACM Conference on Economics and Computation (EC 2017)*, Cambridge, MA. [https://dl.acm.org/doi/10.1145/3033274.3084086 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2655790 Process Flexibility for Multi-Period Production Systems], 
+C. Shi, Y. Wei, Y. Zhong, *Operations Research*, Vol. 67(5), 1300-1320, 2019. [https://pubsonline.informs.org/doi/abs/10.1287/opre.2018.1810 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2818044 Service Level Constrained Inventory Systems], 
+Y. Jiang, C. Shi, S. Shen, *Production and Operations Management*, Vol. 28(9), 2365-2389, 2019. [https://onlinelibrary.wiley.com/doi/10.1111/poms.13060/full \[DOI\]] 
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3088872 Perishable Inventory Systems: Convexity Results for Base-Stock Policies and Learning Algorithms under Censored Demand], 
+H. Zhang, X. Chao, C. Shi, *Operations Research*, Vol. 66(5), 1276-1286, 2018. [https://pubsonline.informs.org/doi/10.1287/opre.2018.1724 \[DOI\]]
+
+- [papers/perishable2.pdf Approximation Algorithms for Capacitated Perishable Inventory Systems with Positive Lead Times], 
+X. Chao, X. Gong, C. Shi, C. Yang, H. Zhang, S. X. Zhou, *Management Science*, Vol. 64(11), 5038-5061, 2018. [https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2017.2886 \[DOI\]]
+#-- Selected for MSOM Supply Chain Management SIG Conference, 2016.
+
+- [papers/RM_AR.Final.pdf Revenue Management of Reusable Resources with Advanced Reservations], 
+Y. Chen, R. Levi, C. Shi, *Production and Operations Management*, Vol. 26(5), 836-859, 2017.  [http://onlinelibrary.wiley.com/doi/10.1111/poms.12672/full \[DOI\]] 
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2702989 Production Planning Problems with Joint Service-Level Guarantee: A Computational Study], 
+Y. Jiang, J. Xu, S. Shen, C. Shi, *International Journal of Production Research*, Vol. 55(1), 38-58, 2017. [http://www.tandfonline.com/doi/full/10.1080/00207543.2016.1193245 \[DOI\]] 
+
+- [papers/priority-scheduling.final.pdf Priority Rules for Multi-Task Due-Date Scheduling under Varying Processing Costs], 
+Y. Xu, C. Shi, I. Duenyas, *Production and Operations Management*, Vol. 25(12), 2086-2102, 2016. [http://onlinelibrary.wiley.com/doi/10.1111/poms.12606/full \[DOI\]] 
+
+- [papers/RM-regret.final.pdf Stochastic Regret Minimization for Revenue Management Problems with Nonstationary Demands], 
+  H. Zhang, C. Shi, C. Qin, C. Hua, *Naval Research Logistics*, Vol. 63(6), 433-448, 2016.[http://onlinelibrary.wiley.com/doi/10.1002/nav.21704/full \[DOI\]] 
+
+- [https://arxiv.org/abs/1504.06560 Approximation Algorithms for Inventory Problems with Submodular or Routing Costs], 
+V. Nagarajan, C. Shi, *Mathematical Programming Series A*, Vol. 160(1), 225-244, 2016. [http://link.springer.com/article/10.1007%2Fs10107-016-0981-y \[DOI\]] 
+
+- [papers/data-driven-peach-arch-revision.pdf A Data-Driven Approach to Manpower Planning at U.S.-Canada Border Crossings], 
+M. Yu, Y. Ding, R. Lindsey, C. Shi, *Transportation Research Part A*,  Vol. 91, 34-47, 2016. [http://www.sciencedirect.com/science/article/pii/S0965856416305080 \[DOI\]]
+
+#  .. Canadian Media Coverages: [http://globalnews.ca/news/2906723/canadian-border-lineups-could-be-way-shorter-with-new-scheduling-technique/ Global News], [http://www.news1130.com/2016/08/26/cutting-border-wait-times-without-adding-staff-ubc-study/  News 1130], [http://vancouver.24hrs.ca/2016/08/25/cbsa-improperly-schedules-border-staff-ubc 24 Hours]
+ 	
+- [papers/perishable-setup-costs.FINAL.pdf Approximation Algorithms for Perishable Inventory Systems with Setup Costs], 
+H. Zhang, C. Shi, X. Chao, *Operations Research*, Vol. 64(2), 432-440, 2016. [http://pubsonline.informs.org/doi/full/10.1287/opre.2016.1485 \[DOI\]] 
+
+- [papers/nonparametric-multi-product.Final.pdf Nonparametric Data-Driven Algorithms for Multiproduct Inventory Systems with Censored Demand], 
+C. Shi, W. Chen, I. Duenyas, *Operations Research*, Vol. 64(2), 362-370, 2016. [http://pubsonline.informs.org/doi/10.1287/opre.2015.1474 \[DOI\]]  
+
+- [papers/perishable.pdf Approximation Algorithms for Perishable Inventory Systems], 
+X. Chao, X. Gong, C. Shi, H. Zhang, *Operations Research*, Vol. 63(3), 585-601, 2015. [http://pubsonline.informs.org/doi/10.1287/opre.2015.1386 \[DOI\]]  
+
+- [papers/algo-resource-allocation.pdf A Faster Algorithm for the Resource Allocation Problem with Convex Cost Functions],
+C. Shi, H. Zhang, C. Qin, *Journal of Discrete Algorithms*, Vol. 34, 137-146, 2015. [http://www.sciencedirect.com/science/article/pii/S1570866715000830 \[DOI\]]  
+
+- [papers/cap-lot-sizing-revision.pdf Approximation Algorithms for Capacitated Stochastic Inventory Systems with Setup Costs], 
+C. Shi, H. Zhang, X. Chao, R. Levi, *Naval Research Logistics*, Vol. 61(4), 304-319, 2014. [http://onlinelibrary.wiley.com/doi/10.1002/nav.21584/full \[DOI\]]
+
+- [papers/OR-lot-sizing.pdf Approximation Algorithms for the Stochastic Lot-Sizing Problem with Order Lead Times], 
+R. Levi, C. Shi, *Operations Research*, Vol. 61(3), 593-602, 2013. [http://pubsonline.informs.org/doi/abs/10.1287/opre.2013.1162 \[DOI\]]  
+-- First Place, INFORMS George Nicholson Student Paper Competition, 2009.
+
+
+
+==  Human-Robot Interaction
+
+- Enabling Team of Teams: A Trust Inference and Propagation (TIP) Model in Multi-Human Multi-Robot Teams, 
+Yaohui Guo, Jessie X. Yang, Cong Shi
+
+- Modeling Trust Propagation in Multi-Human Multi-Robot Teams, 
+Yaohui Guo, Jessie X. Yang, Cong Shi
+
+- [https://arxiv.org/abs/2206.01645 Clustering Trust Dynamics in a Human-Robot Sequential Decision-Making Task], 
+S. Bhat, J. B. Lyons, C. Shi, X. J. Yang, *IEEE Robotics and Automation Letters*, Vol. 7(4), 8815-8822, 2022. [https://ieeexplore.ieee.org/document/9816108 \[DOI\]]
+-- Accepted at the *2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2022)*, Kyoto, Japan. 
+
+- [https://arxiv.org/abs/2103.10055 Reverse Psychology in Trust-Aware Human-Robot Interaction], 
+Y. Guo, C. Shi, X. J. Yang, *IEEE Robotics and Automation Letters*, Vol. 6(3), 4851-4858, 2021. [https://ieeexplore.ieee.org/document/9382074 \[DOI\]] 
+-- Accepted at the *2021 IEEE International Conference on Robotics and Automation (ICRA 2021)*,  Xi'an, China.  
+
+- [https://journals.sagepub.com/doi/10.1177/14614448211045664 Road to Micro-Celebration: The Role of Mutation Strategy of Micro-Celebrity in Digital Media], 
+X. Chen, L. Jiang, S. Miao, C. Shi, *New Media and Society*, to appear. [https://journals.sagepub.com/doi/10.1177/14614448211045664 \[DOI\]]
+
+
+
+#== Refereed Conference Proceedings
+#- Approximation Algorithms for Capacitated Perishable Inventory Systems with Positive Lead Times, 
+#X. Chao, X. Gong, C. Shi, C. Yang, H. Zhang, S. X. Zhou, *MSOM Supply Chain Management SIG Conference*, 2016, Auckland, New Zealand.
+
+
+
+== Books and Book Chapters
+
+- [https://link.springer.com/book/9783031019258 The Elements of Joint Learning and Optimization in Operations Management], 
+edited by Xi Chen, Stefanus Jasin, Cong Shi, Springer, New York, NY.
+
+- Approximation Algorithms for Stochastic Inventory Systems,
+*Research Handbook on Inventory Management*, edited by J.-S. Song, Edward Elgar, Cheltenham, UK.
+
+- Approximation Algorithms for Stochastic Optimization Problems in Operations Management, 
+*Encyclopedia of Operations Research and Management Science*, edited by J. J. Cochran, Wiley, Hoboken, NJ. 
+#[http://onlinelibrary.wiley.com/doi/10.1002/9780470400531.eorms1097/abstract \[DOI\]]
+
+
+#== Peer-Reviewed Conferences
+
+#- Approximation Algorithms for Capacitated Perishable Inventory Systems with Positive Lead Times, with Xiuli Chao, Xiting Gong, Chaolin Yang, Huanan Zhang and Sean X. Zhou, acccepted at /2016 MSOM Supply Chain Management SIG Conference/.
+
+#- Efficiency of Capacity Investment Decisions in Revenue Sharing Joint Ventures with Spillovers, with Retsef Levi, Georgia Perakis and Wei Sun, extended abstract accepted at /2016 RMP Conference/.
+
+#- Approximation Algorithms for Capacitated Stochastic Inventory Systems with Setup Cost], with Xiuli Chao, Retsef Levi and Huanan Zhang, extended abstract accepted at /2013 MSOM Conference/.
+
+#- Contract Designs with Incentive Alignment for Joint Ventures in the Healthcare Industry], with Retsef Levi, Georgia Perakis and Wei Sun, extended abstract accepted at /2012 MSOM Conference/. 
+
+#- Revenue Management of Reusable Resources with Advanced Reservations], with Retsef Levi, extended abstract accepted at /2011 MSOM Conference/. 
+
+#- Approximation Algorithms for the Stochastic Lot-sizing Problem], with Retsef Levi, extended abstract accepted at /2009 MSOM Conference/.   
+
+# - Stochastic Economic Lot Scheduling Problem with Sequence-dependent Setup Costs, with Joline Uichanco, /in preparation/.
+
+
+== External Grants
+
+- NSF CMMI-1362619 (Co-PI), NSF CMMI-1451078 (PI), NSF CMMI-1634505 (PI).
+	
+{{<!-- Default Statcounter code for Research Website
+http://www-personal.umich.edu/~shicong/ -->
+<script type="text/javascript">
+var sc_project=11637034; 
+var sc_invisible=1; 
+var sc_security="5a452ed4"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="website
+statistics" href="http://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/11637034/0/5a452ed4/1/"
+alt="website statistics"></a></div></noscript>
+<!-- End of Statcounter Code -->}}
