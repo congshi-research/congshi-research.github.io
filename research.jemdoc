@@ -7,10 +7,19 @@
 -  Revenue Management, Supply Chain Management, Healthcare Operations, Human-Robot Interaction
 -  Online Reinforcement Learning, Data-Driven Optimization, Approximation Algorithms
 
-#~~~
-#For any prospective PhD students, here is a recent book that encompasses my research interests. (Online version coming up soon!) \n
-#[https://link.springer.com/book/9783031019258 The Elements of Joint Learning and Optimization in Operations Management], edited by Xi Chen, Stefanus Jasin, Cong Shi, Springer, New York, NY.
-#~~~ 
+
+== Books and Book Chapters
+
+- [https://link.springer.com/book/9783031019258 The Elements of Joint Learning and Optimization in Operations Management], 
+edited by Xi Chen, Stefanus Jasin, Cong Shi, Springer, New York, NY.
+
+- [http://onlinelibrary.wiley.com/doi/10.1002/9780470400531.eorms1097/abstract Approximation Algorithms for Stochastic Optimization Problems in Operations Management], 
+*Encyclopedia of Operations Research and Management Science*, edited by J. J. Cochran, Wiley, Hoboken, NJ. 
+
+- Approximation Algorithms for Stochastic Inventory Systems,
+*Research Handbook on Inventory Management*, edited by J.-S. Song, Edward Elgar, Cheltenham, UK.
+
+
 
 #~~~
 #{}{img_left}{wordcloud.png}{Word Cloud}{480}{300}{}
@@ -202,20 +211,6 @@ X. Chen, L. Jiang, S. Miao, C. Shi, *New Media and Society*, to appear. [https:/
 #== Refereed Conference Proceedings
 #- Approximation Algorithms for Capacitated Perishable Inventory Systems with Positive Lead Times, 
 #X. Chao, X. Gong, C. Shi, C. Yang, H. Zhang, S. X. Zhou, *MSOM Supply Chain Management SIG Conference*, 2016, Auckland, New Zealand.
-
-
-
-== Books and Book Chapters
-
-- [https://link.springer.com/book/9783031019258 The Elements of Joint Learning and Optimization in Operations Management], 
-edited by Xi Chen, Stefanus Jasin, Cong Shi, Springer, New York, NY.
-
-- Approximation Algorithms for Stochastic Inventory Systems,
-*Research Handbook on Inventory Management*, edited by J.-S. Song, Edward Elgar, Cheltenham, UK.
-
-- Approximation Algorithms for Stochastic Optimization Problems in Operations Management, 
-*Encyclopedia of Operations Research and Management Science*, edited by J. J. Cochran, Wiley, Hoboken, NJ. 
-#[http://onlinelibrary.wiley.com/doi/10.1002/9780470400531.eorms1097/abstract \[DOI\]]
 
 
 #== Peer-Reviewed Conferences
