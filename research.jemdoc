@@ -17,13 +17,10 @@
 #~~~
 
 
-== Working Papers
+== Under Review
 
 - Online Learning and Pricing for Multiple Products with Reference Price Effects, 
 Sheng Ji, Yi Yang, Cong Shi
-
-- Online Learning and Pricing for Network Revenue Management with Reusable Resources, 
-Huiwen Jia, Cong Shi, Siqian Shen
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
 Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi
@@ -31,21 +28,13 @@ Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3456834 Tailored Base-Surge Policies in Dual-Sourcing Inventory Systems with Demand Learning], 
 Beryl Chen, Cong Shi
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655819 More Bang for Your Buck: Effective KOL Marketing Campaign in Emerging Short-Video Markets], 
-Xingyu Chen, Li Ji, Ling Jiang, Sentao Miao, Cong Shi 
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655848 Optimal Content Strategies for Social Media Influencers on Streaming Video Platforms],
-Xingyu Chen, Ling Liang, Sentao Miao, Cong Shi
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247323 Integrating Empirical Estimation and Assortment Personalization for E-Commerce: A Consider-then-Choose Model], 
-Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua
--- Finalist, The 2018 MSOM Data Driven Research Challenge, 2018.
-
 - Online Learning and Matching for Multiproduct Systems with General Upgrading, 
 Jingwen Tang, Cong Shi, Izak Duenyas
 
-- Near-Optimal Pricing Policy for Service Systems with Reusable Resources and Forward-Looking Customers, 
-Yiwei Chen, Cong Shi
+
+
+
+
 
 
 
@@ -59,7 +48,7 @@ Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi, Major Revision at *Manufacturing & 
 Zhengling Qi, Jingwen Tang, Xingyuan (Ethan) Fang, Cong Shi, Major Revision at *Management Science*.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3501316 Contextual Learning with Online Convex Optimization: Theory and Application to Chronic Diseases], 
-Esmaeil Keyvanshokooh, Mohammad Zhalechian, Cong Shi, Mark P. Van Oyen, Pooyan Kazemian, Major Revision at *Management Science*.
+Esmaeil Keyvanshokooh, Mohammad Zhalechian, Cong Shi, Mark P. Van Oyen, Pooyan Kazemian, Minor Revision at *Management Science*.
 -- Finalist, POMS College of Healthcare Operations Management (CHOM) Best Paper Competition, 2022.
 -- Finalist, INFORMS Manufacturing & Service Operations Management (MSOM) Best Student Paper Competition, 2021.
 -- Finalist, INFORMS Health Applications Society (HAS) Best Student Paper Competition, 2021.
@@ -180,11 +169,14 @@ R. Levi, C. Shi, *Operations Research*, Vol. 61(3), 593-602, 2013. [http://pubso
 
 ==  Human-Robot Interaction
 
+- Heterogeneous Matching in Multi-Human Multi-Robot Teams: A Matching Bandit Approach, 
+Yaohui Guo, X. Jessie Yang, Cong Shi
+
 - Enabling Team of Teams: A Trust Inference and Propagation (TIP) Model in Multi-Human Multi-Robot Teams, 
-Yaohui Guo, Jessie X. Yang, Cong Shi
+Yaohui Guo, X. Jessie Yang, Cong Shi
 
 - Modeling Trust Propagation in Multi-Human Multi-Robot Teams, 
-Yaohui Guo, Jessie X. Yang, Cong Shi
+Yaohui Guo, X. Jessie Yang, Cong Shi
 
 - [https://arxiv.org/abs/2206.01645 Clustering Trust Dynamics in a Human-Robot Sequential Decision-Making Task], 
 S. Bhat, J. B. Lyons, C. Shi, X. J. Yang, *IEEE Robotics and Automation Letters*, Vol. 7(4), 8815-8822, 2022. [https://ieeexplore.ieee.org/document/9816108 \[DOI\]]
@@ -208,6 +200,17 @@ edited by Xi Chen, Stefanus Jasin, Cong Shi, Springer, New York, NY.
 
 - Approximation Algorithms for Stochastic Inventory Systems,
 *Research Handbook on Inventory Management*, edited by J.-S. Song, Edward Elgar, Cheltenham, UK.
+
+
+== Some Preprints
+
+- Online Learning and Pricing for Network Revenue Management with Reusable Resources, Huiwen Jia, Cong Shi, Siqian Shen
+- Near-Optimal Pricing Policy for Service Systems with Reusable Resources and Forward-Looking Customers, Yiwei Chen, Cong Shi
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655819 More Bang for Your Buck: Effective KOL Marketing Campaign in Emerging Short-Video Markets], Xingyu Chen, Li Ji, Ling Jiang, Sentao Miao, Cong Shi 
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655848 Optimal Content Strategies for Social Media Influencers on Streaming Video Platforms], Xingyu Chen, Ling Liang, Sentao Miao, Cong Shi
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247323 Integrating Empirical Estimation and Assortment Personalization for E-Commerce: A Consider-then-Choose Model], 
+Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua
+-- Finalist, The 2018 MSOM Data Driven Research Challenge, 2018.
 
 
 #== Refereed Conference Proceedings
