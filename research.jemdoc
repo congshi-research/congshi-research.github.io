@@ -16,14 +16,9 @@
 
 == Under Review
 
-- [https://arxiv.org/abs/2302.03821 PASTA: Pessimistic Assortment Optimization], 
-Juncheng Dong, Weibin Mo, Zhengling Qi, Cong Shi, Ethan X. Fang, Vahid Tarokh
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], 
 Sheng Ji, Yi Yang, Cong Shi
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
-Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3456834 Tailored Base-Surge Policies in Dual-Sourcing Inventory Systems with Demand Learning], 
 Beryl Chen, Cong Shi
@@ -35,6 +30,9 @@ Jingwen Tang, Cong Shi, Izak Duenyas
 
 
 == Under Revision
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
+Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi, Major Revision at *Operations Research*.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4143885 Online Learning for Dual Index Policies in Dual Sourcing Systems], 
 Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi, Major Revision at *Manufacturing & Service Operations Management*.
@@ -53,6 +51,8 @@ Esmaeil Keyvanshokooh, Mohammad Zhalechian, Cong Shi, Mark P. Van Oyen, Pooyan K
 
 
 == Operations Research
+
+- [https://arxiv.org/abs/2302.03821 PASTA: Pessimistic Assortment Optimization], J. Dong, W. Mo, Z. Qi, C. Shi, E. X. Fang, V. Tarokh, *International Conference on Machine Learning (ICML 2023)*, Honolulu, HI. 
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4225832 Online Learning and Pricing for Network Revenue Management with Reusable Resources], 
 H. Jia, C. Shi, S. Shen, *Advances in Neural Information Processing Systems (NeurIPS 2022)*, New Orleans, LA. [https://papers.nips.cc/paper_files/paper/2022/hash/1f01cdfd07f0ec78124627cf32d0d83c-Abstract-Conference.html \[DOI\]]
@@ -167,11 +167,12 @@ R. Levi, C. Shi, *Operations Research*, Vol. 61(3), 593-602, 2013. [http://pubso
 - Heterogeneous Matching in Multi-Human Multi-Robot Teams: A Matching Bandit Approach, 
 Yaohui Guo, X. Jessie Yang, Cong Shi
 
-- Enabling Team of Teams: A Trust Inference and Propagation (TIP) Model in Multi-Human Multi-Robot Teams, 
-Yaohui Guo, X. Jessie Yang, Cong Shi
-
 - Modeling Trust Propagation in Multi-Human Multi-Robot Teams, 
 Yaohui Guo, X. Jessie Yang, Cong Shi
+
+-  Enabling Team of Teams: A Trust Inference and Propagation (TIP) Model in Multi-Human Multi-Robot Teams, 
+Y. Guo, X. J. Yang, C. Shi, *Robotics: Science and Systems (RSS 2023)*, Daegu, South Korea.
+-- Late-Breaking Reports (LBR) at *International Conference on Human-Robot Interaction (HRI 2023)*, Stockholm, Sweden. [https://dl.acm.org/doi/10.1145/3568294.3580164 \[DOI\]]
 
 - [https://arxiv.org/abs/2206.01645 Clustering Trust Dynamics in a Human-Robot Sequential Decision-Making Task], 
 S. Bhat, J. B. Lyons, C. Shi, X. J. Yang, *IEEE Robotics and Automation Letters*, Vol. 7(4), 8815-8822, 2022. [https://ieeexplore.ieee.org/document/9816108 \[DOI\]]
