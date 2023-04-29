@@ -5,7 +5,7 @@
 
 == Research Interests
 -  Revenue Management, Supply Chain Management, Healthcare Operations, Human-Robot Interaction
--  Online Reinforcement Learning, Data-Driven Optimization, Approximation Algorithms
+-  Online Learning, Offline Learning, Data-Driven Optimization, Approximation Algorithms, Online Algorithms
 
 
 
@@ -36,6 +36,7 @@ Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi, Major Revision at *Operations Resear
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4143885 Online Learning for Dual Index Policies in Dual Sourcing Systems], 
 Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi, Major Revision at *Manufacturing & Service Operations Management*.
+-- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2023.
 
 -  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
 Zhengling Qi, Jingwen Tang, Xingyuan (Ethan) Fang, Cong Shi, Major Revision at *Management Science*.
@@ -235,7 +236,9 @@ Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua
 
 - NSF CMMI-1362619 (Co-PI), NSF CMMI-1451078 (PI), NSF CMMI-1634505 (PI).
 	
-{{<!-- Default Statcounter code for Research Website
+~~~
+{}{raw}
+<!-- Default Statcounter code for Research Website
 http://www-personal.umich.edu/~shicong/ -->
 <script type="text/javascript">
 var sc_project=11637034; 
@@ -250,4 +253,5 @@ statistics" href="http://statcounter.com/"
 target="_blank"><img class="statcounter"
 src="//c.statcounter.com/11637034/0/5a452ed4/1/"
 alt="website statistics"></a></div></noscript>
-<!-- End of Statcounter Code -->}}
+<!-- End of Statcounter Code -->
+~~~
