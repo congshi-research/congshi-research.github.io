@@ -16,6 +16,8 @@
 
 == Under Review
 
+- Remunerating Newsvendor Problem in a Two-Sided Market, 
+Jingwen Tang, Cong Shi, Izak Duenyas
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], 
 Sheng Ji, Yi Yang, Cong Shi
@@ -31,15 +33,15 @@ Jingwen Tang, Cong Shi, Izak Duenyas
 
 == Under Revision
 
+-  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
+Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi, Major Revision at *Management Science*.
+
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
 Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi, Major Revision at *Operations Research*.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4143885 Online Learning for Dual Index Policies in Dual Sourcing Systems], 
 Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi, Major Revision at *Manufacturing & Service Operations Management*.
 -- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2023.
-
--  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
-Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi, Major Revision at *Management Science*.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3501316 Contextual Learning with Online Convex Optimization: Theory and Application to Chronic Diseases], 
 Esmaeil Keyvanshokooh, Mohammad Zhalechian, Cong Shi, Mark P. Van Oyen, Pooyan Kazemian, Minor Revision at *Management Science*.
@@ -64,7 +66,7 @@ H. Jia, C. Shi, S. Shen, *International Conference on Machine Learning (ICML 202
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3755902 Online Learning and Pricing for Service Systems with Reusable Resources], 
 H. Jia, C. Shi, S. Shen, *Operations Research*, to appear. [https://pubsonline.informs.org/doi/full/10.1287/opre.2022.2381 \[DOI\]]
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3653433 Data-Driven Hospital Admission Control: A Contextual Learning Approach], 
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3653433 Data-Driven Hospital Admission Control: A Learning Approach], 
 M. Zhalechian, E. Keyvanshokooh, C. Shi, M. P. Van Oyen, *Operations Research*, to appear.
 -- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2021.
 
@@ -170,6 +172,10 @@ Yaohui Guo, X. Jessie Yang, Cong Shi
 
 - Modeling Trust Propagation in Multi-Human Multi-Robot Teams, 
 Yaohui Guo, X. Jessie Yang, Cong Shi
+
+- Reward Shaping for Building Trustworthy Robots in Sequential Human-Robot Interaction
+Y. Guo, X. J. Yang, C. Shi
+-- Accepted at *International Conference on Intelligent Robots and Systems (IROS 2023)*, Detroit, MI
 
 - [http://arxiv.org/abs/2305.12614 Enabling Team of Teams: A Trust Inference and Propagation (TIP) Model in Multi-Human Multi-Robot Teams], 
 Y. Guo, X. J. Yang, C. Shi, *Robotics: Science and Systems (RSS 2023)*, Daegu, South Korea.
