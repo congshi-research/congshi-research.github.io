@@ -22,9 +22,6 @@ Jingwen Tang, Cong Shi, Izak Duenyas
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], 
 Sheng Ji, Yi Yang, Cong Shi
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3456834 Tailored Base-Surge Policies in Dual-Sourcing Inventory Systems with Demand Learning], 
-Beryl Chen, Cong Shi
-
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3978123 Online Learning and Matching for Multiproduct Systems with General Upgrading], 
 Jingwen Tang, Cong Shi, Izak Duenyas
 
@@ -33,15 +30,14 @@ Jingwen Tang, Cong Shi, Izak Duenyas
 
 == Under Revision
 
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3456834 Tailored Base-Surge Policies in Dual-Sourcing Inventory Systems with Demand Learning], 
+Beryl Chen, Cong Shi, Major Revision at *Operations Research*.
+
 -  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
 Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi, Major Revision at *Management Science*.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
 Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi, Major Revision at *Operations Research*.
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4143885 Online Learning for Dual Index Policies in Dual Sourcing Systems], 
-Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi, Major Revision at *Manufacturing & Service Operations Management*.
--- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2023.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3501316 Contextual Learning with Online Convex Optimization: Theory and Application to Chronic Diseases], 
 Esmaeil Keyvanshokooh, Mohammad Zhalechian, Cong Shi, Mark P. Van Oyen, Pooyan Kazemian, Minor Revision at *Management Science*.
@@ -55,7 +51,12 @@ Esmaeil Keyvanshokooh, Mohammad Zhalechian, Cong Shi, Mark P. Van Oyen, Pooyan K
 
 == Operations Research
 
-- [https://arxiv.org/abs/2302.03821 PASTA: Pessimistic Assortment Optimization], J. Dong, W. Mo, Z. Qi, C. Shi, E. X. Fang, V. Tarokh, *International Conference on Machine Learning (ICML 2023)*, Honolulu, HI. 
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4143885 Online Learning for Dual Index Policies in Dual Sourcing Systems], 
+Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi, *Manufacturing & Service Operations Management*, to appear.
+-- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2023.
+
+- [https://arxiv.org/abs/2302.03821 PASTA: Pessimistic Assortment Optimization], 
+J. Dong, W. Mo, Z. Qi, C. Shi, E. X. Fang, V. Tarokh, *International Conference on Machine Learning (ICML 2023)*, Honolulu, HI.[https://proceedings.mlr.press/v202/dong23e.html \[DOI\]]
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4225832 Online Learning and Pricing for Network Revenue Management with Reusable Resources], 
 H. Jia, C. Shi, S. Shen, *Advances in Neural Information Processing Systems (NeurIPS 2022)*, New Orleans, LA. [https://papers.nips.cc/paper_files/paper/2022/hash/1f01cdfd07f0ec78124627cf32d0d83c-Abstract-Conference.html \[DOI\]]
@@ -67,7 +68,7 @@ H. Jia, C. Shi, S. Shen, *International Conference on Machine Learning (ICML 202
 H. Jia, C. Shi, S. Shen, *Operations Research*, to appear. [https://pubsonline.informs.org/doi/full/10.1287/opre.2022.2381 \[DOI\]]
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3653433 Data-Driven Hospital Admission Control: A Learning Approach], 
-M. Zhalechian, E. Keyvanshokooh, C. Shi, M. P. Van Oyen, *Operations Research*, to appear.
+M. Zhalechian, E. Keyvanshokooh, C. Shi, M. P. Van Oyen, *Operations Research*, to appear. [https://pubsonline.informs.org/doi/full/10.1287/opre.2020.0481 \[DOI\]]
 -- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2021.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3331939 Network Revenue Management with Online Inverse Batch Gradient Descent Method], 
@@ -166,6 +167,9 @@ R. Levi, C. Shi, *Operations Research*, Vol. 61(3), 593-602, 2013. [http://pubso
 
 
 ==  Human-Robot Interaction
+
+- Effect of Value Alignment on Trust in Human-Robot Teaming: A Simulation Study, 
+S. Bhat, J. B. Lyons, C. Shi, X. J. Yang
 
 - Heterogeneous Matching in Multi-Human Multi-Robot Teams: A Matching Bandit Approach, 
 Yaohui Guo, X. Jessie Yang, Cong Shi
