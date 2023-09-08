@@ -168,16 +168,17 @@ R. Levi, C. Shi, *Operations Research*, Vol. 61(3), 593-602, 2013. [http://pubso
 
 ==  Human-Robot Interaction
 
-- Effect of Value Alignment on Trust in Human-Robot Teaming: A Simulation Study, 
-S. Bhat, J. B. Lyons, C. Shi, X. J. Yang
-
 - Heterogeneous Matching in Multi-Human Multi-Robot Teams: A Matching Bandit Approach, 
 Yaohui Guo, X. Jessie Yang, Cong Shi
 
 - Modeling Trust Propagation in Multi-Human Multi-Robot Teams, 
 Yaohui Guo, X. Jessie Yang, Cong Shi
 
-- Reward Shaping for Building Trustworthy Robots in Sequential Human-Robot Interaction
+- Effect of Adapting to Human Preferences on Trust in Human-Robot Teaming, 
+S. Bhat, J. B. Lyons, C. Shi, X. J. Yang
+-- Accepted at *AAAI Symposium on "Agent Teaming in Mixed-Motive Situations (2023)*, Arlington, VA.
+
+- [https://arxiv.org/abs/2308.00945 Reward Shaping for Building Trustworthy Robots in Sequential Human-Robot Interaction],
 Y. Guo, X. J. Yang, C. Shi
 -- Accepted at *International Conference on Intelligent Robots and Systems (IROS 2023)*, Detroit, MI.
 
