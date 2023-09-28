@@ -16,14 +16,21 @@
 
 == Under Review
 
+
+
 - Remunerating Newsvendor Problem in a Two-Sided Market, 
 Jingwen Tang, Cong Shi, Izak Duenyas
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], 
-Sheng Ji, Yi Yang, Cong Shi
+Sheng Ji, Cong Shi, Yi Yang
+
+-  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
+Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3978123 Online Learning and Matching for Multiproduct Systems with General Upgrading], 
 Jingwen Tang, Cong Shi, Izak Duenyas
+
+
 
 
 
@@ -33,8 +40,6 @@ Jingwen Tang, Cong Shi, Izak Duenyas
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3456834 Tailored Base-Surge Policies in Dual-Sourcing Inventory Systems with Demand Learning], 
 Beryl Chen, Cong Shi, Major Revision at *Operations Research*.
 
--  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
-Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi, Major Revision at *Management Science*.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
 Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi, Major Revision at *Operations Research*.
