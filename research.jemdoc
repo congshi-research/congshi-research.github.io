@@ -14,25 +14,6 @@
 #~~~
 
 
-== Under Review
-
-
-
-- Remunerating Newsvendor Problem in a Two-Sided Market, 
-Jingwen Tang, Cong Shi, Izak Duenyas
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], 
-Sheng Ji, Cong Shi, Yi Yang
-
--  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
-Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi.
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3978123 Online Learning and Matching for Multiproduct Systems with General Upgrading], 
-Jingwen Tang, Cong Shi, Izak Duenyas
-
-
-
-
 == Under Revision
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3456834 Tailored Base-Surge Policies in Dual-Sourcing Inventory Systems with Demand Learning], 
@@ -221,36 +202,34 @@ edited by Xi Chen, Stefanus Jasin, Cong Shi, Springer, New York, NY.
 *Research Handbook on Inventory Management*, edited by J.-S. Song, Edward Elgar, Cheltenham, UK.
 
 
-== Some Preprints
 
-- Online Learning and Pricing for Network Revenue Management with Reusable Resources, Huiwen Jia, Cong Shi, Siqian Shen
-- Near-Optimal Pricing Policy for Service Systems with Reusable Resources and Forward-Looking Customers, Yiwei Chen, Cong Shi
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655819 More Bang for Your Buck: Effective KOL Marketing Campaign in Emerging Short-Video Markets], Xingyu Chen, Li Ji, Ling Jiang, Sentao Miao, Cong Shi 
+== Preprints
+
+- Remunerating Newsvendor Problem in a Two-Sided Market, 
+Jingwen Tang, Cong Shi, Izak Duenyas
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], 
+Sheng Ji, Cong Shi, Yi Yang
+
+-  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
+Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3978123 Online Learning and Matching for Multiproduct Systems with General Upgrading], 
+Jingwen Tang, Cong Shi, Izak Duenyas
+
+- Online Learning and Pricing for Network Revenue Management with Reusable Resources, 
+Huiwen Jia, Cong Shi, Siqian Shen
+
+- Near-Optimal Pricing Policy for Service Systems with Reusable Resources and Forward-Looking Customers, 
+Yiwei Chen, Cong Shi
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655819 More Bang for Your Buck: Effective KOL Marketing Campaign in Emerging Short-Video Markets], 
+Xingyu Chen, Li Ji, Ling Jiang, Sentao Miao, Cong Shi 
+
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247323 Integrating Empirical Estimation and Assortment Personalization for E-Commerce: A Consider-then-Choose Model], 
 Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua
 -- Finalist, The 2018 MSOM Data Driven Research Challenge, 2018.
 
-
-#== Refereed Conference Proceedings
-#- Approximation Algorithms for Capacitated Perishable Inventory Systems with Positive Lead Times, 
-#X. Chao, X. Gong, C. Shi, C. Yang, H. Zhang, S. X. Zhou, *MSOM Supply Chain Management SIG Conference*, 2016, Auckland, New Zealand.
-
-
-#== Peer-Reviewed Conferences
-
-#- Approximation Algorithms for Capacitated Perishable Inventory Systems with Positive Lead Times, with Xiuli Chao, Xiting Gong, Chaolin Yang, Huanan Zhang and Sean X. Zhou, acccepted at /2016 MSOM Supply Chain Management SIG Conference/.
-
-#- Efficiency of Capacity Investment Decisions in Revenue Sharing Joint Ventures with Spillovers, with Retsef Levi, Georgia Perakis and Wei Sun, extended abstract accepted at /2016 RMP Conference/.
-
-#- Approximation Algorithms for Capacitated Stochastic Inventory Systems with Setup Cost], with Xiuli Chao, Retsef Levi and Huanan Zhang, extended abstract accepted at /2013 MSOM Conference/.
-
-#- Contract Designs with Incentive Alignment for Joint Ventures in the Healthcare Industry], with Retsef Levi, Georgia Perakis and Wei Sun, extended abstract accepted at /2012 MSOM Conference/. 
-
-#- Revenue Management of Reusable Resources with Advanced Reservations], with Retsef Levi, extended abstract accepted at /2011 MSOM Conference/. 
-
-#- Approximation Algorithms for the Stochastic Lot-sizing Problem], with Retsef Levi, extended abstract accepted at /2009 MSOM Conference/.   
-
-# - Stochastic Economic Lot Scheduling Problem with Sequence-dependent Setup Costs, with Joline Uichanco, /in preparation/.
 
 
 == External Grants
@@ -276,3 +255,21 @@ src="//c.statcounter.com/11637034/0/5a452ed4/1/"
 alt="website statistics"></a></div></noscript>
 <!-- End of Statcounter Code -->
 ~~~
+
+
+#== Peer-Reviewed Conferences
+
+#- Approximation Algorithms for Capacitated Perishable Inventory Systems with Positive Lead Times, with Xiuli Chao, Xiting Gong, Chaolin Yang, Huanan Zhang and Sean X. Zhou, acccepted at /2016 MSOM Supply Chain Management SIG Conference/.
+
+#- Efficiency of Capacity Investment Decisions in Revenue Sharing Joint Ventures with Spillovers, with Retsef Levi, Georgia Perakis and Wei Sun, extended abstract accepted at /2016 RMP Conference/.
+
+#- Approximation Algorithms for Capacitated Stochastic Inventory Systems with Setup Cost], with Xiuli Chao, Retsef Levi and Huanan Zhang, extended abstract accepted at /2013 MSOM Conference/.
+
+#- Contract Designs with Incentive Alignment for Joint Ventures in the Healthcare Industry], with Retsef Levi, Georgia Perakis and Wei Sun, extended abstract accepted at /2012 MSOM Conference/. 
+
+#- Revenue Management of Reusable Resources with Advanced Reservations], with Retsef Levi, extended abstract accepted at /2011 MSOM Conference/. 
+
+#- Approximation Algorithms for the Stochastic Lot-sizing Problem], with Retsef Levi, extended abstract accepted at /2009 MSOM Conference/.   
+
+# - Stochastic Economic Lot Scheduling Problem with Sequence-dependent Setup Costs, with Joline Uichanco, /in preparation/.
+
