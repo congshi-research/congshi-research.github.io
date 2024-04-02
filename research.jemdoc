@@ -13,6 +13,36 @@
 #{}{img_left}{wordcloud.png}{Word Cloud}{480}{300}{}
 #~~~
 
+== Preprints
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4781604 Multiproduct Inventory Systems with Upgrading: Replenishment, Allocation, and Online Learning], 
+Jingwen Tang, Izak Duenyas, Cong Shi, Nan Yang
+
+- [https://arxiv.org/abs/2302.12670 Personalized Pricing with Invalid Instrumental Variables: Identification, Estimation, and Policy Learning], 
+Rui Miao, Zhengling Qi, Cong Shi, Lin Lin
+
+-  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
+Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi
+
+- Online Learning and Pricing for Network Revenue Management with Reusable Resources, 
+Huiwen Jia, Cong Shi, Siqian Shen
+
+- Near-Optimal Pricing Policy for Service Systems with Reusable Resources and Forward-Looking Customers, 
+Yiwei Chen, Cong Shi
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655819 More Bang for Your Buck: Effective KOL Marketing Campaign in Emerging Short-Video Markets], 
+Xingyu Chen, Li Ji, Ling Jiang, Sentao Miao, Cong Shi 
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247323 Integrating Empirical Estimation and Assortment Personalization for E-Commerce: A Consider-then-Choose Model], 
+Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua
+-- Finalist, The 2018 MSOM Data Driven Research Challenge, 2018.
+
+
+#- Remunerating Newsvendor Problem in a Two-Sided Market, Jingwen Tang, Cong Shi, Izak Duenyas
+
+#- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], Sheng Ji, Cong Shi, Yi Yang
+
+
 
 == Under Revision
 
@@ -20,12 +50,10 @@
 Beryl Chen, Cong Shi, Major Revision at *Operations Research*.
 
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
-Shukai Li, Qi Luo, Zhiyuan Huang, Cong Shi, Major Revision at *Operations Research*.
-
-
-
 == Operations Research
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
+S. Li, Q. Luo, Z. Huang, C. Shi, *Operations Research*, to appear.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3501316 Contextual Learning with Online Convex Optimization: Theory and Application to Medical Decision-Making], 
 E. Keyvanshokooh, M. Zhalechian, C. Shi, M. P. Van Oyen, P. Kazemian, *Management Science*, to appear.
@@ -40,7 +68,7 @@ J. Tang, B. Chen, C. Shi, *Manufacturing & Service Operations Management*, to ap
 -- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2023.
 
 - [https://arxiv.org/abs/2302.03821 PASTA: Pessimistic Assortment Optimization], 
-J. Dong, W. Mo, Z. Qi, C. Shi, E. X. Fang, V. Tarokh, *International Conference on Machine Learning (ICML 2023)*, Honolulu, HI.[https://proceedings.mlr.press/v202/dong23e.html \[DOI\]]
+J. Dong, W. Mo, Z. Qi, C. Shi, E. X. Fang, V. Tarokh, *International Conference on Machine Learning (ICML 2023)*, Honolulu, HI. [https://proceedings.mlr.press/v202/dong23e.html \[DOI\]]
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4225832 Online Learning and Pricing for Network Revenue Management with Reusable Resources], 
 H. Jia, C. Shi, S. Shen, *Advances in Neural Information Processing Systems (NeurIPS 2022)*, New Orleans, LA. [https://papers.nips.cc/paper_files/paper/2022/hash/1f01cdfd07f0ec78124627cf32d0d83c-Abstract-Conference.html \[DOI\]]
@@ -52,7 +80,7 @@ H. Jia, C. Shi, S. Shen, *International Conference on Machine Learning (ICML 202
 H. Jia, C. Shi, S. Shen, *Operations Research*, to appear. [https://pubsonline.informs.org/doi/full/10.1287/opre.2022.2381 \[DOI\]]
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3653433 Data-Driven Hospital Admission Control: A Learning Approach], 
-M. Zhalechian, E. Keyvanshokooh, C. Shi, M. P. Van Oyen, *Operations Research*, to appear. [https://pubsonline.informs.org/doi/full/10.1287/opre.2020.0481 \[DOI\]]
+M. Zhalechian, E. Keyvanshokooh, C. Shi, M. P. Van Oyen, *Operations Research*, Vol. 71(6), 2111-2129, 2023. [https://pubsonline.informs.org/doi/full/10.1287/opre.2020.0481 \[DOI\]]
 -- IOE Wilson Prize for Best Student Paper on Manufacturing and Service Systems, 2021.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3331939 Network Revenue Management with Online Inverse Batch Gradient Descent Method], 
@@ -203,32 +231,7 @@ edited by Xi Chen, Stefanus Jasin, Cong Shi, Springer, New York, NY.
 
 
 
-== Preprints
 
-- Remunerating Newsvendor Problem in a Two-Sided Market, 
-Jingwen Tang, Cong Shi, Izak Duenyas
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], 
-Sheng Ji, Cong Shi, Yi Yang
-
--  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
-Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3978123 Online Learning and Matching for Multiproduct Systems with General Upgrading], 
-Jingwen Tang, Cong Shi, Izak Duenyas
-
-- Online Learning and Pricing for Network Revenue Management with Reusable Resources, 
-Huiwen Jia, Cong Shi, Siqian Shen
-
-- Near-Optimal Pricing Policy for Service Systems with Reusable Resources and Forward-Looking Customers, 
-Yiwei Chen, Cong Shi
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655819 More Bang for Your Buck: Effective KOL Marketing Campaign in Emerging Short-Video Markets], 
-Xingyu Chen, Li Ji, Ling Jiang, Sentao Miao, Cong Shi 
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247323 Integrating Empirical Estimation and Assortment Personalization for E-Commerce: A Consider-then-Choose Model], 
-Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua
--- Finalist, The 2018 MSOM Data Driven Research Challenge, 2018.
 
 
 
