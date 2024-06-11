@@ -13,7 +13,7 @@
 #{}{img_left}{wordcloud.png}{Word Cloud}{480}{300}{}
 #~~~
 
-== Preprints
+== Under Review
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4803002 LEGO: Optimal Online Learning under Sequential Price Competition], 
 Shukai Li, Cong Shi, Sanjay Mehrotra
@@ -33,18 +33,7 @@ Rui Miao, Zhengling Qi, Cong Shi, Lin Lin
 -  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
 Jingwen Tang, Zhengling Qi, Xingyuan (Ethan) Fang, Cong Shi
 
-- Online Learning and Pricing for Network Revenue Management with Reusable Resources, 
-Huiwen Jia, Cong Shi, Siqian Shen
 
-- Near-Optimal Pricing Policy for Service Systems with Reusable Resources and Forward-Looking Customers, 
-Yiwei Chen, Cong Shi
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655819 More Bang for Your Buck: Effective KOL Marketing Campaign in Emerging Short-Video Markets], 
-Xingyu Chen, Li Ji, Ling Jiang, Sentao Miao, Cong Shi 
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247323 Integrating Empirical Estimation and Assortment Personalization for E-Commerce: A Consider-then-Choose Model], 
-Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua
--- Finalist, The 2018 MSOM Data Driven Research Challenge, 2018.
 
 
 #- Remunerating Newsvendor Problem in a Two-Sided Market, Jingwen Tang, Cong Shi, Izak Duenyas
@@ -237,7 +226,20 @@ edited by Xi Chen, Stefanus Jasin, Cong Shi, Springer, New York, NY.
 
 
 
+== Preprints
 
+- Online Learning and Pricing for Network Revenue Management with Reusable Resources, 
+Huiwen Jia, Cong Shi, Siqian Shen
+
+- Near-Optimal Pricing Policy for Service Systems with Reusable Resources and Forward-Looking Customers, 
+Yiwei Chen, Cong Shi
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3655819 More Bang for Your Buck: Effective KOL Marketing Campaign in Emerging Short-Video Markets], 
+Xingyu Chen, Li Ji, Ling Jiang, Sentao Miao, Cong Shi 
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247323 Integrating Empirical Estimation and Assortment Personalization for E-Commerce: A Consider-then-Choose Model], 
+Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua
+-- Finalist, The 2018 MSOM Data Driven Research Challenge, 2018.
 
 
 == External Grants
