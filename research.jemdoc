@@ -15,20 +15,24 @@
 
 == Under Review
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5012366 Online Learning for Inventory Control Problems under Random Yield], 
-Zhong Zheng, Qian Chen, Xingyuan (Ethan) Fang, Cong Shi
+- PASTA: A Unified Framework for Offline Assortment Optimization, 
+J. Dong, W. Mo, Z. Qi, C. Shi, E. X. Fang, V. Tarokh
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4952453 Learning Bundle Pricing of Reusable Resources], 
 Arlen Dean, Mohammad Zhalechian, Cong Shi
 
-- Online Learning for Joint Pricing and Remuneration in a Two-Sided Market, 
-Jingwen Tang, Cong Shi, Izak Duenyas
-
 - [https://arxiv.org/abs/2302.12670 Personalized Pricing with Invalid Instrumental Variables: Identification, Estimation, and Policy Learning], 
 Rui Miao, Zhengling Qi, Cong Shi, Lin Lin
 
+- Online Learning for Joint Pricing and Remuneration in a Two-Sided Market, 
+Jingwen Tang, Cong Shi, Izak Duenyas
+
+
 
 == Under Revision
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5012366 Online Learning for Inventory Control Problems under Random Yield], 
+Zhong Zheng, Qian Chen, Xingyuan (Ethan) Fang, Cong Shi, Major Revision at *Operations Research*.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4860515 It is All About the Demand CDF: Data-Driven Periodic Review Inventory Control], 
 Ganggang Xu, Cong Shi, Major Revision at *Management Science*.
@@ -181,14 +185,14 @@ R. Levi, C. Shi, *Operations Research*, Vol. 61(3), 593-602, 2013. [http://pubso
 
 ==  Human-Robot Interaction
 
-- A Linear Assignment Bandit Approach to Online Multi-Human Multi-Robot Teaming, 
+- Online Labor Matching via Linear Bandit Framework, 
 Yaohui Guo, X. Jessie Yang, Cong Shi
 
 - Modeling Trust Propagation in Multi-Human Multi-Robot Teams, 
 Yaohui Guo, X. Jessie Yang, Cong Shi
 
-- TIP: A Trust Inference and Propagation Model in Multi-Human Multi-Robot Teams, 
-Y. Guo, X. J. Yang, C. Shi, *Autonomous Robots*, to appear.
+- [https://link.springer.com/article/10.1007/s10514-024-10175-3 TIP: A Trust Inference and Propagation Model in Multi-Human Multi-Robot Teams], 
+Y. Guo, X. J. Yang, C. Shi, *Autonomous Robots*, Vol. 48(20), 1-20, 2024.
 
 - [https://arxiv.org/abs/2311.16051 Evaluating the Impact of Personalized Value Alignment in Human-Robot Interaction: Insights into Trust and Team Performance Outcomes], 
 S. Bhat, J. B. Lyons, C. Shi, X. J. Yang
