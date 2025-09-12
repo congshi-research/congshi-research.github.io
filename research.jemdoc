@@ -18,14 +18,11 @@
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5415215 Managing Advance Reservations of Reusable Resources with Continuous Arrivals and Discrete Usage], 
 Yun-Tung Kuo, Cong Shi, Yehua Wei
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5319693 Fairness-Constrained Inventory Control with Demand Learning], 
-Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi, Yuan Zhou
-
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5239963 Joint Learning and Pricing in Many-Server Queues: Near-Optimal Policies via Fluid Duality],
 Xu Zheng, Xu Sun, Cong Shi
 
-- PASTA: A Unified Framework for Offline Assortment Optimization, 
-J. Dong, W. Mo, Z. Qi, C. Shi, E. X. Fang, V. Tarokh
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5319693 Fairness-Constrained Inventory Control with Demand Learning], 
+Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi, Yuan Zhou
 
 - [https://arxiv.org/abs/2503.16737 Optimal Nonlinear Online Learning under Sequential Price Competition via s-Concavity], 
 Daniele Bracale, Moulinath Banerjee, Cong Shi, Yuekai Sun
@@ -35,6 +32,9 @@ Arlen Dean, Mohammad Zhalechian, Cong Shi
 
 - [https://arxiv.org/abs/2302.12670 Personalized Pricing with Invalid Instrumental Variables: Identification, Estimation, and Policy Learning], 
 Rui Miao, Zhengling Qi, Cong Shi, Lin Lin
+
+- PASTA: A Unified Framework for Offline Assortment Optimization, 
+J. Dong, W. Mo, Z. Qi, C. Shi, E. X. Fang, V. Tarokh
 
 - Online Learning for Joint Pricing and Remuneration in a Two-Sided Market, 
 Jingwen Tang, Cong Shi, Izak Duenyas
@@ -61,16 +61,11 @@ Jingwen Tang, Izak Duenyas, Cong Shi, Nan Yang, Minor Revision at *Manufacturing
 #- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], Sheng Ji, Cong Shi, Yi Yang
 
 
+
 == Operations Research
 
--  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
-J. Tang, Z. Qi, E. X. Fang, C. Shi, *Manufacturing & Service Operations Management*, to appear. [https://pubsonline.informs.org/doi/abs/10.1287/msom.2024.1061 \[DOI\]]
-
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3456834 Tailored Base-Surge Policies in Dual-Sourcing Inventory Systems with Demand Learning], 
-B. Chen, C. Shi, *Operations Research*, to appear. [https://pubsonline.informs.org/doi/abs/10.1287/opre.2022.0624 \[DOI\]]
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
-S. Li, Q. Luo, Z. Huang, C. Shi, *Operations Research*, to appear. [https://pubsonline.informs.org/doi/abs/10.1287/opre.2022.0693 \[DOI\]]
+B. Chen, C. Shi, *Operations Research*, Vol. 73(4), 1723-2295, 2025. [https://pubsonline.informs.org/doi/abs/10.1287/opre.2022.0624 \[DOI\]]
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3501316 Contextual Learning with Online Convex Optimization: Theory and Application to Medical Decision-Making], 
 E. Keyvanshokooh, M. Zhalechian, C. Shi, M. P. Van Oyen, P. Kazemian, *Management Science*, to appear. [https://pubsonline.informs.org/doi/10.1287/mnsc.2019.03211 \[DOI\]]
@@ -79,6 +74,12 @@ E. Keyvanshokooh, M. Zhalechian, C. Shi, M. P. Van Oyen, P. Kazemian, *Managemen
 -- Finalist, INFORMS Health Applications Society (HAS) Best Student Paper Competition, 2021.
 -- Finalist, INFORMS Decision Analysis Society (DAS) Best Student Paper Competition, 2020.
 -- IOE Murty Prize for Best Student Paper on Optimization, 2020.
+
+-  [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4040305 Offline Feature-Based Pricing under Censored Demand: A Causal Inference Approach],
+J. Tang, Z. Qi, E. X. Fang, C. Shi, *Manufacturing & Service Operations Management*, Vol. 27(2), 339-678, 2025. [https://pubsonline.informs.org/doi/abs/10.1287/msom.2024.1061 \[DOI\]]
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079753 Online Learning for Constrained Assortment Optimization under Markov Chain Choice Model],
+S. Li, Q. Luo, Z. Huang, C. Shi, *Operations Research*, Vol. 73(1), 109-138, 2025. [https://pubsonline.informs.org/doi/abs/10.1287/opre.2022.0693 \[DOI\]]
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4143885 Online Learning for Dual Index Policies in Dual Sourcing Systems], 
 J. Tang, B. Chen, C. Shi, *Manufacturing & Service Operations Management*, Vol. 26(2), 758-774, 2024. [https://pubsonline.informs.org/doi/abs/10.1287/msom.2022.0323 \[DOI\]]
@@ -192,6 +193,7 @@ C. Shi, H. Zhang, X. Chao, R. Levi, *Naval Research Logistics*, Vol. 61(4), 304-
 - [papers/OR-lot-sizing.pdf Approximation Algorithms for the Stochastic Lot-Sizing Problem with Order Lead Times], 
 R. Levi, C. Shi, *Operations Research*, Vol. 61(3), 593-602, 2013. [http://pubsonline.informs.org/doi/abs/10.1287/opre.2013.1162 \[DOI\]]  
 -- First Place, INFORMS George Nicholson Student Paper Competition, 2009.
+
 
 
 
