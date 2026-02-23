@@ -65,8 +65,6 @@ Ganggang Xu, Cong Shi, Major Revision at *Management Science*.
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4803002 LEGO: Optimal Online Learning under Sequential Price Competition], 
 Shukai Li, Cong Shi, Sanjay Mehrotra, Major Revision at *Operations Research*.
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4806687 An Online Mirror Descent Learning Algorithm for Multiproduct Inventory Systems], 
-Sichen Guo, Cong Shi, Chaolin Yang, Christos Zacharias, Minor Revision at *Operations Research*.
 
 #- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349904 Online Learning and Pricing for Multiple Products with Reference Price Effects], Sheng Ji, Cong Shi, Yi Yang
 
@@ -74,6 +72,8 @@ Sichen Guo, Cong Shi, Chaolin Yang, Christos Zacharias, Minor Revision at *Opera
 
 == Operations Research
 
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4806687 An Online Mirror Descent Learning Algorithm for Multiproduct Inventory Systems], 
+S. Guo, C. Shi, C. Yang, C. Zacharias, *Operations Research*, to appear.
 
 - [https://arxiv.org/abs/2503.16737 Revenue Maximization under Sequential Price Competition via the Estimation of s-Concave Demand Functions],
 D. Bracale, M. Banerjee, Y. Sun, C. Shi, *International Conference on Learning Representations (ICLR 2026)*, Rio de Janeiro, Brazil. [https://iclr.cc/virtual/2026/poster/10007110 \[DOI\]]
