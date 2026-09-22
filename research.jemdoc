@@ -61,6 +61,7 @@ Kaiting Yang, Zhongping Li, Cong Shi \n
 
 
 
+
 == Under Revision
 
 - [https://arxiv.org/abs/2510.01693 PASTA: A Unified Framework for Offline Assortment Learning] \n
@@ -76,24 +77,24 @@ Jingwen Tang, Cong Shi, Izak Duenyas, Major Revision at *Manufacturing & Service
 Ganggang Xu, Cong Shi, Major Revision at *Management Science*. \n
 Revised title: Estimate-Then-Optimize: A Modular Statistical Framework for Data-Driven (s, S) Inventory Control \n
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5594890 Learning to Price under Competition with Reference Price Effects] \n
-Yongge Yang, Jiannan Ke, Cong Shi, Minor Revision at *Production and Operations Management*. \n
-
 
 
 
 
 == Operations Research
 
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5594890 Learning to Price under Competition with Reference Price Effects] \n
+Y. Yang, J. Ke, C. Shi, *Production and Operations Management*, to appear. \n
+
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5415215 Managing Advance Reservations of Reusable Resources with Continuous Arrivals and Discrete Usage] \n
 Y.-T. Kuo, C. Shi, Y. Wei,  *ACM Conference on Economics and Computation (EC 2026)*, Rome, Italy.
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4803002 LEGO: Optimal Online Learning under Sequential Price Competition] \n
-S. Li, C. Shi, S. Mehrotra, *Operations Research*, to appear. 
+S. Li, C. Shi, S. Mehrotra, *Operations Research*, Vol. 74(5), 2556–2576, 2026. 
 [https://pubsonline.informs.org/doi/abs/10.1287/opre.2024.1085 \[DOI\]] \n
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4806687 An Online Mirror Descent Learning Algorithm for Multiproduct Inventory Systems] \n
-S. Guo, C. Shi, C. Yang, C. Zacharias, *Operations Research*, to appear. 
+S. Guo, C. Shi, C. Yang, C. Zacharias, *Operations Research*, Vol. 74(5), 2310–2328, 2026. 
 [https://pubsonline.informs.org/doi/abs/10.1287/opre.2024.0982 \[DOI\]] \n
 
 - [https://arxiv.org/abs/2503.16737 Revenue Maximization under Sequential Price Competition via the Estimation of s-Concave Demand Functions] \n
