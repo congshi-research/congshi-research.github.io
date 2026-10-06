@@ -1,0 +1,1702 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>Gallup Park Bridge Case</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* Layout: sticky task bar; each task is a numbered "sheet" with a 70ch reading column inside a 1160px frame. Diagrams, step-throughs and tables use the full frame. */
+:root{
+  --bg:#F1F3F5; --surface:#FFFFFF; --surface-2:#E9EDF1;
+  --ink:#14202B; --ink-2:#4A5866; --ink-3:#6E7C8B;
+  --rule:#D2D9E0; --rule-strong:#97A4B1; --grid:#E3E8ED;
+  --panel:#14202B; --panel-ink:#F1F3F5;
+  --cone:#D4520E; --cone-ink:#A33E08; --cone-soft:#FBE7DA;
+  --steel:#1E68B0; --steel-ink:#175591; --steel-soft:#DCE9F5;
+  --go:#1F7547; --go-soft:#DDF0E4; --stop:#B42318; --stop-soft:#FBE3E0;
+  --font-display:"Barlow Condensed","Roboto Condensed","Arial Narrow",sans-serif;
+  --font-body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --fs:18px; --frame:1160px; --measure:70ch;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E151C; --surface:#17212B; --surface-2:#1F2B37;
+    --ink:#E7EDF3; --ink-2:#A9B6C3; --ink-3:#8593A1;
+    --rule:#2D3B49; --rule-strong:#5B6C7D; --grid:#25323F;
+    --panel:#26333F; --panel-ink:#E7EDF3;
+    --cone:#E0621A; --cone-ink:#FF9C61; --cone-soft:#3A2416;
+    --steel:#3F8FDB; --steel-ink:#93C3F0; --steel-soft:#183049;
+    --go:#55C48B; --go-soft:#14301F; --stop:#F47C70; --stop-soft:#3B1B19;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E151C; --surface:#17212B; --surface-2:#1F2B37;
+  --ink:#E7EDF3; --ink-2:#A9B6C3; --ink-3:#8593A1;
+  --rule:#2D3B49; --rule-strong:#5B6C7D; --grid:#25323F;
+  --panel:#26333F; --panel-ink:#E7EDF3;
+  --cone:#E0621A; --cone-ink:#FF9C61; --cone-soft:#3A2416;
+  --steel:#3F8FDB; --steel-ink:#93C3F0; --steel-soft:#183049;
+  --go:#55C48B; --go-soft:#14301F; --stop:#F47C70; --stop-soft:#3B1B19;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:var(--fs); scroll-behavior:smooth; scroll-padding-top:76px}
+body{background:var(--bg); color:var(--ink); font-family:var(--font-body); font-size:1rem; line-height:1.6; padding-inline:16px}
+h1,h2,h3,h4{margin:0; text-wrap:balance}
+p{margin:0}
+a{color:var(--steel-ink)}
+b,strong{font-weight:600}
+:focus-visible{outline:3px solid var(--steel); outline-offset:2px; border-radius:3px}
+.wrap{max-width:var(--frame); margin-inline:auto}
+.prose{max-width:var(--measure)}
+.prose p + p{margin-top:.8em}
+.muted{color:var(--ink-2)}
+.mono{font-family:var(--font-mono)}
+.nowrap{white-space:nowrap}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; margin-inline:-16px; padding-inline:16px; background:var(--surface); border-bottom:1px solid var(--rule)}
+.bar{display:flex; align-items:center; gap:14px; min-height:58px}
+.brand{font-family:var(--font-display); font-weight:700; font-size:1.1rem; letter-spacing:.04em; text-transform:uppercase; color:var(--ink); text-decoration:none; white-space:nowrap; display:flex; align-items:center; gap:10px}
+.brand i{display:block; width:22px; height:10px; background:repeating-linear-gradient(135deg,var(--cone) 0 5px,transparent 5px 10px); border-radius:2px}
+.tasknav{display:flex; gap:2px; overflow-x:auto; flex:1; min-width:0; scrollbar-width:none}
+.tasknav::-webkit-scrollbar{display:none}
+.tasknav a{display:flex; align-items:center; gap:6px; padding:6px 9px; border-radius:6px; color:var(--ink-2); text-decoration:none; font-size:.8rem; font-weight:600; white-space:nowrap}
+.tasknav a b{font-family:var(--font-mono); font-size:.78rem; font-weight:600; color:var(--ink-3)}
+.tasknav a:hover{background:var(--surface-2); color:var(--ink)}
+.tasknav a[aria-current="true"]{background:var(--ink); color:var(--surface)}
+.tasknav a[aria-current="true"] b{color:var(--surface)}
+.controls{display:flex; gap:8px; align-items:center}
+.switch{display:flex; align-items:center; gap:8px; background:none; border:0; padding:6px 4px; color:var(--ink); font:600 .8rem var(--font-body); cursor:pointer; white-space:nowrap}
+.switch .track{width:36px; height:20px; border-radius:10px; background:var(--rule-strong); position:relative; transition:background .15s}
+.switch .thumb{position:absolute; top:2px; left:2px; width:16px; height:16px; border-radius:50%; background:var(--surface); transition:transform .15s}
+.switch[aria-checked="true"] .track{background:var(--go)}
+.switch[aria-checked="true"] .thumb{transform:translateX(16px)}
+.fs{display:flex}
+.fs button{font:700 .78rem var(--font-body); min-width:34px; height:32px; border:1px solid var(--rule-strong); background:var(--surface); color:var(--ink); cursor:pointer}
+.fs button:first-child{border-radius:6px 0 0 6px}
+.fs button:last-child{border-radius:0 6px 6px 0; border-left:0}
+.fs button:hover{background:var(--surface-2)}
+@media (max-width:900px){ .tasknav a span:not(.keep){display:none} .tasknav a b{color:inherit} }
+@media (max-width:560px){ .brand span{display:none} .fs{display:none} }
+
+/* ---------- sheets ---------- */
+.sheet{padding-block:72px 12px; display:flex; flex-direction:column; gap:28px}
+.task{border-top:2px solid var(--ink); margin-top:56px; padding-top:40px}
+.sheet-head{display:flex; flex-direction:column; gap:6px}
+.sheet-no{font-family:var(--font-display); font-weight:600; font-size:1.05rem; letter-spacing:.14em; text-transform:uppercase; color:var(--cone-ink)}
+.sheet-head h2{font-family:var(--font-display); font-weight:700; font-size:clamp(2rem,4.4vw,3rem); line-height:1.02; text-transform:uppercase; letter-spacing:.005em}
+h3{font-family:var(--font-display); font-weight:600; font-size:1.5rem; line-height:1.15; letter-spacing:.01em}
+h4{font:700 .76rem/1.3 var(--font-body); text-transform:uppercase; letter-spacing:.1em; color:var(--ink-2)}
+.block{display:flex; flex-direction:column; gap:14px; min-width:0}
+
+.prompt{position:relative; border:1.5px solid var(--ink); background:var(--surface); padding:24px 22px 18px; max-width:var(--measure); margin-top:6px}
+.prompt-tag{position:absolute; top:-.8em; left:14px; background:var(--ink); color:var(--surface); font:700 .68rem/1 var(--font-body); text-transform:uppercase; letter-spacing:.12em; padding:5px 9px}
+.prompt p{font-size:1.06rem}
+
+ol.steps{list-style:none; counter-reset:s; padding:0; margin:0; display:grid; gap:12px; max-width:var(--measure)}
+ol.steps li{counter-increment:s; display:grid; grid-template-columns:2rem minmax(0,1fr); gap:12px}
+ol.steps li::before{content:counter(s); font:600 .82rem var(--font-mono); width:1.7rem; height:1.7rem; display:grid; place-items:center; border:1.5px solid var(--ink); border-radius:3px; margin-top:.15rem}
+
+.rules{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px}
+.rule{background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:16px 18px; display:flex; flex-direction:column; gap:8px; min-width:0}
+.rule p{font-size:.92rem; color:var(--ink-2)}
+.fx{font-family:var(--font-mono); font-size:.92rem; color:var(--ink); line-height:1.6}
+@media (max-width:860px){ .rules{grid-template-columns:1fr} }
+
+.formula{font-family:var(--font-mono); font-size:.95rem; line-height:1.75; background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:14px 18px; overflow-x:auto; max-width:var(--measure)}
+.formula .c{color:var(--ink-3)}
+.note{font-size:.9rem; color:var(--ink-2); max-width:var(--measure)}
+.callout{background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:14px 18px; max-width:var(--measure); font-size:.95rem}
+.callout h4{margin-bottom:4px}
+
+/* ---------- brief ---------- */
+.brief{padding-top:44px}
+.barricade{height:10px; width:min(260px,60%); background:repeating-linear-gradient(135deg,var(--cone) 0 12px,transparent 12px 24px); border-radius:2px}
+.eyebrow{font:700 .76rem/1.3 var(--font-body); text-transform:uppercase; letter-spacing:.13em; color:var(--cone-ink)}
+h1{font-family:var(--font-display); font-weight:700; font-size:clamp(2.7rem,7vw,4.6rem); line-height:.95; text-transform:uppercase; letter-spacing:-.005em}
+.dek{font-size:1.18rem; color:var(--ink-2); max-width:60ch}
+.intro{display:flex; flex-direction:column; gap:14px}
+.brief-grid{display:grid; grid-template-columns:minmax(0,1.45fr) minmax(0,1fr); gap:20px}
+@media (max-width:860px){ .brief-grid{grid-template-columns:1fr} }
+.clipping{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:24px 26px}
+.dateline{font:500 .74rem var(--font-mono); text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3)}
+.clip-head{font-family:var(--font-display); font-weight:600; font-size:1.65rem; line-height:1.12; margin-block:8px 14px}
+.clipping p + p{margin-top:12px}
+.role{background:var(--panel); color:var(--panel-ink); border-radius:4px; padding:24px 26px; display:flex; flex-direction:column; gap:12px}
+.role h2{font-family:var(--font-display); font-weight:700; font-size:1.5rem; text-transform:uppercase; letter-spacing:.04em}
+.role ul{margin:0; padding:0; list-style:none; display:grid; gap:6px}
+.role li{display:grid; grid-template-columns:18px 1fr; gap:8px; font-weight:600}
+.role li::before{content:""; width:12px; height:12px; margin-top:.4em; background:repeating-linear-gradient(135deg,var(--cone) 0 3px,transparent 3px 6px); border:1.5px solid var(--cone)}
+.titleblock{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--rule); border:1.5px solid var(--ink)}
+.titleblock > div{background:var(--surface); padding:10px 14px; font-weight:600; font-size:.92rem}
+.titleblock span{display:block; font:700 .64rem/1.4 var(--font-body); text-transform:uppercase; letter-spacing:.12em; color:var(--ink-3)}
+@media (max-width:700px){ .titleblock{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.tasklist{list-style:none; padding:0; margin:0; border-top:1px solid var(--rule)}
+.tasklist a{display:grid; grid-template-columns:2.4rem minmax(0,1fr) auto; gap:14px; align-items:baseline; padding:12px 6px; border-bottom:1px solid var(--rule); color:var(--ink); text-decoration:none}
+.tasklist a:hover{background:var(--surface)}
+.tasklist .n{font-family:var(--font-display); font-weight:700; font-size:1.5rem; line-height:1; color:var(--cone-ink)}
+.tasklist .t{font-weight:600}
+.tasklist .m{font:500 .74rem var(--font-mono); color:var(--ink-3); text-transform:uppercase; letter-spacing:.06em; white-space:nowrap}
+@media (max-width:560px){ .tasklist .m{display:none} .tasklist a{grid-template-columns:2rem minmax(0,1fr)} }
+.presenter{font-size:.86rem; color:var(--ink-2); display:flex; gap:10px; align-items:baseline; flex-wrap:wrap}
+.presenter kbd{font:600 .74rem var(--font-mono); border:1px solid var(--rule-strong); border-bottom-width:2px; border-radius:4px; padding:1px 6px; background:var(--surface); color:var(--ink)}
+
+/* ---------- tables ---------- */
+.tbl-wrap{overflow-x:auto; border:1px solid var(--rule); border-radius:8px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:.86rem; font-variant-numeric:tabular-nums}
+th{font:700 .68rem/1.3 var(--font-body); text-transform:uppercase; letter-spacing:.08em; color:var(--ink-2); text-align:left; padding:10px 12px; background:var(--surface-2); border-bottom:1px solid var(--rule); vertical-align:bottom}
+td{padding:9px 12px; border-bottom:1px solid var(--grid); vertical-align:top}
+tr:last-child td{border-bottom:0}
+.num{text-align:right; white-space:nowrap}
+td.id{font-family:var(--font-display); font-weight:700; font-size:1.08rem; line-height:1.3}
+tr.is-crit td.id{color:var(--cone-ink)}
+tr.is-total td{font-weight:700; background:var(--surface-2)}
+tr.dim td{color:var(--ink-3)}
+tr.future{display:none}
+.chip{display:inline-flex; align-items:center; gap:4px; font:700 .7rem/1 var(--font-body); padding:4px 8px; border-radius:999px; white-space:nowrap; letter-spacing:.02em}
+.chip.crit{background:var(--cone-soft); color:var(--cone-ink)}
+.chip.go{background:var(--go-soft); color:var(--go)}
+.chip.stop{background:var(--stop-soft); color:var(--stop)}
+.chip.mute{background:var(--surface-2); color:var(--ink-2)}
+.chip.steel{background:var(--steel-soft); color:var(--steel-ink)}
+
+/* ---------- solutions & discussion ---------- */
+.solution{border:1.5px solid var(--rule-strong); border-radius:8px; background:var(--surface)}
+.sol-bar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 18px; border-bottom:1px solid var(--rule); background:var(--surface-2); border-radius:7px 7px 0 0; flex-wrap:wrap}
+.sol-tag{font:700 .74rem var(--font-body); text-transform:uppercase; letter-spacing:.13em; color:var(--ink)}
+.sol-hint{font-size:.86rem; color:var(--ink-2); flex:1}
+.sol-body{padding:22px; display:flex; flex-direction:column; gap:22px}
+body:not(.hide-ans) .reveal{display:none}
+body.hide-ans .reveal{display:inline-flex}
+body:not(.hide-ans) .sol-hint{display:none}
+body.hide-ans .solution:not(.open) .sol-body{display:none}
+body.hide-ans .solution:not(.open) .sol-bar{border-bottom:0; border-radius:7px}
+body.hide-ans .solution.open .sol-hint{display:none}
+.answer{display:flex; flex-wrap:wrap; gap:6px 28px; align-items:baseline; padding:14px 18px; background:var(--cone-soft); border-radius:6px}
+.answer div{display:flex; flex-direction:column}
+.answer span{font:700 .66rem var(--font-body); text-transform:uppercase; letter-spacing:.12em; color:var(--cone-ink)}
+.answer strong{font-size:1.2rem; font-weight:700}
+
+details.discuss{border:1.5px dashed var(--rule-strong); border-radius:8px}
+details.discuss summary{cursor:pointer; padding:14px 18px; display:grid; gap:4px; list-style:none}
+details.discuss summary::-webkit-details-marker{display:none}
+.d-tag{font:700 .7rem var(--font-body); text-transform:uppercase; letter-spacing:.13em; color:var(--steel-ink)}
+.d-q{font-weight:600; font-size:1.04rem; max-width:var(--measure)}
+.d-more{font-size:.8rem; color:var(--ink-3)}
+details:not([open]) .d-more::before{content:"Show suggested answer ▸"}
+details[open] .d-more::before{content:"Suggested answer"}
+.d-a{padding:0 18px 16px; max-width:var(--measure); color:var(--ink-2)}
+.d-a p + p{margin-top:.6em}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:40px; padding:8px 16px; font:600 .84rem var(--font-body); border:1.5px solid var(--rule-strong); border-radius:6px; background:var(--surface); color:var(--ink); cursor:pointer; white-space:nowrap}
+.btn:hover:not(:disabled){border-color:var(--ink)}
+.btn:disabled{opacity:.4; cursor:default}
+.btn.primary{background:var(--ink); color:var(--surface); border-color:var(--ink)}
+.btn.small{min-height:32px; padding:4px 12px; font-size:.78rem}
+
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px}
+.tile{background:var(--surface-2); border-radius:6px; padding:14px 16px; display:flex; flex-direction:column; gap:2px; min-width:0}
+.tile .lbl{font-size:.78rem; font-weight:600; color:var(--ink-2)}
+.tile .val{font-size:1.85rem; font-weight:700; line-height:1.15}
+.tile .sub{font-size:.8rem; color:var(--ink-2)}
+
+.cards{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px}
+@media (max-width:1000px){ .cards{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){ .cards{grid-template-columns:1fr} }
+.card{border:1px solid var(--rule); border-radius:6px; padding:16px; display:flex; flex-direction:column; gap:8px; background:var(--surface); min-width:0}
+.card .big{font-size:1.9rem; font-weight:700; line-height:1}
+.card .big small{font-size:.9rem; font-weight:600; color:var(--ink-2); margin-left:4px}
+.card .who{font-weight:600}
+.card .who b{font-family:var(--font-display); font-size:1.1rem; color:var(--steel-ink); margin-right:4px}
+.card p{font-size:.88rem; color:var(--ink-2)}
+
+.insights{list-style:none; margin:0; padding:0; display:grid; gap:0; counter-reset:i; border-top:1px solid var(--rule)}
+.insights li{counter-increment:i; display:grid; grid-template-columns:3rem minmax(0,1fr); gap:16px; padding:18px 0; border-bottom:1px solid var(--rule)}
+.insights li::before{content:counter(i); font-family:var(--font-display); font-weight:700; font-size:2rem; line-height:1; color:var(--cone-ink)}
+.insights h3{font-size:1.35rem; margin-bottom:6px}
+.insights p{max-width:var(--measure); color:var(--ink-2)}
+.insights p + p{margin-top:.5em}
+
+/* ---------- step-throughs ---------- */
+.stepper{background:var(--surface); border:1.5px solid var(--rule-strong); border-radius:10px; overflow:hidden}
+.st-head{display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; justify-content:space-between; padding:12px 18px; border-bottom:1px solid var(--rule)}
+.st-title{font:700 .76rem var(--font-body); text-transform:uppercase; letter-spacing:.12em; color:var(--ink-2)}
+.jumps{display:flex; gap:6px; flex-wrap:wrap}
+.jump{font:600 .78rem var(--font-body); padding:5px 11px; border-radius:999px; border:1px solid var(--rule-strong); background:transparent; color:var(--ink-2); cursor:pointer}
+.jump:hover{color:var(--ink); border-color:var(--ink)}
+.jump[aria-current="true"]{background:var(--ink); color:var(--surface); border-color:var(--ink)}
+.diagram{overflow-x:auto; padding:10px 12px 6px}
+.diagram svg{display:block; width:100%; min-width:760px; height:auto}
+.st-panel{padding:16px 20px 18px; border-top:1px solid var(--rule); display:grid; gap:10px; min-height:10.5rem; align-content:start}
+.st-meta{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.phase{font:700 .7rem var(--font-body); text-transform:uppercase; letter-spacing:.1em; padding:5px 9px; border-radius:4px; background:var(--steel-soft); color:var(--steel-ink)}
+.phase.is-crit{background:var(--cone-soft); color:var(--cone-ink)}
+.st-count{font:500 .8rem var(--font-mono); color:var(--ink-3)}
+.st-math{font-family:var(--font-mono); font-size:1.02rem; line-height:1.75; overflow-x:auto}
+.st-math b{color:var(--steel-ink); font-weight:600}
+.st-say{font-size:1rem; max-width:var(--measure)}
+.st-ctrl{display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:12px 18px; background:var(--surface-2); border-top:1px solid var(--rule)}
+.progress{flex:1; min-width:100px; height:6px; background:var(--rule); border-radius:3px; overflow:hidden}
+.progress i{display:block; height:100%; width:0; background:var(--steel); transition:width .2s}
+.keyrow{display:flex; flex-wrap:wrap; gap:10px 22px; align-items:center; font-size:.84rem; color:var(--ink-2)}
+.keyrow svg{display:block; height:auto}
+.lg{display:inline-flex; align-items:center; gap:8px}
+.lg i{display:inline-block; width:22px; height:4px; border-radius:2px; background:var(--rule-strong)}
+.lg i.cone{background:var(--cone); height:5px}
+.lg i.steel{background:var(--steel)}
+.lg i.wash{background:var(--steel); opacity:.25; height:12px}
+.lg i.mute{background:var(--ink-3)}
+.lg i.ink{background:var(--ink); width:3px; height:16px}
+.lg i.box{width:14px; height:14px; border-radius:3px}
+
+.crash-grid{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:20px; padding:16px 20px 20px; border-top:1px solid var(--rule)}
+@media (max-width:900px){ .crash-grid{grid-template-columns:1fr} }
+.mini table{font-size:.82rem}
+.mini th,.mini td{padding:7px 10px}
+.mini tr.pick td{background:var(--steel-soft); font-weight:600}
+.score{border-top:1px solid var(--rule); padding:16px 20px 20px; display:flex; flex-direction:column; gap:10px}
+.score td{white-space:nowrap}
+.score td.paths{white-space:normal; min-width:9.5rem}
+.score tr.cur td{background:var(--steel-soft)}
+.opt-pick{font-weight:700; color:var(--ink)}
+.opt-out{text-decoration:line-through; color:var(--ink-3)}
+
+/* ---------- network & chart SVG ---------- */
+svg text{font-family:var(--font-body)}
+.n-fill{fill:var(--surface)}
+.n-band{fill:var(--surface-2)}
+.n-line{fill:none; stroke:var(--rule-strong); stroke-width:1.5}
+.n-div{stroke:var(--rule); stroke-width:1}
+.n-letter{font-family:var(--font-display); font-weight:700; fill:var(--ink)}
+.n-dur{font-family:var(--font-mono); font-weight:600; font-size:15px; fill:var(--ink)}
+.n-was{fill:var(--ink-3); font-weight:400}
+.n-name{font-size:11.5px; fill:var(--ink-2)}
+.n-val{font-family:var(--font-mono); font-size:15px; font-weight:600; fill:var(--ink)}
+.n-ph{font-family:var(--font-mono); font-size:10px; fill:var(--ink-3); letter-spacing:.04em}
+.n-hl{fill:var(--steel-soft)}
+.n-hl.bind{fill:var(--steel)}
+.n-val.on-bind{fill:var(--surface)}
+.n-val.fresh{fill:var(--steel-ink); animation:pop .35s ease-out}
+.n-band-txt{font-family:var(--font-mono); font-size:12px; font-weight:600; fill:var(--ink-2)}
+.n-band-txt.out{fill:var(--ink-3); font-weight:400}
+.is-crit .n-line{stroke:var(--cone); stroke-width:2.5}
+.is-crit .n-band{fill:var(--cone-soft)}
+.is-cur .n-line{stroke:var(--steel); stroke-width:3.5}
+.edge .e{fill:none; stroke:var(--rule-strong); stroke-width:2}
+.edge .ah{fill:var(--rule-strong)}
+.edge.crit .e{stroke:var(--cone); stroke-width:3.5}
+.edge.crit .ah{fill:var(--cone)}
+.edge.hl .e{stroke:var(--steel); stroke-width:3}
+.edge.hl .ah{fill:var(--steel)}
+.edge.bind .e{stroke-width:4.5}
+@keyframes pop{from{opacity:0}to{opacity:1}}
+
+/* lecture-style CPM figures: circle node, four corner times */
+.fig{margin:0; border:1px solid var(--rule); border-radius:8px; padding:16px 16px 18px; display:flex; flex-direction:column; gap:12px; min-width:0}
+.fig .diagram{padding:0}
+.fig-cap{display:flex; flex-wrap:wrap; gap:4px 16px; align-items:baseline}
+.fig-no{font-family:var(--font-display); font-weight:700; font-size:1.3rem; text-transform:uppercase; letter-spacing:.04em}
+.fig-sub{color:var(--ink-2); font-size:.9rem}
+.fig-cap .lg{font-size:.84rem; color:var(--ink-2)}
+.fig-notes{list-style:none; margin:0; padding:12px 0 0; border-top:1px solid var(--grid); display:grid; gap:8px; font-size:.95rem}
+.fig-notes li{display:grid; grid-template-columns:10.5rem minmax(0,1fr); gap:14px; max-width:calc(var(--measure) + 11rem)}
+.fig-notes b{font-weight:700}
+@media (max-width:620px){ .fig-notes li{grid-template-columns:1fr; gap:0} }
+.c-node{fill:var(--surface); stroke:var(--rule-strong); stroke-width:2}
+.c-node.crit{fill:var(--cone-soft); stroke:var(--cone); stroke-width:3}
+.c-letter{font-family:var(--font-display); font-weight:700; font-size:27px; fill:var(--ink)}
+.c-dur{font-family:var(--font-mono); font-size:15px; font-weight:500; fill:var(--ink-2)}
+.c-num{font-family:var(--font-mono); font-size:19px; font-weight:600; fill:var(--steel-ink)}
+.c-key-frame{fill:none; stroke:var(--rule); stroke-width:1}
+.c-key{font-family:var(--font-mono); font-size:12px; fill:var(--ink-3)}
+.c-key.on{fill:var(--steel-ink); font-weight:600}
+.c-key-title{font-size:10px; font-weight:700; letter-spacing:.1em; fill:var(--ink-3)}
+.c-node.pick{stroke:var(--steel); stroke-width:5}
+.c-sub{font-family:var(--font-mono); font-size:13px; font-weight:600; fill:var(--ink-2)}
+.c-sub.out{fill:var(--ink-3); font-weight:400}
+
+/* crash day cards */
+.days{display:flex; flex-direction:column; gap:22px}
+.day{border:1.5px solid var(--rule-strong); border-radius:8px; overflow:hidden; background:var(--surface); scroll-margin-top:72px}
+.day-head{display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; padding:14px 18px; background:var(--surface-2); border-bottom:1px solid var(--rule)}
+.day-no{font-family:var(--font-display); font-weight:700; font-size:1.8rem; line-height:1; text-transform:uppercase; color:var(--cone-ink); white-space:nowrap}
+.day-title{display:flex; flex-direction:column; flex:1; min-width:200px}
+.day-title b{font-size:1.1rem; font-weight:700}
+.day-title span{font-size:.86rem; color:var(--ink-2)}
+.day-result{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.day-result .mono{font-weight:600; font-size:1.02rem}
+.day .diagram{padding:12px 14px 0}
+.day-body{padding:6px 18px 18px; display:flex; flex-direction:column; gap:14px}
+.day-cap{font-size:.86rem; color:var(--ink-2)}
+.ptable{font-size:.84rem}
+.ptable th{text-transform:none; letter-spacing:0; font:600 .74rem var(--font-mono); text-align:center; white-space:nowrap}
+.ptable td{text-align:center; font-family:var(--font-mono); font-weight:600}
+.ptable th:first-child,.ptable td:first-child{text-align:left; white-space:nowrap; font-family:var(--font-body); color:var(--ink-2)}
+.ptable td.cp{background:var(--cone-soft); color:var(--cone-ink)}
+.day-steps{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; counter-reset:ds}
+@media (max-width:760px){ .day-steps{grid-template-columns:1fr} }
+.day-steps li{counter-increment:ds; border:1px solid var(--rule); border-radius:6px; padding:12px 14px; display:flex; flex-direction:column; gap:8px; font-size:.9rem; min-width:0}
+.day-steps h5{margin:0; font:700 .72rem/1.3 var(--font-body); text-transform:uppercase; letter-spacing:.08em; color:var(--ink-2); display:flex; gap:9px; align-items:center}
+.day-steps h5::before{content:counter(ds); font-family:var(--font-mono); font-size:.76rem; width:1.45rem; height:1.45rem; display:grid; place-items:center; border:1.5px solid var(--ink); border-radius:3px; color:var(--ink); flex:none}
+.day-steps .fx{font-size:.86rem; overflow-wrap:anywhere}
+.day-steps .fx b{color:var(--ink); font-weight:700}
+.optlist{display:flex; flex-wrap:wrap; gap:6px}
+.opt{font:600 .76rem var(--font-mono); padding:4px 8px; border-radius:4px; background:var(--surface-2); color:var(--ink)}
+.opt.pick{background:var(--steel); color:var(--surface)}
+.opt.out{text-decoration:line-through; color:var(--ink-3); font-weight:400}
+.day-why{font-size:.95rem; padding:12px 16px; background:var(--steel-soft); border-radius:6px; color:var(--ink)}
+.day-why b{color:var(--steel-ink)}
+.score-full td{white-space:nowrap}
+.score-full td.paths{white-space:normal; min-width:9.5rem}
+.c-note rect{fill:var(--steel-soft)}
+.c-note text{font-family:var(--font-mono); font-size:13.5px; font-weight:600; fill:var(--steel-ink)}
+
+.charts{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
+@media (max-width:860px){ .charts{grid-template-columns:1fr} }
+.chart{border:1px solid var(--rule); border-radius:6px; padding:16px 16px 10px; display:flex; flex-direction:column; gap:8px; min-width:0}
+.chart.wide{overflow-x:auto}
+.chart svg{display:block; width:100%; height:auto}
+.chart.wide svg{min-width:640px}
+.chart .cap{font-size:.84rem; color:var(--ink-2)}
+.tick{font-family:var(--font-mono); font-size:12px; fill:var(--ink-3)}
+.ax-title{font-size:12px; font-weight:600; fill:var(--ink-2)}
+.lbl{font-size:13px; font-weight:600; fill:var(--ink)}
+.lbl2{font-size:12px; fill:var(--ink-2)}
+.g-id{font-family:var(--font-display); font-weight:700; font-size:17px; fill:var(--ink)}
+.grid{stroke:var(--grid); stroke-width:1}
+.axis{stroke:var(--rule-strong); stroke-width:1}
+.m-steel{fill:var(--steel)}
+.m-cone{fill:var(--cone)}
+.m-mute{fill:var(--ink-3)}
+.m-wash{fill:var(--steel); fill-opacity:.2}
+.a-steel{fill:var(--steel); fill-opacity:.1}
+.a-mute{fill:var(--ink-3); fill-opacity:.1}
+.l-steel{fill:none; stroke:var(--steel); stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+.l-mute{fill:none; stroke:var(--ink-3); stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+.l-ghost{fill:none; stroke:var(--ink-3); stroke-width:2; stroke-dasharray:4 4}
+.ref{stroke:var(--ink); stroke-width:2}
+.dot{stroke:var(--surface); stroke-width:2}
+.hollow{fill:var(--surface); stroke:var(--ink-3); stroke-width:2}
+[data-tip]{cursor:default}
+
+.tip{position:fixed; z-index:60; pointer-events:none; background:var(--panel); color:var(--panel-ink); font-size:.8rem; line-height:1.45; padding:8px 11px; border-radius:6px; max-width:280px; white-space:pre-line; box-shadow:0 6px 18px rgb(0 0 0 / .22)}
+.foot{margin-top:72px; padding-block:28px 56px; border-top:1px solid var(--rule); color:var(--ink-3); font-size:.82rem; display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important; animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="#brief"><i aria-hidden="true"></i><span>Gallup Park Bridge</span></a>
+    <nav class="tasknav" aria-label="Case sections">
+      <a href="#brief"><span class="keep">Case</span></a>
+      <a href="#t1"><b>1</b><span>Network</span></a>
+      <a href="#t2"><b>2</b><span>CPM</span></a>
+      <a href="#t3"><b>3</b><span>Slack</span></a>
+      <a href="#t4"><b>4</b><span>Crashing</span></a>
+      <a href="#t5"><b>5</b><span>PERT</span></a>
+      <a href="#t6"><b>6</b><span>45-day target</span></a>
+      <a href="#t7"><b>7</b><span>Insights</span></a>
+    </nav>
+    <div class="controls">
+      <button id="ansToggle" class="switch" role="switch" aria-checked="true" title="Show or hide all solutions"><span class="track"><span class="thumb"></span></span><span id="ansLabel">Answers on</span></button>
+      <div class="fs" role="group" aria-label="Text size">
+        <button id="fsDown" type="button" aria-label="Smaller text">A−</button>
+        <button id="fsUp" type="button" aria-label="Larger text">A+</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= CASE BRIEF ================= -->
+<section id="brief" class="sheet brief">
+  <div class="intro">
+    <div class="barricade" aria-hidden="true"></div>
+    <p class="eyebrow">MGT 303 · Operations Management · CPM / PERT case study</p>
+    <h1>The Gallup Park Bridge</h1>
+    <p class="dek">A trail bridge over Geddes Pond in Ann Arbor has to be torn down and rebuilt. You run the schedule. Plan it with CPM, buy time with crashing, and test the risk with PERT.</p>
+  </div>
+
+  <div class="brief-grid">
+    <article class="clipping">
+      <p class="dateline">Ann Arbor News / WEMU · October 2024</p>
+      <h2 class="clip-head">“New bridge opens in Gallup Park after demolition of aging span in late winter.”</h2>
+      <p>The Gallup Park Bridge, a vital segment of the Border-to-Border Trail crossing Geddes Pond in Ann Arbor, was demolished in early 2024 after engineering assessments identified severe structural deterioration. Construction of the replacement bridge began soon after and continued through the spring and summer, culminating in a public reopening ceremony in October 2024.</p>
+      <p>The new structure features wider sidewalks, improved safety barriers, and enhanced trail connectivity. It was delivered through close collaboration between the City of Ann Arbor, the Washtenaw County Parks and Recreation Commission, and the University of Michigan, whose faculty and transportation researchers contributed to early planning and design consultations.</p>
+    </article>
+    <aside class="role">
+      <h2>Your role</h2>
+      <p>As part of the planning committee, you are now serving as project manager for the Gallup Park Bridge construction. Using CPM, crashing, and PERT, you must plan, monitor, and control the project timeline to ensure:</p>
+      <ul>
+        <li>Timely completion</li>
+        <li>Cost efficiency</li>
+        <li>Minimal disruption to park access and community events</li>
+      </ul>
+    </aside>
+  </div>
+
+  <div class="titleblock" aria-label="Project facts">
+    <div><span>Project</span>Gallup Park Bridge replacement</div>
+    <div><span>Site</span>Geddes Pond, Ann Arbor, MI</div>
+    <div><span>Trail</span>Border-to-Border Trail</div>
+    <div><span>Activities</span>9, labeled A–I</div>
+    <div><span>Indirect (overhead) cost</span>$220,000 per project day</div>
+    <div><span>Units</span>Working days · US dollars</div>
+  </div>
+
+  <div class="block">
+    <h3>A. Network logic and normal durations</h3>
+    <div class="tbl-wrap"><table id="tblA"></table></div>
+    <p class="note">The $220,000 daily overhead covers supervision, equipment, administration and site operations. It keeps running for as long as the project stays open. Crashing data (table B) is in Task 4 and the PERT estimates (table C) are in Task 5.</p>
+  </div>
+
+  <div class="block">
+    <h3>Your seven tasks</h3>
+    <ol class="tasklist">
+      <li><a href="#t1"><span class="n">1</span><span class="t">Draw the AON network</span><span class="m">Network</span></a></li>
+      <li><a href="#t2"><span class="n">2</span><span class="t">Run CPM: ES, EF, LS, LF, slack, critical path</span><span class="m">Forward / backward pass</span></a></li>
+      <li><a href="#t3"><span class="n">3</span><span class="t">Which activities have slack? Interpret operationally</span><span class="m">Slack</span></a></li>
+      <li><a href="#t4"><span class="n">4</span><span class="t">Crash one activity at a time to minimize total cost</span><span class="m">Time–cost trade-off</span></a></li>
+      <li><a href="#t5"><span class="n">5</span><span class="t">PERT: t<sub>e</sub>, variance, μ, σ and the 3σ date</span><span class="m">Three-time estimates</span></a></li>
+      <li><a href="#t6"><span class="n">6</span><span class="t">Does the crash plan meet ≤ 45 days at 99.73%?</span><span class="m">Confidence check</span></a></li>
+      <li><a href="#t7"><span class="n">7</span><span class="t">Managerial insights</span><span class="m">Discussion</span></a></li>
+    </ol>
+  </div>
+
+  <p class="presenter"><span><b>Presenting on Zoom:</b></span><span>press <kbd>1</kbd>–<kbd>7</kbd> to jump to a task</span><span><kbd>←</kbd> <kbd>→</kbd> move through a step-through</span><span>switch <b>Answers</b> off until the class has tried each task</span></p>
+</section>
+
+<!-- ================= TASK 1 ================= -->
+<section id="t1" class="sheet task">
+  <header class="sheet-head">
+    <p class="sheet-no">Task 1 of 7 · Network</p>
+    <h2>Draw the AON network</h2>
+  </header>
+  <div class="prompt"><span class="prompt-tag">From the case</span><p>Draw the AON network.</p></div>
+
+  <div class="block">
+    <h3>How to approach it</h3>
+    <p class="prose">In an activity-on-node (AON) network, each activity is a node and each arrow is a precedence relation. You can build it straight from the “Immediate predecessors” column of table A.</p>
+    <ol class="steps">
+      <li><span>Draw one node per activity, A through I. Write the normal duration inside.</span></li>
+      <li><span>For every activity, draw an arrow into it from each of its immediate predecessors. F gets three incoming arrows (B, C, E). H gets two (D, F). I gets two (G, H).</span></li>
+      <li><span>Find the start and the finish. Only A has no predecessor and only I has no successor, so the network already has one start and one finish. You don't need separate Start and End nodes.</span></li>
+      <li><span>Mark the burst and merge points. A bursts into four parallel streams. F is the big merge: the truss can only go up once both foundations are done <em>and</em> the steel has arrived.</span></li>
+    </ol>
+  </div>
+
+  <div class="solution">
+    <div class="sol-bar"><span class="sol-tag">Solution</span><span class="sol-hint">Have the class sketch it first, then reveal.</span><button class="btn small reveal" type="button">Reveal solution</button></div>
+    <div class="sol-body">
+      <div class="diagram" style="padding:0"><svg id="net1" viewBox="0 0 1040 492" role="img" aria-label="Activity-on-node network for the Gallup Park Bridge project, activities A to I"></svg></div>
+      <p class="prose">Read it left to right. Site work (A) comes first. Then four streams run in parallel: east piers (B), west piers (C), utility relocation (D) and off-site steel fabrication (E). The truss is erected (F) once B, C and E are done. Deck work (G) and lighting (H) run in parallel. Final inspection and the public opening (I) close the project.</p>
+      <div class="callout"><h4>Watch for this</h4>D skips F and feeds H directly. Lighting needs the relocated power and fiber, but the deck does not. Students often draw D → F by mistake.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TASK 2 ================= -->
+<section id="t2" class="sheet task">
+  <header class="sheet-head">
+    <p class="sheet-no">Task 2 of 7 · CPM</p>
+    <h2>Run the forward and backward pass</h2>
+  </header>
+  <div class="prompt"><span class="prompt-tag">From the case</span><p>Run CPM (forward/backward) with normal durations. Provide ES, EF, LS, LF, slack; identify critical path(s) and baseline duration.</p></div>
+
+  <div class="block">
+    <h3>How to approach it</h3>
+    <div class="rules">
+      <div class="rule"><h4>Forward pass · left to right</h4><p class="fx">ES = largest EF of all immediate predecessors<br>EF = ES + t</p><p>The first activity starts at 0. At a merge, take the <b>max</b>.</p></div>
+      <div class="rule"><h4>Backward pass · right to left</h4><p class="fx">LF = smallest LS of all immediate successors<br>LS = LF − t</p><p>The last activity's LF is the project duration. At a burst, take the <b>min</b>.</p></div>
+      <div class="rule"><h4>Slack</h4><p class="fx">Slack = LS − ES = LF − EF</p><p>Activities with zero slack are critical. They form the critical path, the longest path through the network.</p></div>
+    </div>
+    <div class="keyrow">
+      <svg id="nodeKey" width="250" height="118" viewBox="0 0 250 118" role="img" aria-label="Node key: ES top left, EF top right, LS bottom left, slack bottom middle, LF bottom right"></svg>
+      <span class="lg"><i class="steel"></i>Value being used in this step</span>
+      <span class="lg"><i class="cone"></i>Critical path</span>
+    </div>
+  </div>
+
+  <div class="stepper" id="cpmStepper" tabindex="0" aria-label="CPM step-through. Use left and right arrow keys to move between steps.">
+    <div class="st-head">
+      <span class="st-title">Step-through · forward and backward pass</span>
+      <div class="jumps" id="cpmJumps">
+        <button class="jump" type="button" data-to="1">Forward pass</button>
+        <button class="jump" type="button" data-to="10">Backward pass</button>
+        <button class="jump" type="button" data-to="19">Slack &amp; critical path</button>
+      </div>
+    </div>
+    <div class="diagram"><svg id="net2" viewBox="0 0 1040 492" role="img" aria-label="CPM network showing early and late times"></svg></div>
+    <div class="st-panel" aria-live="polite">
+      <div class="st-meta"><span class="phase" id="cpmPhase">Start</span><span class="st-count" id="cpmCount"></span></div>
+      <div class="st-math" id="cpmMath"></div>
+      <p class="st-say" id="cpmSay"></p>
+    </div>
+    <div class="st-ctrl">
+      <button class="btn" type="button" id="cpmReset">Reset</button>
+      <button class="btn" type="button" id="cpmBack">◀ Back</button>
+      <button class="btn primary" type="button" id="cpmNext">Next ▶</button>
+      <div class="progress" aria-hidden="true"><i id="cpmBar"></i></div>
+    </div>
+  </div>
+
+  <div class="solution">
+    <div class="sol-bar"><span class="sol-tag">Solution</span><span class="sol-hint">Three figures (forward pass, backward pass, complete network), then the CPM table and the path check.</span><button class="btn small reveal" type="button">Reveal solution</button></div>
+    <div class="sol-body">
+      <p class="prose">The three figures follow the order you would work on the board: fill the top corners going forward, fill the bottom corners going backward, then read slack and the critical path off the complete network.</p>
+
+      <figure class="fig" id="fig1">
+        <figcaption class="fig-cap"><span class="fig-no">Figure 1 · Forward pass</span><span class="fig-sub">Early start (ES) and early finish (EF), worked left to right</span></figcaption>
+        <div class="diagram"><svg id="figFwd" viewBox="0 0 1040 596" role="img" aria-label="Forward pass: ES and EF for every activity. A 0–6, B 6–16, C 6–15, D 6–14, E 6–20, F 20–30, G 30–38, H 30–37, I 38–44."></svg></div>
+        <ul class="fig-notes">
+          <li><b>Start</b><span>A has no predecessor: ES = 0 and EF = 0 + 6 = 6.</span></li>
+          <li><b>One predecessor</b><span>Copy that predecessor's EF. B, C, D and E all start on day 6, when A finishes. G starts on day 30, when F finishes.</span></li>
+          <li><b>Merge: take the max</b><span>F waits for B, C and E: max{16, 15, 20} = 20, so the steel (E) sets F's start. H: max{14, 30} = 30. I: max{38, 37} = 38.</span></li>
+          <li><b>Finish</b><span>EF(I) = 44, so the project takes 44 days.</span></li>
+        </ul>
+      </figure>
+
+      <figure class="fig" id="fig2">
+        <figcaption class="fig-cap"><span class="fig-no">Figure 2 · Backward pass</span><span class="fig-sub">Late start (LS) and late finish (LF), worked right to left</span></figcaption>
+        <div class="diagram"><svg id="figBwd" viewBox="0 0 1040 596" role="img" aria-label="Backward pass: LS and LF for every activity. I 38–44, G 30–38, H 31–38, F 20–30, D 23–31, E 6–20, C 11–20, B 10–20, A 0–6."></svg></div>
+        <ul class="fig-notes">
+          <li><b>Start at the end</b><span>LF(I) = 44, the project duration. LS(I) = 44 − 6 = 38.</span></li>
+          <li><b>One successor</b><span>Copy that successor's LS. G and H must finish by 38 (LS of I). D must finish by 31 (LS of H). B, C and E must finish by 20 (LS of F).</span></li>
+          <li><b>Burst: take the min</b><span>F feeds G and H: min{30, 31} = 30. A feeds B, C, D and E: min{10, 11, 23, 6} = 6.</span></li>
+          <li><b>Check</b><span>LS(A) = 0 matches ES(A) = 0, so the backward pass closes correctly.</span></li>
+        </ul>
+      </figure>
+
+      <figure class="fig" id="fig3">
+        <figcaption class="fig-cap"><span class="fig-no">Figure 3 · Complete network</span><span class="fig-sub">All four times on every node</span><span class="lg"><i class="cone"></i>Critical path</span></figcaption>
+        <div class="diagram"><svg id="figAll" viewBox="0 0 1040 596" role="img" aria-label="Complete CPM network with ES, EF, LS and LF on every node; critical path A, E, F, G, I highlighted."></svg></div>
+        <ul class="fig-notes">
+          <li><b>Read a node</b><span>Top corners come from the forward pass (ES, EF). Bottom corners come from the backward pass (LS, LF).</span></li>
+          <li><b>Slack</b><span>Slack = LS − ES = LF − EF. B: 10 − 6 = 4. C: 11 − 6 = 5. D: 23 − 6 = 17. H: 31 − 30 = 1.</span></li>
+          <li><b>Critical path</b><span>Where the top and bottom numbers match (A, E, F, G, I), slack is 0. Those activities form the critical path A → E → F → G → I, which takes 44 days.</span></li>
+        </ul>
+      </figure>
+
+      <div class="answer">
+        <div><span>Critical path</span><strong>A → E → F → G → I</strong></div>
+        <div><span>Baseline duration</span><strong>44 days</strong></div>
+      </div>
+      <div class="block">
+        <h4>CPM table, normal durations</h4>
+        <div class="tbl-wrap"><table id="tblCpm"></table></div>
+      </div>
+      <div class="block">
+        <h4>Cross-check by enumerating every path</h4>
+        <p class="note">The longest path is the critical path, and its length is the project duration. This should agree with the passes above.</p>
+        <div class="tbl-wrap"><table id="tblPaths"></table></div>
+        <p class="note">A-E-F-H-I is only one day shorter than the critical path. Keep an eye on it. It becomes critical in the first step of Task 4.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TASK 3 ================= -->
+<section id="t3" class="sheet task">
+  <header class="sheet-head">
+    <p class="sheet-no">Task 3 of 7 · Slack</p>
+    <h2>Where is there room to slip?</h2>
+  </header>
+  <div class="prompt"><span class="prompt-tag">From the case</span><p>Which activities have slack? Interpret operationally.</p></div>
+
+  <div class="block">
+    <h3>How to approach it</h3>
+    <p class="prose">Slack (total float) is the number of days an activity can slip without moving the 44-day finish. Read it off the CPM table: any activity with LS − ES &gt; 0 has room. Then ask what that room means on the job site. Who can wait? Where can a delay be absorbed? Which activities need daily attention?</p>
+  </div>
+
+  <div class="solution">
+    <div class="sol-bar"><span class="sol-tag">Solution</span><span class="sol-hint">Ask for the four activities with slack first.</span><button class="btn small reveal" type="button">Reveal solution</button></div>
+    <div class="sol-body">
+      <p class="prose">Four activities have slack. Activities with nonzero slack can float without delaying the project. A, E, F, G and I have none.</p>
+      <div class="chart wide">
+        <h4>Schedule at early start, with slack</h4>
+        <div class="keyrow">
+          <span class="lg"><i class="box" style="background:var(--cone)"></i>Critical activity</span>
+          <span class="lg"><i class="box" style="background:var(--steel)"></i>Activity with slack</span>
+          <span class="lg"><i class="box wash"></i>Slack (room to slip)</span>
+        </div>
+        <svg id="gantt" role="img" aria-label="Gantt chart of activities at early start, showing slack for B, C, D and H"></svg>
+      </div>
+      <div class="cards" id="slackCards"></div>
+      <div class="callout"><h4>No slack: A, E, F, G, I</h4>Every day lost on site clearance, steel fabrication, truss erection, deck work or final inspection moves the opening by a day. These are the activities to staff first and watch daily.</div>
+    </div>
+  </div>
+
+  <details class="discuss">
+    <summary><span class="d-tag">Ask the class</span><span class="d-q">To save money, could one foundation crew build both piers, east and then west?</span><span class="d-more"></span></summary>
+    <div class="d-a">
+      <p>No. Back to back, the piers take 10 + 9 = 19 days starting on day 6, so they would be done on day 25. Erection (F) has to start by day 20 (its LS). The project would slip 5 days, to 49.</p>
+      <p>Slack is per activity, not a pool you can spend twice. B's 4 days and C's 5 days don't add up to 9 days for one crew.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ================= TASK 4 ================= -->
+<section id="t4" class="sheet task">
+  <header class="sheet-head">
+    <p class="sheet-no">Task 4 of 7 · Crashing</p>
+    <h2>Buy days only when they pay</h2>
+  </header>
+  <div class="prompt"><span class="prompt-tag">From the case</span><p>Crashing: You may crash only one activity at a time. Build a step-by-step scorecard and minimize Total Cost = Direct + Overhead × Duration. Note: when multiple paths are critical, duration cannot be shortened by crashing a single activity unless it lies on every critical path.</p></div>
+
+  <div class="block">
+    <h3>B. Crashing options</h3>
+    <div class="tbl-wrap"><table id="tblB"></table></div>
+    <p class="note">Crashing is linear: each day cut costs the same. Example for E: ($6,360,000 − $5,400,000) ÷ (14 − 10) = $240,000 per day.</p>
+  </div>
+
+  <div class="block">
+    <h3>How to approach it</h3>
+    <ol class="steps">
+      <li><span>Find every critical path at the current durations.</span></li>
+      <li><span>List the activities that lie on <b>every</b> critical path and still have days left to cut. Only these can shorten the project on their own.</span></li>
+      <li><span>Pick the cheapest one and compare its crash cost per day with the <b>$220,000</b> of overhead a shorter project saves per day.</span></li>
+      <li><span>If it's cheaper, crash it by one day and record the step on the scorecard. If not, stop: no crash saves money.</span></li>
+      <li><span>Recompute the paths and repeat. A crash can turn a near-critical path critical.</span></li>
+    </ol>
+    <div class="formula"><span class="c">Baseline:</span> Direct $28,400,000 + Overhead $220,000 × 44 days ($9,680,000) = <b>$38,080,000</b></div>
+  </div>
+
+  <div class="stepper" id="crashStepper" tabindex="0" aria-label="Crashing step-through. Use left and right arrow keys to move between steps.">
+    <div class="st-head">
+      <span class="st-title">Step-through · crash scorecard</span>
+      <div class="keyrow">
+        <span class="lg"><i class="cone"></i>Critical path</span>
+        <span class="lg"><i class="box" style="border:3px solid var(--steel)"></i>Activity chosen this step</span>
+      </div>
+    </div>
+    <div class="diagram"><svg id="net4" viewBox="0 0 1040 492" role="img" aria-label="Network with current durations and crash costs"></svg></div>
+    <div class="st-panel" aria-live="polite">
+      <div class="st-meta"><span class="phase" id="crPhase">Baseline</span><span class="st-count" id="crCount"></span></div>
+      <div class="st-math" id="crMath"></div>
+      <p class="st-say" id="crSay"></p>
+    </div>
+    <div class="crash-grid">
+      <div class="block mini">
+        <h4>Options on every critical path</h4>
+        <div class="tbl-wrap"><table id="crOpts"></table></div>
+      </div>
+      <div class="block mini">
+        <h4>Path lengths</h4>
+        <div class="tbl-wrap"><table id="crPaths"></table></div>
+      </div>
+    </div>
+    <div class="score">
+      <h4>Scorecard</h4>
+      <div class="tbl-wrap"><table id="crScore"></table></div>
+    </div>
+    <div class="st-ctrl">
+      <button class="btn" type="button" id="crReset">Reset</button>
+      <button class="btn" type="button" id="crBack">◀ Back</button>
+      <button class="btn primary" type="button" id="crNext">Next ▶</button>
+      <div class="progress" aria-hidden="true"><i id="crBar"></i></div>
+    </div>
+  </div>
+
+  <div class="solution">
+    <div class="sol-bar"><span class="sol-tag">Solution</span><span class="sol-hint">Seven crash days, each worked in the same four steps, then the scorecard and the result.</span><button class="btn small reveal" type="button">Reveal solution</button></div>
+    <div class="sol-body">
+      <div class="block">
+        <h3>Crashing, one day at a time</h3>
+        <p class="prose">We start from the baseline: 44 days and a total cost of $28,400,000 + 44 × $220,000 = <b>$38,080,000</b>. Then we buy back the schedule one day at a time. Every day repeats the same four steps:</p>
+        <ol class="steps">
+          <li><span><b>Find the critical paths</b> at today's durations.</span></li>
+          <li><span><b>List the activities that lie on every critical path</b> and still have days left to cut. Only these can shorten the project on their own.</span></li>
+          <li><span><b>Compare the cheapest one with $220,000</b>, the overhead a one-day-shorter project saves. Crash it only if it costs less.</span></li>
+          <li><span><b>Update</b> the activity's duration, every path length, and the total cost. Then start the next day.</span></li>
+        </ol>
+        <div class="keyrow">
+          <span class="lg"><i class="cone"></i>Critical path at the start of the day</span>
+          <span class="lg"><i class="box" style="border:4px solid var(--steel); border-radius:50%"></i>Activity crashed that day</span>
+          <span class="lg"><span class="mono" style="color:var(--ink)"><span style="color:var(--ink-3)">10→</span>9</span> duration after earlier crashes</span>
+          <span class="lg"><span class="mono" style="color:var(--ink)">$200k · 3 left</span> crash cost per day · days left to cut</span>
+        </div>
+      </div>
+      <div class="days" id="crashDays"></div>
+
+      <div class="block">
+        <h3>The completed scorecard</h3>
+        <div class="tbl-wrap score-full"><table id="crScoreFull"></table></div>
+      </div>
+
+      <h3>Result</h3>
+      <div class="tiles">
+        <div class="tile"><span class="lbl">Optimal duration</span><span class="val">38 days</span><span class="sub">down from 44</span></div>
+        <div class="tile"><span class="lbl">Minimum total cost</span><span class="val">$37.93M</span><span class="sub">$37,930,000</span></div>
+        <div class="tile"><span class="lbl">Saved vs. baseline</span><span class="val">$150,000</span><span class="sub">from $38,080,000</span></div>
+        <div class="tile"><span class="lbl">Crash plan</span><span class="val">G 1 · F 3 · A 2</span><span class="sub">days cut per activity</span></div>
+      </div>
+      <div class="formula"><span class="c">Direct:</span>   $28,400,000 + $150,000 (G) + 3 × $200,000 (F) + 2 × $210,000 (A) = $29,570,000<br><span class="c">Overhead:</span> 38 days × $220,000 = $8,360,000<br><span class="c">Total:</span>    $29,570,000 + $8,360,000 = <b>$37,930,000</b></div>
+      <div class="charts">
+        <div class="chart">
+          <h4>Net saving from each crash day</h4>
+          <svg id="chNet" viewBox="0 0 560 300" role="img" aria-label="Bar chart of net saving per crash step: 70k, 20k, 20k, 20k, 10k, 10k, then 0"></svg>
+          <p class="cap">Net saving = $220,000 overhead saved − crash cost per day. Keep crashing while the bar is above zero. Step 7 (I) is exactly zero, so it isn't taken.</p>
+        </div>
+        <div class="chart">
+          <h4>Total cost after each step</h4>
+          <svg id="chTotal" viewBox="0 0 560 300" role="img" aria-label="Line chart of total cost falling from 38.08 million at 44 days to 37.93 million at 38 days"></svg>
+          <p class="cap">The axis is zoomed in to $37.90M–$38.10M. Total cost falls with every adopted step and bottoms out at 38 days. Crashing I would reach 37 days at the same cost (hollow point).</p>
+        </div>
+      </div>
+      <p class="prose">The optimal crash plan stops when no single-day crash yields a positive net saving. Final crashed duration: <b>38 days</b>. Final total cost (direct + overhead): <b>$37,930,000</b>.</p>
+    </div>
+  </div>
+
+  <details class="discuss">
+    <summary><span class="d-tag">Ask the class</span><span class="d-q">Step 7 is a tie. Crashing I gives a 37-day schedule for the same $37,930,000. Would you take it?</span><span class="d-more"></span></summary>
+    <div class="d-a">
+      <p>The cost model says you're indifferent, which is why the solution stops at 38 days: there is no positive saving.</p>
+      <p>A manager might still take the free day as a buffer before a fixed October ceremony. A manager might also decline it. Crashing the final inspection means squeezing safety checks and paying inspectors overtime, and that brings risks the cost table doesn't show.</p>
+    </div>
+  </details>
+  <details class="discuss">
+    <summary><span class="d-tag">Ask the class</span><span class="d-q">In step 2, why not crash G and H together? That shortens both critical paths at once.</span><span class="d-more"></span></summary>
+    <div class="d-a">
+      <p>The case allows one activity at a time. Even if two were allowed, the pair would cost $150,000 + $190,000 = $340,000 for a day that saves only $220,000 of overhead. Crashing F ($200,000) shortens both paths more cheaply because it lies on both.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ================= TASK 5 ================= -->
+<section id="t5" class="sheet task">
+  <header class="sheet-head">
+    <p class="sheet-no">Task 5 of 7 · PERT</p>
+    <h2>How uncertain is 44 days?</h2>
+  </header>
+  <div class="prompt"><span class="prompt-tag">From the case</span><p>PERT: compute t<sub>e</sub> and variance per activity; then project μ, σ, and the 99.73% (i.e., 3-sigma value) completion date.</p></div>
+
+  <div class="block">
+    <h3>C. PERT three-time estimates</h3>
+    <div class="tbl-wrap"><table id="tblC"></table></div>
+    <p class="note">a = optimistic, m = most likely, b = pessimistic (days). PERT assumes each activity time follows a Beta distribution.</p>
+  </div>
+
+  <div class="block">
+    <h3>How to approach it</h3>
+    <ol class="steps">
+      <li><span>For each activity, compute the expected time t<sub>e</sub> = (a + 4m + b) ÷ 6 and the variance σ² = ((b − a) ÷ 6)².</span></li>
+      <li><span>Find the critical path using the expected times t<sub>e</sub>.</span></li>
+      <li><span>Project mean μ = sum of t<sub>e</sub> on the critical path. Project variance = sum of the variances on that path (activity times are assumed independent). σ = √variance.</span></li>
+      <li><span>The completion time is treated as normal, so the 3-sigma (99.73%) date is μ + 3σ.</span></li>
+    </ol>
+    <div class="formula"><span class="c">Worked example, activity E (a = 10, m = 14, b = 20)</span><br>t<sub>e</sub> = (10 + 4 × 14 + 20) ÷ 6 = 86 ÷ 6 = <b>14.33 days</b><br>σ²  = ((20 − 10) ÷ 6)² = 1.667² = <b>2.7778</b></div>
+  </div>
+
+  <div class="solution">
+    <div class="sol-bar"><span class="sol-tag">Solution</span><span class="sol-hint">Have the class compute t<sub>e</sub> and σ² for two activities first.</span><button class="btn small reveal" type="button">Reveal solution</button></div>
+    <div class="sol-body">
+      <div class="block">
+        <h4>Expected times and variances</h4>
+        <div class="tbl-wrap"><table id="tblPert"></table></div>
+      </div>
+      <div class="block">
+        <h4>Paths under expected times</h4>
+        <div class="tbl-wrap"><table id="tblPertPaths"></table></div>
+        <p class="note">The critical path under expected times is still A → E → F → G → I.</p>
+      </div>
+      <div class="tiles">
+        <div class="tile"><span class="lbl">Project mean μ</span><span class="val">44.50 days</span><span class="sub">6.17 + 14.33 + 10 + 8 + 6</span></div>
+        <div class="tile"><span class="lbl">Standard deviation σ</span><span class="val">2.09 days</span><span class="sub">√4.361 ≈ 2.09</span></div>
+        <div class="tile"><span class="lbl">99.73% (3σ) completion</span><span class="val">50.76 days</span><span class="sub">μ + 3σ = 44.50 + 3 × 2.088</span></div>
+      </div>
+      <div class="chart">
+        <h4>Where the uncertainty comes from: variance on the critical path (days²)</h4>
+        <svg id="chVar" viewBox="0 0 640 220" role="img" aria-label="Variance by critical activity: E 2.78, A 0.25, F, G and I 0.44 each"></svg>
+        <p class="cap">Off-site steel fabrication (E) alone contributes 64% of the project variance. Its pessimistic estimate (20 days) is 6 days above its most likely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TASK 6 ================= -->
+<section id="t6" class="sheet task">
+  <header class="sheet-head">
+    <p class="sheet-no">Task 6 of 7 · Confidence check</p>
+    <h2>Can we promise 45 days?</h2>
+  </header>
+  <div class="prompt"><span class="prompt-tag">From the case</span><p>If leadership requests ≤ 45 working days with 99.73% confidence, check whether your optimal crash plan meets the target.</p></div>
+
+  <div class="block">
+    <h3>How to approach it</h3>
+    <ol class="steps">
+      <li><span>The 99.73% (3-sigma) completion date is μ + 3σ.</span></li>
+      <li><span>Under the optimal crash plan, the deterministic CPM duration is 38 days. Use it as the mean.</span></li>
+      <li><span>Keep σ = 2.09 days from Task 5. This assumes crashing shortens the schedule but doesn't change how uncertain it is.</span></li>
+      <li><span>The plan meets the target if μ + 3σ ≤ 45.</span></li>
+    </ol>
+  </div>
+
+  <div class="solution">
+    <div class="sol-bar"><span class="sol-tag">Solution</span><span class="sol-hint">Ask for a yes/no with the arithmetic.</span><button class="btn small reveal" type="button">Reveal solution</button></div>
+    <div class="sol-body">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Plan</th><th class="num">μ (days)</th><th class="num">σ (days)</th><th class="num">μ + 3σ</th><th>≤ 45 days?</th></tr></thead>
+          <tbody>
+            <tr><td>Baseline, no crashing</td><td class="num">44.50</td><td class="num">2.09</td><td class="num">50.76</td><td><span class="chip stop">✕ Misses by 5.76 days</span></td></tr>
+            <tr><td><b>Optimal crash plan</b></td><td class="num">38.00</td><td class="num">2.09</td><td class="num"><b>44.27</b></td><td><span class="chip go">✓ Meets, 0.73 days to spare</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="formula">μ + 3σ = 38 + 3 × 2.09 = <b>44.27 ≤ 45</b></div>
+      <div class="answer"><div><span>Verdict</span><strong>The target is met. Without crashing, it would not be achievable.</strong></div></div>
+      <div class="chart wide">
+        <h4>Completion-time distributions against the 45-day target</h4>
+        <div class="keyrow">
+          <span class="lg"><i class="steel"></i>Optimal crash plan (μ = 38)</span>
+          <span class="lg"><i class="mute"></i>Baseline schedule (μ = 44.5)</span>
+          <span class="lg"><i class="ink"></i>Leadership target, 45 days</span>
+        </div>
+        <svg id="chBell" viewBox="0 0 1000 330" role="img" aria-label="Two normal curves. The crashed plan's 3-sigma point, 44.27 days, is left of the 45-day target; the baseline's, 50.76 days, is to the right."></svg>
+        <p class="cap">Both curves have σ = 2.09. Crashing moves the whole distribution 6.5 days to the left, which pulls the 3σ point under the target.</p>
+      </div>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+        <div class="card"><span class="who">How much more risk can the plan take?</span><p>The target holds as long as σ ≤ (45 − 38) ÷ 3 = <b>2.33 days</b>. That is only 0.24 days more than today's estimate.</p></div>
+        <div class="card"><span class="who">Same question, as a probability</span><p>z = (45 − μ) ÷ σ. Baseline: z = 0.24, so P(done by day 45) ≈ <b>59%</b>. Crash plan: z = 3.35, so P ≈ <b>99.96%</b>.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TASK 7 ================= -->
+<section id="t7" class="sheet task">
+  <header class="sheet-head">
+    <p class="sheet-no">Task 7 of 7 · Discussion</p>
+    <h2>What should the project manager take away?</h2>
+  </header>
+  <div class="prompt"><span class="prompt-tag">From the case</span><p>Managerial insights.</p></div>
+
+  <div class="solution">
+    <div class="sol-bar"><span class="sol-tag">Solution</span><span class="sol-hint">Collect the class's ideas before revealing.</span><button class="btn small reveal" type="button">Reveal solution</button></div>
+    <div class="sol-body">
+      <ol class="insights">
+        <li><div><h3>Recompute the critical path after every crash</h3><p>Recomputing the critical path after each crash step ensures crash spending stays efficient and focuses on activities that truly constrain project completion.</p><p>In this case, one day cut from G made A-E-F-H-I critical too. From then on, crashing G again would have wasted $150,000 a day.</p></div></li>
+        <li><div><h3>The steel truss and the merge at F drive the schedule</h3><p>Early off-site steel fabrication (E) and the three-way merge at activity F create long, interdependent chains, making the schedule highly sensitive to disruptions.</p><p>E is the longest activity, sits on the critical path, and carries 64% of the project's variance. A late steel delivery stalls everything at F.</p></div></li>
+        <li><div><h3>F → G → I is the tail that sets the finish</h3><p>The segment F → G → I forms the dominant tail that governs the overall project duration. Every critical path runs through it, and four of the six crash days were bought there (F three times, G once).</p></div></li>
+        <li><div><h3>A tight deadline needs more than single-activity crashing</h3><p>If a strict deadline is set far below the probabilistic three-sigma completion time, single-activity crashing will not suffice. Parallel crashing, overtime or additional crews should be considered to reach the target safely.</p></div></li>
+        <li><div><h3>Treat near-critical work as critical</h3><p>Lighting and electrical (H) has one day of slack, and its path became critical after the first crash. Slack that small gives a manager almost no cushion.</p></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <details class="discuss">
+    <summary><span class="d-tag">Ask the class</span><span class="d-q">The October ceremony date is fixed. Which single activity would you watch most closely, and what would you do about it?</span><span class="d-more"></span></summary>
+    <div class="d-a">
+      <p>E, the off-site steel truss. It is the longest activity (14 days), it is critical under both normal and expected times, it feeds the merge at F, and it carries most of the variance. It also happens off-site, so problems surface late.</p>
+      <p>Possible actions: a weekly progress check at the fabricator, a shop inspection before shipping, and a delivery plan agreed in advance.</p>
+    </div>
+  </details>
+  <details class="discuss">
+    <summary><span class="d-tag">Ask the class</span><span class="d-q">The steel is fabricated off-site. Does it really have to wait for site clearance (A)?</span><span class="d-more"></span></summary>
+    <div class="d-a">
+      <p>If the fabricator could start on day 0, E would finish on day 14 instead of 20. The east piers (done day 16) would then set F's start, and the project would drop to 40 days with no crashing. A-B-F-G-I becomes the critical path. That saves 4 × $220,000 = $880,000 of overhead, far more than the $150,000 the crash plan saves.</p>
+      <p>The catch: the fabricator may need site survey data or approvals from A before cutting steel. Rethinking a dependency can beat crashing, so it's worth asking what it would take to break this one.</p>
+    </div>
+  </details>
+  <details class="discuss">
+    <summary><span class="d-tag">Ask the class</span><span class="d-q">Is PERT's 50.76-day estimate optimistic or pessimistic?</span><span class="d-more"></span></summary>
+    <div class="d-a">
+      <p>Slightly optimistic. PERT only adds up variance along one critical path. A-E-F-H-I averages 43.5 days, just one day behind, so if lighting runs long that path finishes last. Ignoring it understates the risk.</p>
+      <p>PERT also assumes activity times are independent. A wet spring on Geddes Pond would slow the east piers, the west piers and the deck at the same time.</p>
+    </div>
+  </details>
+</section>
+
+<footer class="foot">
+  <span>MGT 303 · CPM/PERT case study: The Gallup Park Bridge (Ann Arbor, Michigan)</span>
+  <span>Durations in working days · Costs in US dollars</span>
+</footer>
+</main>
+
+<div id="tip" class="tip" hidden></div>
+
+<script>
+(function () {
+"use strict";
+
+/* ================= case data & engine ================= */
+const ACT = {
+  A: { name: "Site clearance & MOT setup", short: "Site & MOT", pred: [], t: 6, tc: 4, cn: 2600000, cc: 3020000, a: 5, m: 6, b: 8 },
+  B: { name: "Foundation & piers (east)", short: "East piers", pred: ["A"], t: 10, tc: 8, cn: 3600000, cc: 3960000, a: 10, m: 12, b: 14 },
+  C: { name: "Foundation & piers (west)", short: "West piers", pred: ["A"], t: 9, tc: 7, cn: 3200000, cc: 3540000, a: 8, m: 10, b: 12 },
+  D: { name: "Utility relocation (power/fiber)", short: "Utilities", pred: ["A"], t: 8, tc: 6, cn: 2800000, cc: 3120000, a: 8, m: 10, b: 13 },
+  E: { name: "Off-site steel truss fabrication", short: "Truss fab", pred: ["A"], t: 14, tc: 10, cn: 5400000, cc: 6360000, a: 10, m: 14, b: 20 },
+  F: { name: "Erect truss & superstructure", short: "Erect truss", pred: ["B", "C", "E"], t: 10, tc: 7, cn: 3800000, cc: 4400000, a: 8, m: 10, b: 12 },
+  G: { name: "Deck concrete & surface finish", short: "Deck", pred: ["F"], t: 8, tc: 6, cn: 2500000, cc: 2800000, a: 6, m: 8, b: 10 },
+  H: { name: "Lighting & electrical installation", short: "Lighting", pred: ["D", "F"], t: 7, tc: 5, cn: 2400000, cc: 2780000, a: 5, m: 7, b: 9 },
+  I: { name: "Final inspection & public opening", short: "Opening", pred: ["G", "H"], t: 6, tc: 4, cn: 2100000, cc: 2540000, a: 4, m: 6, b: 8 }
+};
+const IDS = Object.keys(ACT);
+const OVERHEAD = 220000;
+const SUCC = Object.fromEntries(IDS.map(id => [id, IDS.filter(j => ACT[j].pred.includes(id))]));
+IDS.forEach(id => {
+  const x = ACT[id];
+  x.slope = (x.cc - x.cn) / (x.t - x.tc);
+  x.te = (x.a + 4 * x.m + x.b) / 6;
+  x.v = ((x.b - x.a) / 6) ** 2;
+});
+
+function cpm(dur) {
+  const r = {};
+  IDS.forEach(id => {
+    const p = ACT[id].pred;
+    const ES = p.length ? Math.max(...p.map(q => r[q].EF)) : 0;
+    r[id] = { ES, EF: ES + dur[id] };
+  });
+  const T = Math.max(...IDS.map(id => r[id].EF));
+  [...IDS].reverse().forEach(id => {
+    const s = SUCC[id];
+    const LF = s.length ? Math.min(...s.map(q => r[q].LS)) : T;
+    r[id].LF = LF; r[id].LS = LF - dur[id]; r[id].SL = r[id].LS - r[id].ES;
+  });
+  return { r, T };
+}
+const PATHS = (function () {
+  const out = [];
+  (function walk(id, acc) {
+    const next = acc.concat(id);
+    if (!SUCC[id].length) out.push(next); else SUCC[id].forEach(s => walk(s, next));
+  })("A", []);
+  return out;
+})();
+const pathLen = (p, dur) => p.reduce((s, id) => s + dur[id], 0);
+const pname = p => p.join("-");
+
+function crashPlan() {
+  const dur = Object.fromEntries(IDS.map(id => [id, ACT[id].t]));
+  let direct = IDS.reduce((s, id) => s + ACT[id].cn, 0);
+  let T = cpm(dur).T;
+  const steps = [{ n: 0, dur: { ...dur }, T, direct, total: direct + OVERHEAD * T, crit: PATHS.filter(p => pathLen(p, dur) === T), adopted: true }];
+  for (let n = 1; n < 20; n++) {
+    const crit = PATHS.filter(p => pathLen(p, dur) === T);
+    const opts = IDS.filter(id => crit.every(p => p.includes(id))).map(id => ({ id, slope: ACT[id].slope, left: dur[id] - ACT[id].tc }));
+    const live = opts.filter(o => o.left > 0).sort((x, y) => x.slope - y.slope);
+    if (!live.length) break;
+    const best = live[0];
+    const net = OVERHEAD - best.slope;
+    const prevTotal = steps[steps.length - 1].total;
+    if (net <= 0) {
+      steps.push({ n, crit, opts, choice: best.id, oldT: T, newT: T - 1, cost: best.slope, net, total: prevTotal, adopted: false, dur: { ...dur }, T, direct });
+      break;
+    }
+    dur[best.id] -= 1; direct += best.slope;
+    const oldT = T; T = cpm(dur).T;
+    steps.push({ n, crit, opts, choice: best.id, oldT, newT: T, cost: best.slope, net, total: direct + OVERHEAD * T, adopted: true, dur: { ...dur }, T, direct });
+  }
+  return steps;
+}
+function pert() {
+  const te = Object.fromEntries(IDS.map(id => [id, ACT[id].te]));
+  const rows = PATHS.map(p => ({ p, mu: pathLen(p, te), v: p.reduce((s, id) => s + ACT[id].v, 0) })).sort((x, y) => y.mu - x.mu);
+  return { rows, mu: rows[0].mu, v: rows[0].v, sd: Math.sqrt(rows[0].v), cp: rows[0].p };
+}
+
+const NORMAL = Object.fromEntries(IDS.map(id => [id, ACT[id].t]));
+const BASE = cpm(NORMAL);
+const CRASH = crashPlan();
+const PERT = pert();
+const CRASHED_3S = 38 + 3 * 2.09; /* answer key: σ rounded to 2.09 */
+
+/* ================= helpers ================= */
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const fmt = n => Math.round(n).toLocaleString("en-US");
+const usd = n => "$" + fmt(n);
+const kk = n => "$" + Math.round(n / 1000) + "k";
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* storage unavailable */ } }
+};
+const isCritPath = (p, dur, T) => pathLen(p, dur) === T;
+const pathsSorted = [...PATHS].sort((x, y) => pathLen(y, NORMAL) - pathLen(x, NORMAL));
+
+/* ================= static tables ================= */
+function table(el, head, rows) {
+  const th = head.map(h => `<th${h.num ? ' class="num"' : ""}>${h.t}</th>`).join("");
+  el.innerHTML = `<thead><tr>${th}</tr></thead><tbody>${rows.join("")}</tbody>`;
+}
+table($("#tblA"),
+  [{ t: "ID" }, { t: "Activity" }, { t: "Immediate predecessors" }, { t: "Normal duration (days)", num: 1 }],
+  IDS.map(id => `<tr><td class="id">${id}</td><td>${ACT[id].name}</td><td>${ACT[id].pred.join(", ") || "—"}</td><td class="num">${ACT[id].t}</td></tr>`));
+
+table($("#tblCpm"),
+  [{ t: "ID" }, { t: "Activity" }, { t: "t", num: 1 }, { t: "ES", num: 1 }, { t: "EF", num: 1 }, { t: "LS", num: 1 }, { t: "LF", num: 1 }, { t: "Slack", num: 1 }, { t: "Critical?" }],
+  IDS.map(id => {
+    const r = BASE.r[id], c = r.SL === 0;
+    return `<tr class="${c ? "is-crit" : ""}"><td class="id">${id}</td><td>${ACT[id].name}</td><td class="num">${ACT[id].t}</td><td class="num">${r.ES}</td><td class="num">${r.EF}</td><td class="num">${r.LS}</td><td class="num">${r.LF}</td><td class="num"><b>${r.SL}</b></td><td>${c ? '<span class="chip crit">Yes</span>' : "No"}</td></tr>`;
+  }));
+
+table($("#tblPaths"),
+  [{ t: "Path" }, { t: "Durations" }, { t: "Length (days)", num: 1 }, { t: "" }],
+  pathsSorted.map(p => {
+    const L = pathLen(p, NORMAL), c = L === BASE.T;
+    return `<tr class="${c ? "is-crit" : ""}"><td class="mono nowrap"><b>${pname(p)}</b></td><td class="mono nowrap">${p.map(id => ACT[id].t).join(" + ")}</td><td class="num"><b>${L}</b></td><td>${c ? '<span class="chip crit">Critical</span>' : L === BASE.T - 1 ? '<span class="chip mute">Near-critical</span>' : ""}</td></tr>`;
+  }));
+
+table($("#tblB"),
+  [{ t: "ID" }, { t: "Activity" }, { t: "Normal time", num: 1 }, { t: "Crash time", num: 1 }, { t: "Max days to cut", num: 1 }, { t: "Normal cost", num: 1 }, { t: "Crash cost", num: 1 }, { t: "Crash cost / day", num: 1 }],
+  IDS.map(id => { const x = ACT[id]; return `<tr><td class="id">${id}</td><td>${x.name}</td><td class="num">${x.t}</td><td class="num">${x.tc}</td><td class="num">${x.t - x.tc}</td><td class="num">${usd(x.cn)}</td><td class="num">${usd(x.cc)}</td><td class="num"><b>${usd(x.slope)}</b></td></tr>`; })
+  .concat([`<tr class="is-total"><td></td><td>Total direct cost at normal durations</td><td></td><td></td><td></td><td class="num">${usd(IDS.reduce((s, id) => s + ACT[id].cn, 0))}</td><td></td><td></td></tr>`]));
+
+table($("#tblC"),
+  [{ t: "ID" }, { t: "Activity" }, { t: "a", num: 1 }, { t: "m", num: 1 }, { t: "b", num: 1 }],
+  IDS.map(id => { const x = ACT[id]; return `<tr><td class="id">${id}</td><td>${x.name}</td><td class="num">${x.a}</td><td class="num">${x.m}</td><td class="num">${x.b}</td></tr>`; }));
+
+table($("#tblPert"),
+  [{ t: "ID" }, { t: "a", num: 1 }, { t: "m", num: 1 }, { t: "b", num: 1 }, { t: "t<sub>e</sub> = (a+4m+b)/6", num: 1 }, { t: "σ² = ((b−a)/6)²", num: 1 }, { t: "On critical path" }],
+  IDS.map(id => { const x = ACT[id], c = PERT.cp.includes(id); return `<tr class="${c ? "is-crit" : ""}"><td class="id">${id}</td><td class="num">${x.a}</td><td class="num">${x.m}</td><td class="num">${x.b}</td><td class="num"><b>${x.te.toFixed(2)}</b></td><td class="num"><b>${x.v.toFixed(4)}</b></td><td>${c ? '<span class="chip crit">Yes</span>' : ""}</td></tr>`; })
+  .concat([`<tr class="is-total"><td colspan="4">Sum along A-E-F-G-I</td><td class="num">${PERT.mu.toFixed(2)}</td><td class="num">${PERT.v.toFixed(3)}</td><td>σ = √${PERT.v.toFixed(3)} ≈ ${PERT.sd.toFixed(2)}</td></tr>`]));
+
+table($("#tblPertPaths"),
+  [{ t: "Path" }, { t: "Expected length (days)", num: 1 }, { t: "Path variance", num: 1 }, { t: "" }],
+  PERT.rows.map((r, i) => `<tr class="${i === 0 ? "is-crit" : ""}"><td class="mono nowrap"><b>${pname(r.p)}</b></td><td class="num"><b>${r.mu.toFixed(2)}</b></td><td class="num">${r.v.toFixed(3)}</td><td>${i === 0 ? '<span class="chip crit">Critical</span>' : ""}</td></tr>`));
+
+/* ================= network drawing ================= */
+const POS = { A: [78, 306], B: [300, 62], C: [300, 184], D: [300, 428], E: [300, 306], F: [522, 306], G: [744, 306], H: [744, 428], I: [962, 306] };
+const NW = 124, NH = 104, BH = 26;
+const EDGES = IDS.flatMap(v => ACT[v].pred.map(u => [u, v]));
+
+function edgeGeom(u, v) {
+  const [x1, y1] = POS[u], [x2, y2] = POS[v];
+  const sx = x1 + NW / 2, sy = y1 + clamp((y2 - y1) * 0.15, -30, 30);
+  const tx = x2 - NW / 2 - 1, ty = y2 + clamp((y1 - y2) * 0.15, -30, 30);
+  const ex = tx - 9, dx = (ex - sx) * 0.5;
+  return { d: `M${sx},${sy} C${sx + dx},${sy} ${ex - dx},${ty} ${ex},${ty}`, head: `${tx},${ty} ${tx - 11},${ty - 6} ${tx - 11},${ty + 6}` };
+}
+function band(x, y, w, h, top) {
+  const r = 7;
+  return top
+    ? `M${x},${y + h} V${y + r} Q${x},${y} ${x + r},${y} H${x + w - r} Q${x + w},${y} ${x + w},${y + r} V${y + h} Z`
+    : `M${x},${y} V${y + h - r} Q${x},${y + h} ${x + r},${y + h} H${x + w - r} Q${x + w},${y + h} ${x + w},${y + h - r} V${y} Z`;
+}
+/* o: {mode:'plain'|'cpm'|'crash', crit, cur, vals, hl, fresh, dur, tip} */
+function nodeSVG(id, o, at) {
+  const A = ACT[id], [cx, cy] = at || POS[id], x = cx - NW / 2, y = cy - NH / 2;
+  const cls = ["node", o.crit && "is-crit", o.cur && "is-cur"].filter(Boolean).join(" ");
+  let s = `<g class="${cls}" data-tip="${esc(o.tip || "")}"><rect class="n-fill" x="${x}" y="${y}" width="${NW}" height="${NH}" rx="7"/>`;
+  if (o.mode === "plain") {
+    s += `<text class="n-letter" x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="36">${id}</text>`;
+    s += `<text class="n-name" x="${cx}" y="${cy + 18}" text-anchor="middle">${A.short}</text>`;
+    s += `<text class="n-dur" x="${cx}" y="${cy + 39}" text-anchor="middle">${A.t} days</text>`;
+  } else {
+    s += `<path class="n-band" d="${band(x, y, NW, BH, true)}"/><path class="n-band" d="${band(x, y + NH - BH, NW, BH, false)}"/>`;
+    s += `<line class="n-div" x1="${x}" y1="${y + BH}" x2="${x + NW}" y2="${y + BH}"/><line class="n-div" x1="${x}" y1="${y + NH - BH}" x2="${x + NW}" y2="${y + NH - BH}"/>`;
+    s += `<text class="n-letter" x="${x + 26}" y="${cy + 11}" text-anchor="middle" font-size="31">${id}</text>`;
+    const d = o.dur != null ? o.dur : A.t;
+    const durTxt = d < A.t ? `<tspan class="n-was">${A.t}→</tspan>${d} d` : `${d} d`;
+    s += `<text class="n-dur" x="${cx + 20}" y="${cy - 1}" text-anchor="middle">${durTxt}</text>`;
+    s += `<text class="n-name" x="${cx + 20}" y="${cy + 16}" text-anchor="middle">${A.short}</text>`;
+    if (o.mode === "cpm") {
+      s += `<line class="n-div" x1="${cx}" y1="${y}" x2="${cx}" y2="${y + BH}"/>`;
+      s += `<line class="n-div" x1="${x + 42}" y1="${y + NH - BH}" x2="${x + 42}" y2="${y + NH}"/><line class="n-div" x1="${x + NW - 42}" y1="${y + NH - BH}" x2="${x + NW - 42}" y2="${y + NH}"/>`;
+      const cells = [["ES", x + NW / 4, y + 18], ["EF", x + 3 * NW / 4, y + 18], ["LS", x + 21, y + NH - 8], ["SL", cx, y + NH - 8], ["LF", x + NW - 21, y + NH - 8]];
+      const vals = o.vals || {}, hl = o.hl || {}, fresh = o.fresh || [];
+      cells.forEach(([k, px, py]) => {
+        const h = hl[k];
+        if (h) s += `<rect class="n-hl ${h === "bind" ? "bind" : ""}" x="${px - 20}" y="${py - 15}" width="40" height="21" rx="4"/>`;
+        if (vals[k] != null) {
+          s += `<text class="n-val ${h === "bind" ? "on-bind" : ""} ${fresh.includes(k) ? "fresh" : ""}" x="${px}" y="${py}" text-anchor="middle">${vals[k]}</text>`;
+        } else {
+          s += `<text class="n-ph" x="${px}" y="${py - 2}" text-anchor="middle">${k === "SL" ? "slack" : k}</text>`;
+        }
+      });
+    } else if (o.mode === "crash") {
+      const left = d - A.tc;
+      s += `<text class="n-band-txt" x="${cx}" y="${y + 18}" text-anchor="middle">${kk(A.slope)}/day</text>`;
+      s += `<text class="n-band-txt ${left ? "" : "out"}" x="${cx}" y="${y + NH - 8}" text-anchor="middle">${left ? `can cut ${left} more` : "at crash limit"}</text>`;
+    }
+  }
+  s += `<rect class="n-line" x="${x}" y="${y}" width="${NW}" height="${NH}" rx="7"/></g>`;
+  return s;
+}
+function networkSVG(nodeOpts, edgeCls) {
+  let s = "";
+  EDGES.forEach(([u, v]) => {
+    const g = edgeGeom(u, v);
+    s += `<g class="edge ${edgeCls ? edgeCls(u, v) : ""}"><path class="e" d="${g.d}"/><polygon class="ah" points="${g.head}"/></g>`;
+  });
+  IDS.forEach(id => { s += nodeSVG(id, nodeOpts(id)); });
+  return s;
+}
+const critEdge = (r) => (u, v) => (r[u].SL === 0 && r[v].SL === 0 && r[u].EF === r[v].ES) ? "crit" : "";
+
+/* Task 2 figures: lecture-style circle nodes with ES/EF on top, LS/LF below */
+const CR = 34;
+const CPOS = { A: [78, 344], B: [300, 64], C: [300, 204], D: [300, 484], E: [300, 344], F: [522, 344], G: [744, 344], H: [744, 484], I: [962, 344] };
+const CPORT = { AB: [-24, 0], AC: [-12, 0], AE: [0, 0], AD: [14, 0], BF: [0, -22], CF: [0, -11], EF: [0, 0], DH: [0, 0], FG: [0, 0], FH: [16, -16], GI: [0, 0], HI: [0, 16] };
+function cEdge(u, v) {
+  const [x1, y1] = CPOS[u], [x2, y2] = CPOS[v], [eo, io] = CPORT[u + v] || [0, 0];
+  const sx = x1 + Math.sqrt(CR * CR - eo * eo) + 1, sy = y1 + eo;
+  const tx = x2 - Math.sqrt(CR * CR - io * io) - 2, ty = y2 + io;
+  const ex = tx - 9, dx = (ex - sx) * 0.5;
+  return { d: `M${sx},${sy} C${sx + dx},${sy} ${ex - dx},${ty} ${ex},${ty}`, head: `${tx},${ty} ${tx - 11},${ty - 6} ${tx - 11},${ty + 6}` };
+}
+function cNote(x, y, text, anchor) {
+  const w = text.length * 8.2 + 18, h = 26;
+  const rx = anchor === "end" ? x - w : anchor === "middle" ? x - w / 2 : x;
+  return `<g class="c-note"><rect x="${rx}" y="${y - h / 2}" width="${w}" height="${h}" rx="5"/><text x="${rx + w / 2}" y="${y + 5}" text-anchor="middle">${text}</text></g>`;
+}
+function circleNet(mode) {
+  const r = BASE.r, top = mode !== "bwd", bot = mode !== "fwd", crit = mode === "all";
+  let s = "";
+  /* key */
+  const on = k => (k === "ES" || k === "EF") ? top : bot;
+  s += `<rect class="c-key-frame" x="4" y="4" width="112" height="134" rx="6"/><text class="c-key-title" x="60" y="20" text-anchor="middle">KEY</text>`;
+  s += `<circle class="c-node" cx="60" cy="78" r="22"/><text class="c-letter" x="60" y="77" text-anchor="middle" style="font-size:17px">X</text><text class="c-dur" x="60" y="92" text-anchor="middle" style="font-size:11px">t</text>`;
+  [["ES", 28, 48], ["EF", 92, 48], ["LS", 28, 120], ["LF", 92, 120]].forEach(([k, x, y]) => { s += `<text class="c-key ${on(k) ? "on" : ""}" x="${x}" y="${y}" text-anchor="middle">${k}</text>`; });
+  /* edges */
+  EDGES.forEach(([u, v]) => {
+    const g = cEdge(u, v);
+    s += `<g class="edge ${crit ? critEdge(r)(u, v) : ""}"><path class="e" d="${g.d}"/><polygon class="ah" points="${g.head}"/></g>`;
+  });
+  /* nodes */
+  const num = (x, y, v) => `<text class="c-num" x="${x}" y="${y}" text-anchor="middle">${v}</text>`;
+  IDS.forEach(id => {
+    const [cx, cy] = CPOS[id], x = r[id], isC = crit && x.SL === 0;
+    const tip = `${id} · ${ACT[id].name}\nt = ${ACT[id].t} days` + (top ? `\nES ${x.ES} · EF ${x.EF}` : "") + (bot ? `\nLS ${x.LS} · LF ${x.LF}` : "") + (crit ? `\nSlack ${x.SL}` : "");
+    s += `<g data-tip="${esc(tip)}"><circle class="c-node ${isC ? "crit" : ""}" cx="${cx}" cy="${cy}" r="${CR}"/>`;
+    s += `<text class="c-letter" x="${cx}" y="${cy - 1}" text-anchor="middle">${id}</text><text class="c-dur" x="${cx}" y="${cy + 20}" text-anchor="middle">${ACT[id].t}</text>`;
+    if (top) s += num(cx - 40, cy - 42, x.ES) + num(cx + 40, cy - 42, x.EF);
+    if (bot) s += num(cx - 40, cy + 57, x.LS) + num(cx + 40, cy + 57, x.LF);
+    s += `</g>`;
+  });
+  /* worked merge / burst points */
+  const merge = id => `ES(${id}) = max{${ACT[id].pred.map(q => r[q].EF).join(", ")}} = ${r[id].ES}`;
+  const burst = id => `LF(${id}) = min{${SUCC[id].map(q => r[q].LS).join(", ")}} = ${r[id].LF}`;
+  if (mode === "fwd") {
+    s += cNote(500, 264, merge("F"), "start");
+    s += cNote(744, 556, merge("H"), "middle");
+    s += cNote(1032, 264, merge("I"), "end");
+  } else if (mode === "bwd") {
+    s += cNote(520, 442, burst("F"), "middle");
+    s += cNote(6, 576, burst("A"), "start");
+  }
+  return s;
+}
+$("#figFwd").innerHTML = circleNet("fwd");
+$("#figBwd").innerHTML = circleNet("bwd");
+$("#figAll").innerHTML = circleNet("all");
+
+/* Task 1 network */
+$("#net1").innerHTML = networkSVG(id => ({ mode: "plain", tip: `${id} · ${ACT[id].name}\nNormal duration: ${ACT[id].t} days\nPredecessors: ${ACT[id].pred.join(", ") || "none"}` }));
+
+/* node key */
+(function () {
+  const svg = $("#nodeKey");
+  const cx = 125, cy = 59;
+  let s = nodeSVG("F", { mode: "cpm", vals: {}, tip: "Node key" }, [cx, cy]);
+  s = s.replace(/>F</, ">X<").replace(/>10 d</, ">t d<").replace(/>Erect truss</, ">activity<");
+  svg.innerHTML = s;
+})();
+
+/* ================= Task 2: CPM step-through ================= */
+const SAY = {
+  "fwd-A": "Site clearance and MOT setup has no predecessor, so the project clock starts with it on day 0.",
+  "fwd-B": "The east foundation can start as soon as the site is cleared.",
+  "fwd-C": "The west foundation also starts right after site clearance, in parallel with the east side.",
+  "fwd-D": "Utility relocation starts after site clearance too.",
+  "fwd-E": "Steel fabrication also waits for A. At 14 days it is the longest of the four parallel streams.",
+  "fwd-F": "Merge point. The truss goes up only when both piers are ready and the steel has arrived. The steel (E) arrives last, so it sets F's start.",
+  "fwd-G": "Deck work starts as soon as the superstructure is up.",
+  "fwd-H": "Lighting needs the relocated utilities (done day 14) and the superstructure (done day 30). The superstructure is the one that binds.",
+  "fwd-I": "Inspection waits for the deck (day 38) and the lighting (day 37). The earliest finish is day 44. That is the project duration.",
+  "bwd-I": "The backward pass starts at the finish. To open on day 44, inspection must start by day 38.",
+  "bwd-H": "Lighting has to be done before inspection starts on day 38, so it can start as late as day 31.",
+  "bwd-G": "The deck also has to be done by day 38. With 8 days of work, it must start by day 30.",
+  "bwd-F": "Burst point. F feeds both the deck and the lighting, so it must finish by the earlier of their late starts: day 30.",
+  "bwd-E": "The steel must be delivered by day 20 so erection can start on time. Starting it any later than day 6 delays the project.",
+  "bwd-D": "Utilities feed only the lighting, which can start as late as day 31. That leaves D a lot of room.",
+  "bwd-C": "The west piers must be ready by day 20, when erection starts.",
+  "bwd-B": "The east piers must also be ready by day 20.",
+  "bwd-A": "A feeds B, C, D and E. The steel's late start (day 6) is the tightest. LS(A) = 0 = ES(A), so the two passes agree."
+};
+const CPM_STEPS = (function () {
+  const steps = [];
+  const known = {};
+  const snap = () => JSON.parse(JSON.stringify(known));
+  steps.push({ phase: "start", known: snap(), math: "Every box starts with only its duration.", say: "The forward pass fills the top row of each box (ES, EF). The backward pass fills the bottom row (LS, LF). Press Next to start with A." });
+  IDS.forEach(id => {
+    const p = ACT[id].pred, r = BASE.r[id], t = ACT[id].t;
+    let math, bind = null; const hl = {}, edges = {};
+    if (!p.length) math = `ES(${id}) = 0 <span class="muted">(no predecessor)</span>`;
+    else if (p.length === 1) { bind = p[0]; math = `ES(${id}) = EF(${p[0]}) = <b>${r.ES}</b>`; }
+    else {
+      bind = p.reduce((a, q) => BASE.r[q].EF > BASE.r[a].EF ? q : a, p[0]);
+      math = `ES(${id}) = max{${p.map(q => `EF(${q})`).join(", ")}} = max{${p.map(q => BASE.r[q].EF).join(", ")}} = <b>${r.ES}</b>`;
+    }
+    p.forEach(q => { hl[q] = { EF: q === bind ? "bind" : "hl" }; edges[q + id] = q === bind ? "hl bind" : "hl"; });
+    math += `<br>EF(${id}) = ${r.ES} + ${t} = <b>${r.EF}</b>`;
+    known[id] = { ES: r.ES, EF: r.EF };
+    steps.push({ phase: "fwd", id, known: snap(), hl, edges, fresh: ["ES", "EF"], math, say: SAY["fwd-" + id] });
+  });
+  [...IDS].reverse().forEach(id => {
+    const s = SUCC[id], r = BASE.r[id], t = ACT[id].t;
+    let math, bind = null; const hl = {}, edges = {};
+    if (!s.length) math = `LF(${id}) = project finish = <b>${r.LF}</b>`;
+    else if (s.length === 1) { bind = s[0]; math = `LF(${id}) = LS(${s[0]}) = <b>${r.LF}</b>`; }
+    else {
+      bind = s.reduce((a, q) => BASE.r[q].LS < BASE.r[a].LS ? q : a, s[0]);
+      math = `LF(${id}) = min{${s.map(q => `LS(${q})`).join(", ")}} = min{${s.map(q => BASE.r[q].LS).join(", ")}} = <b>${r.LF}</b>`;
+    }
+    s.forEach(q => { hl[q] = { LS: q === bind ? "bind" : "hl" }; edges[id + q] = q === bind ? "hl bind" : "hl"; });
+    math += `<br>LS(${id}) = ${r.LF} − ${t} = <b>${r.LS}</b>`;
+    known[id].LS = r.LS; known[id].LF = r.LF;
+    steps.push({ phase: "bwd", id, known: snap(), hl, edges, fresh: ["LS", "LF"], math, say: SAY["bwd-" + id] });
+  });
+  IDS.forEach(id => { known[id].SL = BASE.r[id].SL; });
+  steps.push({
+    phase: "slack", known: snap(), fresh: ["SL"],
+    math: `Slack = LS − ES: ${IDS.map(id => `${id} ${BASE.r[id].SL}`).join(" · ")}`,
+    say: "A, E, F, G and I have zero slack, so they form the critical path A → E → F → G → I. The project takes 44 days. B, C, D and H can slip a little without delaying the opening (Task 3)."
+  });
+  return steps;
+})();
+
+function makeStepper(cfg) {
+  let i = 0;
+  const n = cfg.count;
+  const go = k => { i = clamp(k, 0, n - 1); cfg.render(i); $(cfg.back).disabled = i === 0; $(cfg.next).disabled = i === n - 1; $(cfg.reset).disabled = i === 0; $(cfg.bar).style.width = (100 * i / (n - 1)) + "%"; };
+  $(cfg.next).addEventListener("click", () => go(i + 1));
+  $(cfg.back).addEventListener("click", () => go(i - 1));
+  $(cfg.reset).addEventListener("click", () => go(0));
+  $(cfg.root).addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") { e.preventDefault(); go(i + 1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); go(i - 1); }
+  });
+  go(0);
+  return { go, get i() { return i; } };
+}
+
+const cpmStepper = makeStepper({
+  count: CPM_STEPS.length, root: "#cpmStepper", next: "#cpmNext", back: "#cpmBack", reset: "#cpmReset", bar: "#cpmBar",
+  render(k) {
+    const st = CPM_STEPS[k];
+    const showCrit = st.phase === "slack";
+    $("#net2").innerHTML = networkSVG(id => {
+      const r = BASE.r[id], kn = st.known[id] || {};
+      return {
+        mode: "cpm", vals: kn, hl: (st.hl || {})[id], fresh: st.id === id || st.phase === "slack" ? st.fresh : null,
+        cur: st.id === id, crit: showCrit && r.SL === 0,
+        tip: `${id} · ${ACT[id].name}\nt = ${ACT[id].t} days` + (kn.ES != null ? `\nES ${kn.ES} · EF ${kn.EF}` : "") + (kn.LS != null ? `\nLS ${kn.LS} · LF ${kn.LF}` : "") + (kn.SL != null ? `\nSlack ${kn.SL}` : "")
+      };
+    }, (u, v) => showCrit ? critEdge(BASE.r)(u, v) : ((st.edges || {})[u + v] || ""));
+    const ph = $("#cpmPhase");
+    ph.textContent = { start: "Start", fwd: "Forward pass", bwd: "Backward pass", slack: "Slack & critical path" }[st.phase];
+    ph.className = "phase" + (showCrit ? " is-crit" : "");
+    $("#cpmCount").textContent = k === 0 ? `${CPM_STEPS.length - 1} steps` : `Step ${k} of ${CPM_STEPS.length - 1}` + (st.id ? ` · activity ${st.id}` : "");
+    $("#cpmMath").innerHTML = st.math;
+    $("#cpmSay").textContent = st.say;
+    const cur = k === 0 ? -1 : k <= 9 ? 0 : k <= 18 ? 1 : 2;
+    $$("#cpmJumps .jump").forEach((b, j) => b.setAttribute("aria-current", j === cur ? "true" : "false"));
+  }
+});
+$$("#cpmJumps .jump").forEach(b => b.addEventListener("click", () => cpmStepper.go(+b.dataset.to)));
+
+/* ================= Task 3: slack chart & cards ================= */
+(function () {
+  const svg = $("#gantt");
+  const W = 1000, L = 196, R = 960, top = 40, row = 38, H = top + IDS.length * row + 44;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const X = d => L + (R - L) * d / 44;
+  let s = "";
+  [0, 10, 20, 30, 40].forEach(d => {
+    s += `<line class="grid" x1="${X(d)}" y1="${top - 6}" x2="${X(d)}" y2="${top + IDS.length * row}"/>`;
+    s += `<text class="tick" x="${X(d)}" y="${top + IDS.length * row + 20}" text-anchor="middle">${d}</text>`;
+  });
+  s += `<text class="ax-title" x="${(L + R) / 2}" y="${H - 4}" text-anchor="middle">Working day</text>`;
+  IDS.forEach((id, i) => {
+    const r = BASE.r[id], y = top + i * row, crit = r.SL === 0;
+    s += `<text x="16" y="${y + 25}"><tspan class="g-id">${id}</tspan><tspan class="lbl2" dx="10">${ACT[id].short}</tspan></text>`;
+    s += `<rect class="${crit ? "m-cone" : "m-steel"}" x="${X(r.ES)}" y="${y + 9}" width="${X(r.EF) - X(r.ES)}" height="22" rx="4" data-tip="${esc(`${id} · ${ACT[id].name}\nScheduled days ${r.ES}–${r.EF}` + (crit ? "\nCritical: no slack" : `\nCan finish as late as day ${r.LF}`))}"/>`;
+    if (r.SL > 0) {
+      s += `<rect class="m-wash" x="${X(r.EF) + 2}" y="${y + 9}" width="${X(r.LF) - X(r.EF) - 2}" height="22" rx="4" data-tip="${esc(`${id}: ${r.SL} day${r.SL > 1 ? "s" : ""} of slack\nLatest finish: day ${r.LF}`)}"/>`;
+      s += `<text class="lbl" x="${X(r.LF) + 8}" y="${y + 25}">${r.SL} d slack</text>`;
+    }
+  });
+  s += `<line class="ref" x1="${X(44)}" y1="${top - 14}" x2="${X(44)}" y2="${top + IDS.length * row}"/>`;
+  s += `<text class="lbl" x="${X(44)}" y="${top - 20}" text-anchor="end">Finish · day 44</text>`;
+  svg.innerHTML = s;
+
+  const cards = [
+    { id: "H", text: "Lighting can start on day 30 or 31. Treat it as critical: a two-day slip moves the opening. Its path, A-E-F-H-I, is 43 days, one day short of critical." },
+    { id: "B", text: "The east piers finish on day 16 but aren't needed until day 20, when the truss is ready to go up. That's room to absorb a rain delay or high water on the pond." },
+    { id: "C", text: "The west piers have one day more room than the east side. Like B, they are waiting on the steel." },
+    { id: "D", text: "Utility relocation can start any time between day 6 and day 23, so it can be scheduled around the utility crews' availability. After 16 days of slip it starts eating into H's one-day buffer." }
+  ];
+  $("#slackCards").innerHTML = cards.map(c => {
+    const r = BASE.r[c.id];
+    return `<div class="card"><span class="big">${r.SL}<small>day${r.SL > 1 ? "s" : ""} slack</small></span><span class="who"><b>${c.id}</b>${ACT[c.id].name}</span><p class="mono" style="font-size:.78rem">ES ${r.ES} → EF ${r.EF}<br>LS ${r.LS} → LF ${r.LF}</p><p>${c.text}</p></div>`;
+  }).join("");
+})();
+
+/* ================= Task 4: crash step-through ================= */
+const CR_SAY = [
+  "Baseline at normal durations. One critical path, A-E-F-G-I, sets the 44-day finish. Press Next to make the first crash decision.",
+  "There is one critical path, so any activity on it can shorten the project. G (deck) is cheapest at $150,000 a day, less than the $220,000 of overhead a day saves. Crash G by one day. A-E-F-H-I was already 43 days long, so it is now critical too.",
+  "Now there are two critical paths. G is only on the first and H only on the second, so neither can shorten the project on its own. The activities on both paths are A, E, F and I. F is the cheapest at $200,000.",
+  "Still two critical paths. F is still the cheapest shared option and has 2 days left to cut.",
+  "F's last available day. After this step F is at its 7-day crash limit.",
+  "F is used up. Of the shared options left, A costs $210,000, I $220,000 and E $240,000. Only A is still below $220,000.",
+  "A's second and last crash day. The project is now 38 days long and total cost reaches its lowest point, $37,930,000.",
+  "A is used up. The cheapest shared option is now I at $220,000, exactly the overhead it would save, so the net saving is $0. E would lose $20,000 a day. No crash saves money, so stop at 38 days."
+];
+const shortPaths = ps => ps.map(pname).join("<br>");
+
+const SCORE_HEAD = [{ t: "Step" }, { t: "Critical path(s)" }, { t: "Options on every critical path ($k/day)" }, { t: "Action" }, { t: "Duration", num: 1 }, { t: "Overhead saved", num: 1 }, { t: "Crash cost", num: 1 }, { t: "Net saving", num: 1 }, { t: "Total cost", num: 1 }, { t: "Flag" }];
+const scoreRows = () =>
+  CRASH.map((st, i) => {
+    if (i === 0) return `<tr data-row="0"><td class="num">0</td><td class="paths mono">${shortPaths(st.crit)}</td><td>—</td><td>Baseline</td><td class="num">44</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><b>${usd(st.total)}</b></td><td></td></tr>`;
+    const opts = st.opts.map(o => `<span class="${o.id === st.choice ? "opt-pick" : o.left ? "" : "opt-out"}">${o.id} ${o.slope / 1000}</span>`).join(" · ");
+    const flag = !st.adopted ? '<span class="chip mute">No more improvement</span>' : (i === CRASH.length - 2 && !CRASH[i + 1].adopted) ? '<span class="chip go">Minimal cost</span>' : "";
+    return `<tr data-row="${i}" class="${st.adopted ? "" : "dim"}"><td class="num">${i}</td><td class="paths mono">${shortPaths(st.crit)}</td><td class="mono">${opts}</td><td>${st.adopted ? "" : "Check: "}Crash ${st.choice} by 1 day</td><td class="num">${st.oldT} → ${st.newT}</td><td class="num">${usd(OVERHEAD)}</td><td class="num">${usd(st.cost)}</td><td class="num">${st.net > 0 ? "+" : ""}${usd(st.net)}</td><td class="num"><b>${usd(st.total)}</b></td><td>${flag}</td></tr>`;
+  });
+table($("#crScore"), SCORE_HEAD, scoreRows());
+table($("#crScoreFull"), SCORE_HEAD, scoreRows());
+
+const crStepper = makeStepper({
+  count: CRASH.length, root: "#crashStepper", next: "#crNext", back: "#crBack", reset: "#crReset", bar: "#crBar",
+  render(k) {
+    const st = CRASH[k];
+    const before = k === 0 ? NORMAL : CRASH[k - 1].dur;
+    const res = cpm(st.dur);
+    $("#net4").innerHTML = networkSVG(id => {
+      const d = st.dur[id];
+      return {
+        mode: "crash", dur: d, crit: res.r[id].SL === 0, cur: st.choice === id,
+        tip: `${id} · ${ACT[id].name}\nDuration now: ${d} days (normal ${ACT[id].t}, crash limit ${ACT[id].tc})\nCrash cost: ${usd(ACT[id].slope)} per day`
+      };
+    }, critEdge(res.r));
+    const ph = $("#crPhase");
+    if (k === 0) { ph.textContent = "Baseline"; ph.className = "phase"; }
+    else if (!st.adopted) { ph.textContent = "Stop"; ph.className = "phase is-crit"; }
+    else { ph.textContent = `Crash ${st.choice}`; ph.className = "phase"; }
+    $("#crCount").textContent = k === 0 ? `${CRASH.length - 1} steps` : `Step ${k} of ${CRASH.length - 1}`;
+    if (k === 0) {
+      $("#crMath").innerHTML = `Direct ${usd(st.direct)} + Overhead 44 × ${usd(OVERHEAD)} = <b>${usd(st.total)}</b>`;
+    } else if (st.adopted) {
+      $("#crMath").innerHTML = `Crash ${st.choice}: save ${usd(OVERHEAD)} overhead − pay ${usd(st.cost)} = net <b>+${usd(st.net)}</b><br>Duration ${st.oldT} → <b>${st.newT}</b> days · Total cost <b>${usd(st.total)}</b>`;
+    } else {
+      $("#crMath").innerHTML = `Crash ${st.choice}? save ${usd(OVERHEAD)} − pay ${usd(st.cost)} = <b>${usd(st.net)}</b> → no gain<br>Stay at <b>${st.T}</b> days · Total cost <b>${usd(st.total)}</b>`;
+    }
+    $("#crSay").textContent = CR_SAY[k] || "";
+
+    if (k === 0) {
+      $("#crOpts").innerHTML = `<tbody><tr><td class="muted">Press Next. The options appear once the first critical path is checked.</td></tr></tbody>`;
+    } else {
+      table($("#crOpts"),
+        [{ t: "Activity" }, { t: "Cost / day", num: 1 }, { t: "Days left", num: 1 }, { t: "vs. $220k overhead" }],
+        [...st.opts].sort((a, b) => a.slope - b.slope).map(o => {
+          const net = OVERHEAD - o.slope;
+          const verdict = !o.left ? '<span class="chip mute">Used up</span>' : net > 0 ? `<span class="chip go">Saves ${kk(net)}</span>` : net === 0 ? '<span class="chip mute">Break-even</span>' : `<span class="chip stop">Loses ${kk(-net)}</span>`;
+          return `<tr class="${o.id === st.choice ? "pick" : ""}"><td class="id">${o.id}${o.id === st.choice ? ' <span class="chip steel">' + (st.adopted ? "crash" : "checked") + "</span>" : ""}</td><td class="num">${usd(o.slope)}</td><td class="num">${o.left}</td><td>${verdict}</td></tr>`;
+        }));
+    }
+    table($("#crPaths"),
+      [{ t: "Path" }, { t: "Days", num: 1 }, { t: "" }],
+      pathsSorted.map(p => {
+        const b = pathLen(p, before), a = pathLen(p, st.dur), c = a === res.T;
+        return `<tr class="${c ? "is-crit" : ""}"><td class="mono nowrap">${pname(p)}</td><td class="num">${b !== a ? `<span class="muted">${b} →</span> <b>${a}</b>` : `<b>${a}</b>`}</td><td>${c ? '<span class="chip crit">Critical</span>' : ""}</td></tr>`;
+      }));
+    $$("#crScore tbody tr").forEach(tr => {
+      const r = +tr.dataset.row;
+      tr.classList.toggle("future", r > k);
+      tr.classList.toggle("cur", r === k);
+    });
+  }
+});
+
+/* ---- Task 4 charts ---- */
+(function () {
+  const steps = CRASH.slice(1);
+  /* net saving per step */
+  {
+    const W = 560, L = 64, R = 540, T = 24, B = 236, max = 80000;
+    const Y = v => B - (B - T) * v / max;
+    const band = (R - L) / steps.length;
+    let s = "";
+    [0, 20000, 40000, 60000, 80000].forEach(v => {
+      s += `<line class="${v ? "grid" : "axis"}" x1="${L}" y1="${Y(v)}" x2="${R}" y2="${Y(v)}"/><text class="tick" x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">${v ? kk(v) : "$0"}</text>`;
+    });
+    steps.forEach((st, i) => {
+      const cx = L + band * (i + 0.5), w = 26, v = st.net;
+      const tip = esc(`Step ${st.n}: crash ${st.choice}\nCrash cost ${usd(st.cost)} vs. overhead ${usd(OVERHEAD)}\nNet saving ${usd(st.net)}` + (st.adopted ? "" : "\nNot taken"));
+      if (v > 0) {
+        const y = Y(v), x0 = cx - w / 2, x1 = cx + w / 2;
+        s += `<path class="m-steel" d="M${x0},${B} V${y + 4} Q${x0},${y} ${x0 + 4},${y} H${x1 - 4} Q${x1},${y} ${x1},${y + 4} V${B} Z" data-tip="${tip}"/>`;
+        s += `<rect x="${cx - band / 2}" y="${T}" width="${band}" height="${B - T}" fill="transparent" data-tip="${tip}"/>`;
+        s += `<text class="lbl" x="${cx}" y="${y - 8}" text-anchor="middle">+${kk(v)}</text>`;
+      } else {
+        s += `<line x1="${cx - w / 2}" y1="${B}" x2="${cx + w / 2}" y2="${B}" stroke="var(--ink-3)" stroke-width="4" stroke-linecap="round"/>`;
+        s += `<rect x="${cx - band / 2}" y="${T}" width="${band}" height="${B - T}" fill="transparent" data-tip="${tip}"/>`;
+        s += `<text class="lbl" x="${cx}" y="${B - 12}" text-anchor="middle">$0</text><text class="lbl2" x="${cx}" y="${B - 30}" text-anchor="middle">stop</text>`;
+      }
+      s += `<text class="g-id" x="${cx}" y="${B + 22}" text-anchor="middle">${st.choice}</text><text class="tick" x="${cx}" y="${B + 40}" text-anchor="middle">${kk(st.cost)}</text>`;
+    });
+    s += `<text class="ax-title" x="${L - 56}" y="${B + 22}">Crash</text><text class="ax-title" x="${L - 56}" y="${B + 40}">Cost/day</text>`;
+    $("#chNet").innerHTML = s;
+  }
+  /* total cost by duration */
+  {
+    const W = 560, L = 76, R = 536, T = 24, B = 236, lo = 37900000, hi = 38100000;
+    const days = [44, 43, 42, 41, 40, 39, 38, 37];
+    const X = d => L + (R - L) * (44 - d) / 7;
+    const Y = v => B - (B - T) * (v - lo) / (hi - lo);
+    let s = "";
+    [37900000, 37950000, 38000000, 38050000, 38100000].forEach(v => {
+      s += `<line class="${v === lo ? "axis" : "grid"}" x1="${L}" y1="${Y(v)}" x2="${R}" y2="${Y(v)}"/><text class="tick" x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">$${(v / 1e6).toFixed(2)}M</text>`;
+    });
+    days.forEach(d => { s += `<text class="tick" x="${X(d)}" y="${B + 20}" text-anchor="middle">${d}</text>`; });
+    s += `<text class="ax-title" x="${(L + R) / 2}" y="${B + 44}" text-anchor="middle">Project duration after each step (days)</text>`;
+    const adopted = CRASH.filter(st => st.adopted);
+    const pts = adopted.map(st => [X(st.T), Y(st.total), st]);
+    const last = CRASH[CRASH.length - 1];
+    s += `<path class="a-steel" d="M${pts[0][0]},${B} L${pts.map(p => p[0] + "," + p[1]).join(" L")} L${pts[pts.length - 1][0]},${B} Z"/>`;
+    s += `<polyline class="l-steel" points="${pts.map(p => p[0] + "," + p[1]).join(" ")}"/>`;
+    if (!last.adopted) s += `<line class="l-ghost" x1="${X(38)}" y1="${Y(last.total)}" x2="${X(37)}" y2="${Y(last.total)}"/><circle class="hollow" cx="${X(37)}" cy="${Y(last.total)}" r="5" data-tip="${esc(`37 days (crash I): ${usd(last.total)}\nSame cost as 38 days, so not taken`)}"/>`;
+    pts.forEach(([x, y, st]) => {
+      s += `<circle class="m-steel dot" cx="${x}" cy="${y}" r="5" data-tip="${esc(`${st.T} days: ${usd(st.total)}` + (st.n ? `\nafter crashing ${st.choice}` : "\nbaseline"))}"/>`;
+    });
+    s += `<text class="lbl" x="${pts[0][0] + 10}" y="${pts[0][1] - 10}">${usd(CRASH[0].total)}</text>`;
+    const opt = pts[pts.length - 1];
+    s += `<text class="lbl" x="${opt[0]}" y="${opt[1] + 26}" text-anchor="middle">${usd(opt[2].total)} · 38 days</text>`;
+    $("#chTotal").innerHTML = s;
+  }
+})();
+
+/* ---- Task 4 solution: one card per crash day ---- */
+const CPOS2 = { A: [78, 248], B: [300, 48], C: [300, 148], D: [300, 348], E: [300, 248], F: [522, 248], G: [744, 248], H: [744, 348], I: [962, 248] };
+const CR2 = 30;
+const CPORT2 = { AB: [-20, 0], AC: [-10, 0], AE: [0, 0], AD: [12, 0], BF: [0, -18], CF: [0, -9], EF: [0, 0], DH: [0, 0], FG: [0, 0], FH: [14, -14], GI: [0, 0], HI: [0, 14] };
+function cEdge2(u, v) {
+  const [x1, y1] = CPOS2[u], [x2, y2] = CPOS2[v], [eo, io] = CPORT2[u + v] || [0, 0];
+  const sx = x1 + Math.sqrt(CR2 * CR2 - eo * eo) + 1, sy = y1 + eo;
+  const tx = x2 - Math.sqrt(CR2 * CR2 - io * io) - 2, ty = y2 + io;
+  const ex = tx - 9, dx = (ex - sx) * 0.5;
+  return { d: `M${sx},${sy} C${sx + dx},${sy} ${ex - dx},${ty} ${ex},${ty}`, head: `${tx},${ty} ${tx - 11},${ty - 6} ${tx - 11},${ty + 6}` };
+}
+function crashFig(dur, pick) {
+  const res = cpm(dur);
+  let s = "";
+  EDGES.forEach(([u, v]) => {
+    const g = cEdge2(u, v);
+    s += `<g class="edge ${critEdge(res.r)(u, v)}"><path class="e" d="${g.d}"/><polygon class="ah" points="${g.head}"/></g>`;
+  });
+  IDS.forEach(id => {
+    const [cx, cy] = CPOS2[id], A = ACT[id], d = dur[id], left = d - A.tc, isC = res.r[id].SL === 0;
+    const tip = `${id} · ${A.name}\nDuration ${d} days (normal ${A.t}, crash limit ${A.tc})\n${usd(A.slope)} per day · ${left} day${left === 1 ? "" : "s"} left to cut`;
+    s += `<g data-tip="${esc(tip)}"><circle class="c-node ${isC ? "crit" : ""} ${id === pick ? "pick" : ""}" cx="${cx}" cy="${cy}" r="${CR2}"/>`;
+    s += `<text class="c-letter" x="${cx}" y="${cy - 2}" text-anchor="middle" style="font-size:23px">${id}</text>`;
+    s += `<text class="c-dur" x="${cx}" y="${cy + 17}" text-anchor="middle" style="font-size:13px">${d < A.t ? `<tspan class="n-was">${A.t}→</tspan>${d}` : d}</text>`;
+    s += `<text class="c-sub ${left ? "" : "out"}" x="${cx}" y="${cy + 50}" text-anchor="middle">${kk(A.slope)} · ${left ? left + " left" : "used up"}</text></g>`;
+  });
+  return s;
+}
+const DAY_WHY = [
+  "",
+  "Why only one day on G? After today A-E-F-H-I is also 43 days long. A second day on G would shorten only one of the two critical paths, so the project would stay at 43 days and the $150,000 would buy nothing.",
+  "G ($150k) and H ($190k) are cheaper than F, but each sits on only one critical path, so neither can shorten the project by itself. F lies on both paths, so one day on F shortens both at once.",
+  "Nothing has changed in the structure. The same two paths are critical, and F is still the cheapest activity that lies on both. F has 2 days left.",
+  "This is F's third and last day (10 → 7 days). From now on F is at its crash limit and drops out of the options.",
+  "With F used up, A is the cheapest activity on both critical paths. A starts every path, so cutting it shortens all seven paths at once and no new path becomes critical.",
+  "A reaches its crash limit (6 → 4 days). Total cost is now $37,930,000, the lowest on the scorecard.",
+  "I costs exactly what it saves, so crashing it would leave total cost unchanged. E costs more than it saves. No crash gives a positive saving, so stop. The optimal plan is 38 days at $37,930,000."
+];
+(function () {
+  const ptable = (before, after, Tb, Ta, last) => {
+    const cell = (p, dur, T) => { const L = pathLen(p, dur); return `<td class="${L === T ? "cp" : ""}">${L}</td>`; };
+    return `<div class="tbl-wrap"><table class="ptable"><thead><tr><th>Path length (days)</th>${pathsSorted.map(p => `<th>${pname(p)}</th>`).join("")}</tr></thead><tbody>`
+      + `<tr><td>Start of day</td>${pathsSorted.map(p => cell(p, before, Tb)).join("")}</tr>`
+      + `<tr><td>${last ? "End of day (no crash)" : "End of day"}</td>${pathsSorted.map(p => cell(p, after, Ta)).join("")}</tr>`
+      + `</tbody></table></div>`;
+  };
+  let html = "";
+  for (let k = 1; k < CRASH.length; k++) {
+    const st = CRASH[k], prev = CRASH[k - 1], A = ACT[st.choice];
+    const before = prev.dur, after = st.dur, Tb = prev.T, Ta = st.adopted ? st.newT : st.T;
+    const shared = st.opts.map(o => o.id);
+    const partial = [...new Set(st.crit.flat())].filter(id => !shared.includes(id));
+    const live = st.opts.filter(o => o.left > 0).sort((a, b) => a.slope - b.slope);
+    const chips = [...st.opts].sort((a, b) => a.slope - b.slope).map(o =>
+      `<span class="opt ${o.id === st.choice ? "pick" : ""} ${o.left ? "" : "out"}">${o.id} ${kk(o.slope)} · ${o.left ? o.left + " left" : "used up"}</span>`).join("");
+
+    const step1 = `<p>${st.crit.length === 1 ? "One critical path:" : `${st.crit.length} critical paths, tied:`}</p><p class="fx">${st.crit.map(p => `${pname(p)} = ${pathLen(p, before)} days`).join("<br>")}</p>`;
+    const step2 = `<p>An activity can shorten the project only if it lies on <b>every</b> critical path.</p><div class="optlist">${chips}</div>`
+      + (partial.length
+        ? `<p class="muted">Not on every critical path: ${partial.map(id => `${id} (only on ${st.crit.filter(p => p.includes(id)).map(p => `<span class="nowrap">${pname(p)}</span>`).join(", ")})`).join("; ")}.</p>`
+        : `<p class="muted">With a single critical path, every activity on it qualifies.</p>`);
+    const step3 = st.adopted
+      ? `<p class="fx">Cheapest: ${st.choice} at ${usd(st.cost)}/day<br>Overhead saved: ${usd(OVERHEAD)}/day<br>${usd(st.cost)} &lt; ${usd(OVERHEAD)} → <b>crash ${st.choice}</b><br>Net saving = ${usd(OVERHEAD)} − ${usd(st.cost)} = <b>${usd(st.net)}</b></p>`
+      : `<p class="fx">Cheapest: ${st.choice} at ${usd(st.cost)}/day<br>Overhead saved: ${usd(OVERHEAD)}/day<br>${usd(st.cost)} = ${usd(OVERHEAD)} → net saving $0` + (live[1] ? `<br>Next: ${live[1].id} at ${usd(live[1].slope)} → loses ${usd(live[1].slope - OVERHEAD)}` : "") + `<br><b>No positive saving: stop</b></p>`;
+    const step4 = st.adopted
+      ? `<p class="fx">Duration: ${st.oldT} → <b>${st.newT}</b> days<br>Direct: ${usd(prev.direct)} + ${usd(st.cost)} = ${usd(st.direct)}<br>Overhead: ${st.newT} × ${usd(OVERHEAD)} = ${usd(st.newT * OVERHEAD)}<br>Total: <b>${usd(st.total)}</b> <span class="muted">(was ${usd(prev.total)})</span></p>`
+      : `<p class="fx">Duration stays at <b>${st.T}</b> days<br>Direct: ${usd(st.direct)}<br>Overhead: ${st.T} × ${usd(OVERHEAD)} = ${usd(st.T * OVERHEAD)}<br>Total: <b>${usd(st.total)}</b></p>`;
+
+    const head = st.adopted
+      ? `<div class="day-title"><b>Crash ${st.choice} by one day</b><span>${A.name}</span></div><div class="day-result"><span class="mono">${st.oldT} → ${st.newT} days</span><span class="chip go">Net saving +${usd(st.net)}</span></div>`
+      : `<div class="day-title"><b>Check ${st.choice}: no saving, so stop</b><span>The network below is the final crashed schedule</span></div><div class="day-result"><span class="mono">Stays at ${st.T} days</span><span class="chip mute">Net saving $0</span></div>`;
+    const cap = st.adopted
+      ? `Network at the start of day ${k}. ${st.crit.length === 1 ? "The critical path is" : "The critical paths are"} in orange. ${st.choice} (circled in blue) is crashed today.`
+      : `Network after six crash days: A 6→4, F 10→7, G 8→7. ${st.choice} (circled in blue) is checked but not crashed.`;
+
+    html += `<article class="day" id="day${k}">
+      <header class="day-head"><span class="day-no">Day ${k}</span>${head}</header>
+      <div class="diagram"><svg viewBox="0 0 1040 410" role="img" aria-label="${esc(cap)}">${crashFig(before, st.choice)}</svg></div>
+      <div class="day-body">
+        <p class="day-cap">${cap}</p>
+        ${ptable(before, after, Tb, Ta, !st.adopted)}
+        <ol class="day-steps">
+          <li><h5>Critical paths at the start of the day</h5>${step1}</li>
+          <li><h5>Which activities can shorten the project?</h5>${step2}</li>
+          <li><h5>Cheapest option vs. $220,000 overhead</h5>${step3}</li>
+          <li><h5>${st.adopted ? "Update duration and cost" : "Result"}</h5>${step4}</li>
+        </ol>
+        <p class="day-why"><b>${st.adopted ? "Key point" : "Stop rule"}:</b> ${DAY_WHY[k]}</p>
+      </div>
+    </article>`;
+  }
+  $("#crashDays").innerHTML = html;
+})();
+
+/* ================= Task 5: variance chart ================= */
+(function () {
+  const ids = PERT.cp, W = 640, L = 150, R = 500, T = 16, row = 38;
+  const max = 3;
+  const X = v => L + (R - L) * v / max;
+  let s = "";
+  [0, 1, 2, 3].forEach(v => { s += `<line class="${v ? "grid" : "axis"}" x1="${X(v)}" y1="${T - 4}" x2="${X(v)}" y2="${T + ids.length * row}"/><text class="tick" x="${X(v)}" y="${T + ids.length * row + 18}" text-anchor="middle">${v}</text>`; });
+  ids.forEach((id, i) => {
+    const v = ACT[id].v, y = T + i * row, share = v / PERT.v, x1 = X(v);
+    s += `<text x="0" y="${y + 21}"><tspan class="g-id">${id}</tspan><tspan class="lbl2" dx="8">${ACT[id].short}</tspan></text>`;
+    s += `<path class="${id === "E" ? "m-steel" : "m-mute"}" d="M${L},${y + 6} H${x1 - 4} Q${x1},${y + 6} ${x1},${y + 10} V${y + 22} Q${x1},${y + 26} ${x1 - 4},${y + 26} H${L} Z" data-tip="${esc(`${id}: σ² = ${v.toFixed(4)}\n${(share * 100).toFixed(1)}% of the path variance`)}"/>`;
+    s += `<text class="lbl" x="${x1 + 8}" y="${y + 21}">${v.toFixed(2)} · ${Math.round(share * 100)}%</text>`;
+  });
+  $("#chVar").setAttribute("viewBox", `0 0 ${W} ${T + ids.length * row + 26}`);
+  $("#chVar").innerHTML = s;
+})();
+
+/* ================= Task 6: bell curves ================= */
+(function () {
+  const W = 1000, L = 50, R = 970, T = 24, B = 286, x0 = 30, x1 = 56, ymax = 0.24, sd = PERT.sd;
+  const X = d => L + (R - L) * (d - x0) / (x1 - x0);
+  const Y = p => B - (B - T) * p / ymax;
+  const pdf = (x, mu) => Math.exp(-0.5 * ((x - mu) / sd) ** 2) / (sd * Math.sqrt(2 * Math.PI));
+  const curve = mu => { const pts = []; for (let x = x0; x <= x1 + 1e-9; x += 0.1) pts.push(`${X(x).toFixed(1)},${Y(pdf(x, mu)).toFixed(1)}`); return pts; };
+  let s = "";
+  for (let d = x0; d <= x1; d += 2) {
+    s += `<line class="grid" x1="${X(d)}" y1="${T}" x2="${X(d)}" y2="${B}"/><text class="tick" x="${X(d)}" y="${B + 20}" text-anchor="middle">${d}</text>`;
+  }
+  s += `<line class="axis" x1="${L}" y1="${B}" x2="${R}" y2="${B}"/>`;
+  s += `<text class="ax-title" x="${(L + R) / 2}" y="${B + 42}" text-anchor="middle">Project completion time (working days)</text>`;
+  [[PERT.mu, "mute"], [38, "steel"]].forEach(([mu, c]) => {
+    const pts = curve(mu);
+    s += `<path class="a-${c}" d="M${X(x0)},${B} L${pts.join(" L")} L${X(x1)},${B} Z"/>`;
+    s += `<polyline class="l-${c}" points="${pts.join(" ")}"/>`;
+  });
+  const marks = [
+    { v: PERT.mu + 3 * sd, c: "mute", label: `μ + 3σ = ${(PERT.mu + 3 * sd).toFixed(2)}`, side: "start", tip: `Baseline: μ + 3σ = 44.50 + 3 × 2.088 = 50.76 days\nMisses the 45-day target` },
+    { v: CRASHED_3S, c: "steel", label: `μ + 3σ = ${CRASHED_3S.toFixed(2)}`, side: "end", tip: `Optimal crash plan: μ + 3σ = 38 + 3 × 2.09 = 44.27 days\nMeets the 45-day target` }
+  ];
+  marks.forEach(m => {
+    const x = X(m.v), col = m.c === "steel" ? "var(--steel)" : "var(--ink-3)";
+    s += `<line x1="${x}" y1="${B}" x2="${x}" y2="${T + 44}" stroke="${col}" stroke-width="2"/>`;
+    s += `<circle class="${m.c === "steel" ? "m-steel" : "m-mute"} dot" cx="${x}" cy="${T + 44}" r="5.5" data-tip="${esc(m.tip)}"/>`;
+    s += `<text class="lbl" x="${x + (m.side === "start" ? 10 : -10)}" y="${T + 40}" text-anchor="${m.side}">${m.label}</text>`;
+  });
+  const xd = X(45);
+  s += `<line class="ref" x1="${xd}" y1="${T}" x2="${xd}" y2="${B}" data-tip="Leadership target: 45 working days"/>`;
+  s += `<text class="lbl" x="${xd + 8}" y="${T + 12}">Target · 45 days</text>`;
+  s += `<text class="lbl2" x="${X(38)}" y="${Y(pdf(38, 38)) - 10}" text-anchor="middle">μ = 38</text>`;
+  s += `<text class="lbl2" x="${X(PERT.mu)}" y="${Y(pdf(PERT.mu, PERT.mu)) - 10}" text-anchor="middle">μ = 44.5</text>`;
+  $("#chBell").innerHTML = s;
+})();
+
+/* ================= answers toggle, text size, nav, tooltips ================= */
+const ansBtn = $("#ansToggle");
+function setAnswers(show, save) {
+  document.body.classList.toggle("hide-ans", !show);
+  ansBtn.setAttribute("aria-checked", show ? "true" : "false");
+  $("#ansLabel").textContent = show ? "Answers on" : "Answers off";
+  $$("details.discuss").forEach(d => { d.open = show; });
+  $$(".solution").forEach(s => { s.classList.remove("open"); const b = s.querySelector(".reveal"); if (b) b.textContent = "Reveal solution"; });
+  if (save) store.set("gpb-answers", show ? "1" : "0");
+}
+ansBtn.addEventListener("click", () => setAnswers(ansBtn.getAttribute("aria-checked") !== "true", true));
+$$(".solution .reveal").forEach(b => b.addEventListener("click", () => {
+  const sol = b.closest(".solution");
+  const open = sol.classList.toggle("open");
+  b.textContent = open ? "Hide solution" : "Reveal solution";
+}));
+setAnswers(store.get("gpb-answers") !== "0", false);
+
+const SIZES = [16, 18, 20, 22, 24];
+let fsi = SIZES.indexOf(+(store.get("gpb-fs") || 18)); if (fsi < 0) fsi = 1;
+const applyFs = () => { document.documentElement.style.setProperty("--fs", SIZES[fsi] + "px"); $("#fsDown").disabled = fsi === 0; $("#fsUp").disabled = fsi === SIZES.length - 1; store.set("gpb-fs", String(SIZES[fsi])); };
+$("#fsDown").addEventListener("click", () => { fsi = Math.max(0, fsi - 1); applyFs(); });
+$("#fsUp").addEventListener("click", () => { fsi = Math.min(SIZES.length - 1, fsi + 1); applyFs(); });
+applyFs();
+
+const links = $$(".tasknav a");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) links.forEach(a => a.setAttribute("aria-current", a.getAttribute("href") === "#" + en.target.id ? "true" : "false"));
+    });
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  $$(".sheet").forEach(s => io.observe(s));
+}
+document.addEventListener("keydown", e => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const tag = (e.target.tagName || "").toLowerCase();
+  if (tag === "input" || tag === "textarea" || tag === "select") return;
+  if (/^[1-7]$/.test(e.key)) { e.preventDefault(); $("#t" + e.key).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); }
+  else if (e.key === "0") { $("#brief").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); }
+});
+
+const tip = $("#tip");
+document.addEventListener("pointerover", e => {
+  const t = e.target.closest && e.target.closest("[data-tip]");
+  if (!t || !t.getAttribute("data-tip")) { tip.hidden = true; return; }
+  tip.textContent = t.getAttribute("data-tip");
+  tip.hidden = false;
+});
+document.addEventListener("pointermove", e => {
+  if (tip.hidden) return;
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX + 14, y = e.clientY + 16;
+  if (x + w > window.innerWidth - 8) x = e.clientX - w - 14;
+  if (y + h > window.innerHeight - 8) y = e.clientY - h - 14;
+  tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
+});
+document.addEventListener("pointerout", e => {
+  const to = e.relatedTarget;
+  if (!to || !to.closest || !to.closest("[data-tip]")) tip.hidden = true;
+});
+window.addEventListener("scroll", () => { tip.hidden = true; }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
