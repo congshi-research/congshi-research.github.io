@@ -18,11 +18,11 @@
 
 == Under Review
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7693925 Replenishment and Rationing with Two Priority Classes: Asymptotic Optimality and Discontinuity-Aware Online Learning] \n
-Xinxiu Wang, Cong Shi, Xin Geng \n
-
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7683788 Beyond the Square-Root Degeneracy Gap: Logarithmic Loss in Reusable-Resource Networks] \n
 Xu Zheng, Xu Sun, Cong Shi \n
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7693925 Replenishment and Rationing with Two Priority Classes: Asymptotic Optimality and Discontinuity-Aware Online Learning] \n
+Xinxiu Wang, Cong Shi, Xin Geng \n
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6528938 Pure Exploration for Multiproduct Pricing with Approximate Demand Models] \n
 Solon Sun, Cong Shi
@@ -30,11 +30,23 @@ Solon Sun, Cong Shi
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6329098 Switching Gradient: Learning to Compete with Price-Matching Guarantee] \n 
 Sichen Guo, Shukai Li, Cong Shi, Chaolin Yang \n
 
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5012366 Online Learning for Inventory Control Problems under Random Yield] \n
+Zhong Zheng, Qian Chen, Xingyuan (Ethan) Fang, Cong Shi \n
+
+- [https://arxiv.org/abs/2302.12670 Personalized Pricing with Invalid Instrumental Variables: Identification, Estimation, and Policy Learning] \n
+Rui Miao, Zhengling Qi, Cong Shi, Lin Lin \n
+
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5537380 Multiproduct Dynamic Pricing with Shrinking Choice Sets: Theory and Evidence from Autonomous On-Demand Delivery] \n
 Jingwen Tang, Shuai Hao, Yuqian Xu, Cong Shi \n
 
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5319693 Fairness-Constrained Inventory Control with Demand Learning] \n
 Jingwen Tang, Boxiao (Beryl) Chen, Cong Shi \n
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7604438 More Bang for Your Buck: A Data-Driven Framework for Cost-Effective KOL Selection and Scheduling] \n
+Xingyu Chen, Ling Jiang, Sentao Miao, Huaxiao Shen, Cong Shi \n
+
+- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6433558 Seeing Is Believing: Algorithmic Targeting, Livestream Verification, and Channel Design] \n 
+Kaiting Yang, Zhongping Li, Cong Shi \n
 
 - [https://arxiv.org/abs/2511.10718 Online Price Competition under Generalized Linear Demands] \n
 Daniele Bracale, Moulinath Banerjee, Yuekai Sun, Cong Shi \n
@@ -42,23 +54,13 @@ Daniele Bracale, Moulinath Banerjee, Yuekai Sun, Cong Shi \n
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4952453 Learning Bundle Pricing of Reusable Resources] \n
 Arlen Dean, Mohammad Zhalechian, Cong Shi \n
 
-- [https://arxiv.org/abs/2302.12670 Personalized Pricing with Invalid Instrumental Variables: Identification, Estimation, and Policy Learning] \n
-Rui Miao, Zhengling Qi, Cong Shi, Lin Lin \n
-
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5012366 Online Learning for Inventory Control Problems under Random Yield] \n
-Zhong Zheng, Qian Chen, Xingyuan (Ethan) Fang, Cong Shi \n
-
 - [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3247323 Integrating Empirical Estimation and Assortment Personalization for E-Commerce: A Consider-then-Choose Model] \n
 Maggie Li, Xiang Liu, Yan Huang, Cong Shi, Cheng Hua \n
 -- Finalist, 2018 MSOM Data-Driven Research Challenge, 2018. \n
 
 
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7604438 More Bang for Your Buck: A Data-Driven Framework for Cost-Effective KOL Selection and Scheduling] \n
-Xingyu Chen, Ling Jiang, Sentao Miao, Huaxiao Shen, Cong Shi \n
 
-- [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6433558 Seeing Is Believing: Algorithmic Targeting, Livestream Verification, and Channel Design] \n 
-Kaiting Yang, Zhongping Li, Cong Shi \n
 
 #- Online Learning and Pricing for Network Revenue Management with Reusable Resources \n
 #Huiwen Jia, Cong Shi, Siqian Shen \n
